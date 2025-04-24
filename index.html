@@ -431,33 +431,33 @@
         <div class="container mx-auto px-4 py-3">
             <div class="flex flex-col md:flex-row md:items-center justify-between flex-wrap gap-y-2 gap-x-2 sm:gap-x-3"> <div id="location-filters-container" class="flex items-center justify-center md:justify-start gap-x-1.5 gap-y-1 flex-shrink-0 order-1 md:order-1 flex-wrap"> <button id="all-locations-filter" data-location="all" class="filter-button active">All Locations</button>
 
-                    <div id="finance-major-cities" class="flex gap-x-1.5 gap-y-1 flex-wrap"> <button data-location="New York, NY" class="filter-button major-city-button">New York</button>
-                        <button data-location="Philadelphia, PA" class="filter-button major-city-button">Philadelphia</button>
-                    </div>
-                    <div id="tech-major-cities" class="hidden flex gap-x-1.5 gap-y-1 flex-wrap"> <button data-location="San Francisco, CA" class="filter-button major-city-button">SF Bay Area</button>
-                        <button data-location="Seattle, WA" class="filter-button major-city-button">Seattle</button>
-                        <button data-location="Austin, TX" class="filter-button major-city-button">Austin</button>
-                        <button data-location="Boston, MA" class="filter-button major-city-button">Boston</button>
-                    </div>
+                     <div id="finance-major-cities" class="flex gap-x-1.5 gap-y-1 flex-wrap"> <button data-location="New York, NY" class="filter-button major-city-button">New York</button>
+                         <button data-location="Philadelphia, PA" class="filter-button major-city-button">Philadelphia</button>
+                     </div>
+                     <div id="tech-major-cities" class="hidden flex gap-x-1.5 gap-y-1 flex-wrap"> <button data-location="San Francisco, CA" class="filter-button major-city-button">SF Bay Area</button>
+                         <button data-location="Seattle, WA" class="filter-button major-city-button">Seattle</button>
+                         <button data-location="Austin, TX" class="filter-button major-city-button">Austin</button>
+                         <button data-location="Boston, MA" class="filter-button major-city-button">Boston</button>
+                     </div>
 
-                    <div class="relative">
-                        <select id="hidden location-dropdown" class="hidden custom-select-input">
-                            <option value="all">More Cities...</option>
-                            </select>
-                    </div>
-                </div>
+                     <div class="relative">
+                         <select id="hidden location-dropdown" class="hidden custom-select-input">
+                             <option value="all">More Cities...</option>
+                             </select>
+                     </div>
+                 </div>
 
-                <div class="relative flex-grow md:max-w-xs lg:max-w-sm w-full order-3 md:order-2">
-                    <input type="text" id="search-input"
-                           placeholder="Search..."
-                           class="w-full pl-9 pr-4 py-1.5 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition h-[2.25rem] box-border"> <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i> </div>
+                 <div class="relative flex-grow md:max-w-xs lg:max-w-sm w-full order-3 md:order-2">
+                     <input type="text" id="search-input"
+                             placeholder="Search..."
+                             class="w-full pl-9 pr-4 py-1.5 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition h-[2.25rem] box-border"> <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i> </div>
 
-                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-x-2 gap-y-2 w-full md:w-auto order-2 md:order-3"> <div id="location-status" class="status-pending mr-0 sm:mr-2 hidden md:inline-flex"> <i class="fas fa-map-marker-alt"></i>
-                        <span>Getting location...</span>
-                    </div>
-                    <label for="start-date" class="text-sm font-medium text-gray-600 flex-shrink-0 whitespace-nowrap hidden sm:inline">From:</label> <input type="date" id="start-date" class="custom-date-input w-full sm:w-auto" aria-label="Start Date">
-                    <label for="end-date" class="text-sm font-medium text-gray-600 ml-0 sm:ml-1 flex-shrink-0 whitespace-nowrap hidden sm:inline">To:</label> <input type="date" id="end-date" class="custom-date-input w-full sm:w-auto" aria-label="End Date">
-                </div>
+                 <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-x-2 gap-y-2 w-full md:w-auto order-2 md:order-3"> <div id="location-status" class="status-pending mr-0 sm:mr-2 hidden md:inline-flex"> <i class="fas fa-map-marker-alt"></i>
+                         <span>Getting location...</span>
+                     </div>
+                     <label for="start-date" class="text-sm font-medium text-gray-600 flex-shrink-0 whitespace-nowrap hidden sm:inline">From:</label> <input type="date" id="start-date" class="custom-date-input w-full sm:w-auto" aria-label="Start Date">
+                     <label for="end-date" class="text-sm font-medium text-gray-600 ml-0 sm:ml-1 flex-shrink-0 whitespace-nowrap hidden sm:inline">To:</label> <input type="date" id="end-date" class="custom-date-input w-full sm:w-auto" aria-label="End Date">
+                 </div>
             </div>
              <div id="mobile-location-status-container" class="hidden text-center pt-2"> <div id="location-status-mobile" class="hidden status-pending"> <i class="fas fa-map-marker-alt"></i>
                      <span>Getting location...</span>
@@ -469,41 +469,41 @@
     <section id="events-section" class="py-12 md:py-16">
         <div class="container mx-auto px-4">
             <div class="mb-10 md:flex justify-between items-center">
-                <div>
-                    <h2 class="text-3xl font-bold text-gray-800 mb-1">Upcoming Events</h2>
-                    <div id="event-count" class="text-gray-600">Loading events...</div>
+                 <div>
+                     <h2 class="text-3xl font-bold text-gray-800 mb-1">Upcoming Events</h2>
+                     <div id="event-count" class="text-gray-600">Loading events...</div>
                  </div>
-                <div id="current-date-range" class="flex items-center text-sm text-gray-500 mt-2 md:mt-0 bg-gray-200 px-3 py-1.5 rounded-full">
-                    <i class="far fa-calendar-alt mr-2 text-gray-600"></i>
-                    <span id="date-range-display">All Dates</span>
-                </div>
+                 <div id="current-date-range" class="flex items-center text-sm text-gray-500 mt-2 md:mt-0 bg-gray-200 px-3 py-1.5 rounded-full">
+                     <i class="far fa-calendar-alt mr-2 text-gray-600"></i>
+                     <span id="date-range-display">All Dates</span>
+                 </div>
             </div>
 
             <div id="loading" class="loading-animate text-center py-16">
-                <div class="inline-block p-8 bg-white rounded-lg shadow-md">
-                    <i class="fas fa-spinner fa-spin text-5xl text-indigo-500 mb-4"></i>
-                    <p class="text-gray-700 text-lg font-medium">Loading Events</p>
-                    <p class="text-gray-500 text-sm mt-1">Fetching the latest event data...</p>
-                </div>
+                 <div class="inline-block p-8 bg-white rounded-lg shadow-md">
+                     <i class="fas fa-spinner fa-spin text-5xl text-indigo-500 mb-4"></i>
+                     <p class="text-gray-700 text-lg font-medium">Loading Events</p>
+                     <p class="text-gray-500 text-sm mt-1">Fetching the latest event data...</p>
+                 </div>
             </div>
 
             <div id="events-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                </div>
+                 </div>
 
             <div id="no-events" class="hidden text-center py-16 bg-white rounded-lg shadow-sm mt-8">
-                <i class="fas fa-calendar-times text-6xl text-gray-300 mb-5"></i>
-                <p id="no-events-message" class="text-gray-700 text-xl font-semibold">No events found.</p>
-                <p class="text-gray-500 mt-2">Try adjusting your search terms or date filters.</p>
+                 <i class="fas fa-calendar-times text-6xl text-gray-300 mb-5"></i>
+                 <p id="no-events-message" class="text-gray-700 text-xl font-semibold">No events found.</p>
+                 <p class="text-gray-500 mt-2">Try adjusting your search terms or date filters.</p>
             </div>
 
             <div id="pagination-controls" class="flex justify-center items-center space-x-3 md:space-x-4 mt-10 mb-4 hidden">
-                <button id="prev-page" class="bg-white hover:bg-gray-100 border border-gray-300 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center shadow-sm disabled:shadow-none">
-                    <i class="fas fa-chevron-left mr-2 text-xs"></i> Prev
-                </button>
-                <span id="page-info" class="text-gray-600 text-sm font-medium px-2">Page 1 of 1</span>
-                <button id="next-page" class="bg-white hover:bg-gray-100 border border-gray-300 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center shadow-sm disabled:shadow-none">
-                    Next <i class="fas fa-chevron-right ml-2 text-xs"></i>
-                </button>
+                 <button id="prev-page" class="bg-white hover:bg-gray-100 border border-gray-300 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center shadow-sm disabled:shadow-none">
+                     <i class="fas fa-chevron-left mr-2 text-xs"></i> Prev
+                 </button>
+                 <span id="page-info" class="text-gray-600 text-sm font-medium px-2">Page 1 of 1</span>
+                 <button id="next-page" class="bg-white hover:bg-gray-100 border border-gray-300 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center shadow-sm disabled:shadow-none">
+                     Next <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                 </button>
             </div>
         </div>
     </section>
@@ -511,16 +511,16 @@
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-4 text-center">
             <div class="mb-6">
-                <div class="inline-flex items-center justify-center mb-2">
-                     <span class="text-2xl font-bold logo-text text-gradient">NoLeaf</span>
-                </div>
-                <p class="text-gray-400 max-w-lg mx-auto text-sm">
-                    Your premier destination for the most exhaustive list of professional events across the United States. Stay ahead of the curve.
-                </p>
+                 <div class="inline-flex items-center justify-center mb-2">
+                      <span class="text-2xl font-bold logo-text text-gradient">NoLeaf</span>
+                 </div>
+                 <p class="text-gray-400 max-w-lg mx-auto text-sm">
+                     Your premier destination for the most exhaustive list of professional events across the United States. Stay ahead of the curve.
+                 </p>
             </div>
-             <div class="mt-8 pt-8 border-t border-gray-700">
-                <p class="text-gray-500 text-sm">&copy; 2025 NoLeaf. All rights reserved. | <a href="#" class="hover:text-indigo-300">Privacy Policy</a></p>
-            </div>
+              <div class="mt-8 pt-8 border-t border-gray-700">
+                 <p class="text-gray-500 text-sm">&copy; 2025 NoLeaf. All rights reserved. | <a href="#" class="hover:text-indigo-300">Privacy Policy</a></p>
+             </div>
         </div>
     </footer>
 
@@ -533,7 +533,7 @@
                 </button>
             </div>
             <div id="modal-content" class="p-5 md:p-8 overflow-y-auto modal-content flex-grow space-y-6">
-                </div>
+                 </div>
             <div class="p-5 md:p-6 border-t border-gray-200 bg-gray-50 flex justify-end">
                 <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" class="gradient-accent hover:opacity-90 text-white font-medium rounded-lg px-6 py-2.5 inline-flex items-center transition-all shadow hover:shadow-md transform hover:-translate-y-0.5">
                     View Event Website <i class="fas fa-external-link-alt ml-2 text-xs"></i>
@@ -561,7 +561,7 @@
                  </p>
                  <div class="bg-indigo-50 border border-indigo-200 rounded-md p-3 text-center">
                      <a href="mailto:kamathhrishi@gmail.com" class="text-indigo-700 font-medium hover:text-indigo-900 hover:underline break-all">
-                         <i class="fas fa-envelope mr-2"></i>kamathhrishi@gmail.com
+                          <i class="fas fa-envelope mr-2"></i>kamathhrishi@gmail.com
                      </a>
                  </div>
                  <p class="text-sm text-gray-500 mt-3">
@@ -578,1410 +578,1150 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // --- Global State ---
-            let allEvents = []; // Holds all events loaded from CSV for the current category
-            let currentFilteredEvents = []; // Holds events matching current filters
-            let currentPage = 1; // Current page number for pagination
-            let totalPages = 1; // Total number of pages based on filtered events
-            // ** DECREASED ** Initial items per page values
-            let itemsPerPage = 6; // Default for large screens (changed from 9)
-            let currentCategory = 'finance'; // Default category ('finance', 'ai', 'cyber')
-            let userLocation = null; // User's geolocation { lat: number, lon: number } | null
-            let locationStatus = 'pending'; // Geolocation status: 'pending', 'success', 'error', 'unavailable'
-            let isDistanceSortActive = true; // Flag to determine if sorting by distance is active
+      document.addEventListener('DOMContentLoaded', function() {
+        // --- Global State ---
+        let allEvents = []; // Holds ALL processed, combined, deduplicated events for the current category
+        let currentFilteredEvents = []; // Holds events matching current filters
+        let currentPage = 1; // Current page number for pagination
+        let totalPages = 1; // Total number of pages based on filtered events
+        let itemsPerPage = 6; // Default for large screens
+        let currentCategory = 'finance'; // Default category
+        let userLocation = null; // User's geolocation { lat: number, lon: number } | null
+        let locationStatus = 'pending'; // Geolocation status
+        let isDistanceSortActive = true; // Flag for sorting
 
-            // --- Configuration ---
-            // Defines settings for each event category
-            const categories = {
-                finance: {
-                    name: 'Finance & Investment',
-                    url: 'https://raw.githubusercontent.com/kamathhrishi/noleaf/main/events_finance.csv',
-                    themeClass: 'theme-finance',
-                    buttonId: 'finance-category-button',
-                    titleText: 'Finance & Investment',
-                    majorCitySetId: 'finance-major-cities',
-                    columnNames: { dateCol: "Event Date", titleCol: "Title", descCol: "Description", urlCol: "URL", locCol: "Event City" }
-                },
-                ai: {
-                    name: 'AI',
-                    url: 'https://raw.githubusercontent.com/kamathhrishi/noleaf/main/events_ai.csv',
-                    themeClass: 'theme-ai',
-                    buttonId: 'ai-category-button',
-                    titleText: 'Artificial Intelligence',
-                    majorCitySetId: 'tech-major-cities',
-                    columnNames: { dateCol: "Event Date", titleCol: "Title", descCol: "Description", urlCol: "URL", locCol: "Event City" }
-                },
-                cyber: {
-                    name: 'Cybersecurity',
-                    url: 'https://raw.githubusercontent.com/kamathhrishi/noleaf/main/events_cyber.csv',
-                    themeClass: 'theme-cyber',
-                    buttonId: 'cyber-category-button',
-                    titleText: 'Cybersecurity',
-                    majorCitySetId: 'tech-major-cities',
-                    columnNames: { dateCol: "Event Date", titleCol: "Title", descCol: "Description", urlCol: "URL", locCol: "Event City" }
+        // --- Configuration ---
+        const categories = {
+            finance: {
+                name: 'Finance & Investment',
+                // *** CHANGED: Use 'urls' array for potentially multiple sources ***
+                urls: [
+                    'https://raw.githubusercontent.com/kamathhrishi/noleaf/refs/heads/main/events.csv',
+                    'https://raw.githubusercontent.com/kamathhrishi/noleaf/main/events_finance.csv'
+                ],
+                themeClass: 'theme-finance',
+                buttonId: 'finance-category-button',
+                titleText: 'Finance & Investment',
+                majorCitySetId: 'finance-major-cities',
+                 // *** CHANGED: Use 'columnConfigs' array matching the 'urls' array ***
+                 // Assuming both CSVs use the same relevant column names.
+                 // Verify these match the actual columns in BOTH files if necessary.
+                columnConfigs: [
+                    { dateCol: "Event Date", titleCol: "Title", descCol: "Description", urlCol: "URL", locCol: "Event City" }, // Config for events.csv
+                    { dateCol: "Event Date", titleCol: "Title", descCol: "Description", urlCol: "URL", locCol: "Event City" }  // Config for events_finance.csv
+                ]
+            },
+            ai: {
+                name: 'AI',
+                 // *** CHANGED: Keep single url as string for non-finance categories ***
+                urls: ['https://raw.githubusercontent.com/kamathhrishi/noleaf/main/events_ai.csv'],
+                themeClass: 'theme-ai',
+                buttonId: 'ai-category-button',
+                titleText: 'Artificial Intelligence',
+                majorCitySetId: 'tech-major-cities',
+                 // *** CHANGED: Wrap single config in array for consistency ***
+                columnConfigs: [{ dateCol: "Event Date", titleCol: "Title", descCol: "Description", urlCol: "URL", locCol: "Event City" }]
+            },
+            cyber: {
+                name: 'Cybersecurity',
+                 // *** CHANGED: Keep single url as string for non-finance categories ***
+                urls: ['https://raw.githubusercontent.com/kamathhrishi/noleaf/main/events_cyber.csv'],
+                themeClass: 'theme-cyber',
+                buttonId: 'cyber-category-button',
+                titleText: 'Cybersecurity',
+                majorCitySetId: 'tech-major-cities',
+                // *** CHANGED: Wrap single config in array for consistency ***
+                columnConfigs: [{ dateCol: "Event Date", titleCol: "Title", descCol: "Description", urlCol: "URL", locCol: "Event City" }]
+            }
+        };
+
+        // --- Major City Definitions ---
+        const majorCityAliases = {
+             'New York, NY': ['new york', 'nyc'],
+             'Philadelphia, PA': ['philadelphia', 'philly'],
+             'San Francisco, CA': ['san francisco', 'bay area', 'palo alto', 'mountain view', 'san jose', 'menlo park', 'santa clara'],
+             'Seattle, WA': ['seattle', 'redmond', 'bellevue'],
+             'Austin, TX': ['austin'],
+             'Boston, MA': ['boston', 'cambridge'],
+         };
+
+        // --- Pre-compiled City Coordinates ---
+        const cityCoordinates = {
+            // Finance Hubs
+            "new york, ny": { lat: 40.7128, lon: -74.0060 },
+            "philadelphia, pa": { lat: 39.9526, lon: -75.1652 },
+            // Tech Hubs
+            "san francisco, ca": { lat: 37.7749, lon: -122.4194 },
+            "palo alto, ca": { lat: 37.4419, lon: -122.1430 },
+            "mountain view, ca": { lat: 37.3861, lon: -122.0839 },
+            "san jose, ca": { lat: 37.3387, lon: -121.8853 },
+            "menlo park, ca": { lat: 37.4541, lon: -122.1833 },
+            "santa clara, ca": { lat: 37.3541, lon: -121.9552 },
+            "seattle, wa": { lat: 47.6062, lon: -122.3321 },
+            "redmond, wa": { lat: 47.6740, lon: -122.1215 },
+            "bellevue, wa": { lat: 47.6101, lon: -122.2015 },
+            "austin, tx": { lat: 30.2672, lon: -97.7431 },
+            "boston, ma": { lat: 42.3601, lon: -71.0589 },
+            "cambridge, ma": { lat: 42.3736, lon: -71.1097 },
+            // Other examples
+            "san diego, ca": { lat: 32.7157, lon: -117.1611 },
+            "las vegas, nv": { lat: 36.1699, lon: -115.1398 },
+            "newark, de": { lat: 39.6837, lon: -75.7497 }, // Delaware
+            "newark, nj": { lat: 40.7357, lon: -74.1724 }, // New Jersey!
+            "chicago, il": { lat: 41.8781, lon: -87.6298 },
+            "los angeles, ca": { lat: 34.0522, lon: -118.2437 },
+            "dallas, tx": { lat: 32.7767, lon: -96.7970 },
+            "houston, tx": { lat: 29.7604, lon: -95.3698 },
+            "miami, fl": { lat: 25.7617, lon: -80.1918 },
+            "atlanta, ga": { lat: 33.7490, lon: -84.3880 },
+            "denver, co": { lat: 39.7392, lon: -104.9903 },
+            "washington, dc": { lat: 38.9072, lon: -77.0369 }
+            // Add more cities and their coordinates here...
+        };
+
+        // --- DOM Elements ---
+        const eventsContainer = document.getElementById('events-container');
+        const loadingIndicator = document.getElementById('loading');
+        const noEventsIndicator = document.getElementById('no-events');
+        const noEventsMessage = document.getElementById('no-events-message');
+        const eventCountEl = document.getElementById('event-count');
+        const paginationControlsEl = document.getElementById('pagination-controls');
+        const prevPageButton = document.getElementById('prev-page');
+        const nextPageButton = document.getElementById('next-page');
+        const pageInfoEl = document.getElementById('page-info');
+        const searchInput = document.getElementById('search-input');
+        const startDateInput = document.getElementById('start-date');
+        const endDateInput = document.getElementById('end-date');
+        const dateRangeDisplay = document.getElementById('date-range-display');
+        const locationStatusEl = document.getElementById('location-status');
+        const locationStatusMobileEl = document.getElementById('location-status-mobile');
+        const mobileLocationStatusContainer = document.getElementById('mobile-location-status-container');
+        const eventModal = document.getElementById('event-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalContent = document.getElementById('modal-content');
+        const modalLink = document.getElementById('modal-link');
+        const closeModalButton = document.getElementById('close-modal');
+        const suggestEventButton = document.getElementById('suggest-event-button');
+        const suggestModal = document.getElementById('suggest-modal');
+        const closeSuggestModalButton = document.getElementById('close-suggest-modal');
+        const suggestModalCloseButtonAlt = document.getElementById('suggest-modal-close-button-alt');
+        const categoryTitleSpan = document.getElementById('category-title-span');
+        const locationFiltersContainer = document.getElementById('location-filters-container');
+        const allLocationsFilterButton = document.getElementById('all-locations-filter');
+        const locationDropdown = document.getElementById('location-dropdown');
+        const financeMajorCitiesDiv = document.getElementById('finance-major-cities');
+        const techMajorCitiesDiv = document.getElementById('tech-major-cities');
+        const majorCityButtons = document.querySelectorAll('.major-city-button');
+        const eventSchemaPlaceholder = document.getElementById('event-schema-placeholder');
+
+
+        // --- Helper Functions ---
+
+        function formatDateToYyyyMmDd(date) {
+            if (!date || isNaN(date.getTime())) return '';
+            const year = date.getUTCFullYear();
+            const month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
+            const day = date.getUTCDate().toString().padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+        function escapeHTML(str) {
+            if (typeof str !== 'string') return str;
+            return str.replace(/&/g, '&amp;')
+                      .replace(/</g, '&lt;')
+                      .replace(/>/g, '&gt;')
+                      .replace(/"/g, '&quot;')
+                      .replace(/'/g, '&#39;');
+        }
+
+        function parseDate(dateStr, eventRow = null) {
+            if (typeof dateStr !== 'string' || !dateStr) return new Date(NaN);
+            let date = new Date(NaN);
+            const trimmedDateStr = dateStr.trim();
+
+            if (/^\d{4}-\d{2}-\d{2}/.test(trimmedDateStr)) {
+                date = new Date(trimmedDateStr.substring(0, 10) + 'T00:00:00Z');
+                if (!isNaN(date.getTime())) return date;
+                date = new Date(NaN);
+            }
+
+            if (/^\d{1,2}\/\d{1,2}\/\d{4}/.test(trimmedDateStr)) {
+                const datePart = trimmedDateStr.split(' ')[0];
+                const parts = datePart.split('/');
+                if (parts.length === 3) {
+                    date = new Date(Date.UTC(parseInt(parts[2], 10), parseInt(parts[0], 10) - 1, parseInt(parts[1], 10)));
+                    if (!isNaN(date.getTime())) return date;
+                    date = new Date(NaN);
                 }
-            };
-
-            // --- Major City Definitions (Keys match button data-location) ---
-            // Used to group variations of city names for major city filters
-            const majorCityAliases = {
-                 'New York, NY': ['new york', 'nyc'],
-                 'Philadelphia, PA': ['philadelphia', 'philly'],
-                 'San Francisco, CA': ['san francisco', 'bay area', 'palo alto', 'mountain view', 'san jose', 'menlo park', 'santa clara'],
-                 'Seattle, WA': ['seattle', 'redmond', 'bellevue'],
-                 'Austin, TX': ['austin'],
-                 'Boston, MA': ['boston', 'cambridge'],
-             };
-
-            // --- Pre-compiled City Coordinates ---
-            // Used for distance calculation. Keys should be lowercase "city, st" or just "city".
-            // ** IMPORTANT: EXPAND THIS LIST FOR FULL COVERAGE OF YOUR DATA **
-            const cityCoordinates = {
-                // Finance Hubs
-                "new york, ny": { lat: 40.7128, lon: -74.0060 },
-                "philadelphia, pa": { lat: 39.9526, lon: -75.1652 },
-                // Tech Hubs
-                "san francisco, ca": { lat: 37.7749, lon: -122.4194 },
-                "palo alto, ca": { lat: 37.4419, lon: -122.1430 },
-                "mountain view, ca": { lat: 37.3861, lon: -122.0839 },
-                "san jose, ca": { lat: 37.3387, lon: -121.8853 },
-                "menlo park, ca": { lat: 37.4541, lon: -122.1833 },
-                "santa clara, ca": { lat: 37.3541, lon: -121.9552 },
-                "seattle, wa": { lat: 47.6062, lon: -122.3321 },
-                "redmond, wa": { lat: 47.6740, lon: -122.1215 },
-                "bellevue, wa": { lat: 47.6101, lon: -122.2015 },
-                "austin, tx": { lat: 30.2672, lon: -97.7431 },
-                "boston, ma": { lat: 42.3601, lon: -71.0589 },
-                "cambridge, ma": { lat: 42.3736, lon: -71.1097 },
-                // Other examples
-                "san diego, ca": { lat: 32.7157, lon: -117.1611 },
-                "las vegas, nv": { lat: 36.1699, lon: -115.1398 },
-                "newark, de": { lat: 39.6837, lon: -75.7497 }, // Delaware
-                "newark, nj": { lat: 40.7357, lon: -74.1724 }, // New Jersey!
-                "chicago, il": { lat: 41.8781, lon: -87.6298 },
-                "los angeles, ca": { lat: 34.0522, lon: -118.2437 },
-                "dallas, tx": { lat: 32.7767, lon: -96.7970 },
-                "houston, tx": { lat: 29.7604, lon: -95.3698 },
-                "miami, fl": { lat: 25.7617, lon: -80.1918 },
-                "atlanta, ga": { lat: 33.7490, lon: -84.3880 },
-                "denver, co": { lat: 39.7392, lon: -104.9903 },
-                "washington, dc": { lat: 38.9072, lon: -77.0369 }
-                // Add more cities and their coordinates here...
-            };
-
-
-            // --- DOM Elements ---
-            // Get references to frequently used elements in the HTML
-            const eventsContainer = document.getElementById('events-container');
-            const loadingIndicator = document.getElementById('loading');
-            const noEventsIndicator = document.getElementById('no-events');
-            const noEventsMessage = document.getElementById('no-events-message');
-            const eventCountEl = document.getElementById('event-count');
-            const paginationControlsEl = document.getElementById('pagination-controls');
-            const prevPageButton = document.getElementById('prev-page');
-            const nextPageButton = document.getElementById('next-page');
-            const pageInfoEl = document.getElementById('page-info');
-            const searchInput = document.getElementById('search-input');
-            const startDateInput = document.getElementById('start-date');
-            const endDateInput = document.getElementById('end-date');
-            const dateRangeDisplay = document.getElementById('date-range-display');
-            const locationStatusEl = document.getElementById('location-status'); // Desktop status
-            const locationStatusMobileEl = document.getElementById('location-status-mobile'); // Mobile status
-            const mobileLocationStatusContainer = document.getElementById('mobile-location-status-container'); // Container for mobile status
-            const eventModal = document.getElementById('event-modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalContent = document.getElementById('modal-content');
-            const modalLink = document.getElementById('modal-link');
-            const closeModalButton = document.getElementById('close-modal');
-            const suggestEventButton = document.getElementById('suggest-event-button');
-            const suggestModal = document.getElementById('suggest-modal');
-            const closeSuggestModalButton = document.getElementById('close-suggest-modal');
-            const suggestModalCloseButtonAlt = document.getElementById('suggest-modal-close-button-alt');
-            const categoryTitleSpan = document.getElementById('category-title-span');
-            const locationFiltersContainer = document.getElementById('location-filters-container');
-            const allLocationsFilterButton = document.getElementById('all-locations-filter');
-            const locationDropdown = document.getElementById('location-dropdown');
-            const financeMajorCitiesDiv = document.getElementById('finance-major-cities');
-            const techMajorCitiesDiv = document.getElementById('tech-major-cities');
-            const majorCityButtons = document.querySelectorAll('.major-city-button'); // All major city buttons
-            const eventSchemaPlaceholder = document.getElementById('event-schema-placeholder'); // For JSON-LD
-
-
-            // --- Helper Functions ---
-
-            /**
-             * Formats a Date object into YYYY-MM-DD string (UTC).
-             * @param {Date} date - The date object to format.
-             * @returns {string} The formatted date string or empty string if invalid.
-             */
-            function formatDateToYyyyMmDd(date) {
-                if (!date || isNaN(date.getTime())) return '';
-                const year = date.getUTCFullYear();
-                const month = (date.getUTCMonth() + 1).toString().padStart(2, '0'); // Months are 0-indexed
-                const day = date.getUTCDate().toString().padStart(2, '0');
-                return `${year}-${month}-${day}`;
             }
 
-            /**
-             * Escapes HTML special characters to prevent XSS.
-             * @param {string} str - The string to escape.
-             * @returns {string} The escaped string.
-             */
-            function escapeHTML(str) {
-                if (typeof str !== 'string') return str;
-                return str.replace(/&/g, '&amp;')
-                          .replace(/</g, '&lt;')
-                          .replace(/>/g, '&gt;')
-                          .replace(/"/g, '&quot;')
-                          .replace(/'/g, '&#39;');
-            }
-
-            /**
-             * Parses a date string into a UTC Date object. Handles YYYY-MM-DD, MM/DD/YYYY,
-             * and attempts general parsing. Uses eventRow for potential fallbacks (e.g., AI category).
-             * @param {string} dateStr - The date string to parse.
-             * @param {object|null} eventRow - The full event data row (optional, for fallbacks).
-             * @returns {Date} A Date object (UTC midnight) or Date(NaN) if parsing fails.
-             */
-            function parseDate(dateStr, eventRow = null) {
-                 if (typeof dateStr !== 'string' || !dateStr) return new Date(NaN);
-                 let date = new Date(NaN);
-                 const trimmedDateStr = dateStr.trim();
-
-                 // Try YYYY-MM-DD format first (ensure it's treated as UTC)
-                 if (/^\d{4}-\d{2}-\d{2}/.test(trimmedDateStr)) {
-                     date = new Date(trimmedDateStr.substring(0, 10) + 'T00:00:00Z'); // Explicitly UTC
+            if (isNaN(date.getTime())) {
+                const potentialDate = new Date(trimmedDateStr.includes('UTC') ? trimmedDateStr : trimmedDateStr + ' UTC');
+                 if (!isNaN(potentialDate.getTime())) {
+                     date = new Date(Date.UTC(potentialDate.getUTCFullYear(), potentialDate.getUTCMonth(), potentialDate.getUTCDate()));
                      if (!isNaN(date.getTime())) return date;
-                     date = new Date(NaN); // Reset if invalid
+                     date = new Date(NaN);
                  }
+            }
 
-                 // Try MM/DD/YYYY format
-                 if (/^\d{1,2}\/\d{1,2}\/\d{4}/.test(trimmedDateStr)) {
-                     const datePart = trimmedDateStr.split(' ')[0]; // Ignore time part if present
-                     const parts = datePart.split('/');
-                     if (parts.length === 3) {
-                         // Month is 0-indexed in Date constructor
-                         date = new Date(Date.UTC(parseInt(parts[2], 10), parseInt(parts[0], 10) - 1, parseInt(parts[1], 10)));
-                         if (!isNaN(date.getTime())) return date;
-                         date = new Date(NaN); // Reset if invalid
-                     }
-                 }
+            const currentConfig = categories[currentCategory];
+            if (isNaN(date.getTime()) && currentCategory === 'ai' && eventRow && eventRow['Event date'] && dateStr !== eventRow['Event date']) {
+                const fallbackDateStr = eventRow['Event date'];
+                date = parseDate(fallbackDateStr);
+                if (!isNaN(date.getTime())) return date;
+                date = new Date(NaN);
+            }
 
-                 // Try general JS Date parsing (less reliable, use as fallback)
-                 if (isNaN(date.getTime())) {
-                     // Append UTC to hint the timezone if not already present
-                     const potentialDate = new Date(trimmedDateStr.includes('UTC') ? trimmedDateStr : trimmedDateStr + ' UTC');
-                      if (!isNaN(potentialDate.getTime())) {
-                          // Ensure it's midnight UTC
-                          date = new Date(Date.UTC(potentialDate.getUTCFullYear(), potentialDate.getUTCMonth(), potentialDate.getUTCDate()));
-                          if (!isNaN(date.getTime())) return date;
-                          date = new Date(NaN); // Reset if invalid
-                      }
-                 }
+            //if (isNaN(date.getTime())) { console.warn(`Could not parse date: "${dateStr}"`); }
+            return date;
+        }
 
-                 // Specific fallback for AI category if primary date failed and a known fallback column exists
-                 const currentConfig = categories[currentCategory];
-                 // Check if it's AI, date is invalid, eventRow exists, 'Event date' column exists, and the original dateStr is different from the fallback
-                 if (isNaN(date.getTime()) && currentCategory === 'ai' && eventRow && eventRow['Event date'] && dateStr !== eventRow['Event date']) {
-                     const fallbackDateStr = eventRow['Event date'];
-                     // console.log(`Attempting fallback date parse for AI: "${fallbackDateStr}" (original: "${dateStr}")`);
-                     date = parseDate(fallbackDateStr); // Recursive call with fallback date (without passing eventRow again)
-                     if (!isNaN(date.getTime())) return date;
-                     date = new Date(NaN); // Reset if fallback also failed
-                 }
+        function formatDate(date) {
+            if (!date || isNaN(date.getTime())) return "Invalid Date";
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
+            try { return date.toLocaleDateString('en-US', options); }
+            catch (e) { console.error("Error formatting date:", e); return "Invalid Date"; }
+        }
 
-                 // Log if still invalid after all attempts
-                 if (isNaN(date.getTime())) {
-                     // console.warn(`Could not parse date: "${dateStr}" for category ${currentCategory}`);
-                 }
-                 return date; // Return the parsed date or Date(NaN)
+        function formatShortDate(date) {
+            if (!date || isNaN(date.getTime())) return "N/A";
+            const options = { month: 'short', day: 'numeric', timeZone: 'UTC' };
+             try { return date.toLocaleDateString('en-US', options); }
+             catch (e) { console.error("Error formatting short date:", e); return "N/A"; }
+        }
+
+        function formatDisplayDate(dateStr) {
+             if (!dateStr) return null;
+             const parts = dateStr.split('-');
+             if (parts.length !== 3) return null;
+             const year = parseInt(parts[0], 10);
+             const month = parseInt(parts[1], 10) - 1;
+             const day = parseInt(parts[2], 10);
+             const date = new Date(Date.UTC(year, month, day));
+             if (!isNaN(date.getTime())) {
+                 const displayMonth = date.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' });
+                 const displayDay = date.getUTCDate();
+                 const displayYear = date.getUTCFullYear();
+                 return `${displayMonth} ${displayDay}, ${displayYear}`;
              }
+             return null;
+         }
 
-            /**
-             * Formats a Date object into a long format (e.g., "Monday, April 23, 2025").
-             * @param {Date} date - The date object to format.
-             * @returns {string} The formatted date string or "Invalid Date".
-             */
-            function formatDate(date) {
-                if (!date || isNaN(date.getTime())) return "Invalid Date";
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' };
-                try { return date.toLocaleDateString('en-US', options); }
-                catch (e) { console.error("Error formatting date:", e); return "Invalid Date"; }
+        function getUtcMidnight(date) {
+            if (!date || isNaN(date.getTime())) return null;
+            return new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+        }
+
+        function calculateDistance(lat1, lon1, lat2, lon2) {
+            if (lat1 == null || lon1 == null || lat2 == null || lon2 == null) {
+                return Infinity;
             }
+            const R = 6371; // Radius of the Earth in km
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLon = (lon2 - lon1) * Math.PI / 180;
+            const a =
+                Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            const distance = R * c;
+            return distance;
+        }
 
-            /**
-             * Formats a Date object into a short format (e.g., "Apr 23").
-             * @param {Date} date - The date object to format.
-             * @returns {string} The formatted short date string or "N/A".
-             */
-            function formatShortDate(date) {
-                if (!date || isNaN(date.getTime())) return "N/A";
-                const options = { month: 'short', day: 'numeric', timeZone: 'UTC' };
-                 try { return date.toLocaleDateString('en-US', options); }
-                 catch (e) { console.error("Error formatting short date:", e); return "N/A"; }
-            }
+        function parseLocationString(locStr) {
+            const result = { city: null, state: null, original: locStr };
+            if (!locStr || typeof locStr !== 'string') return result;
 
-            /**
-             * Formats a YYYY-MM-DD date string for display (e.g., "Apr 23, 2025").
-             * @param {string} dateStr - The date string in YYYY-MM-DD format.
-             * @returns {string|null} The formatted display date or null if invalid.
-             */
-            function formatDisplayDate(dateStr) {
-                 if (!dateStr) return null;
-                 const parts = dateStr.split('-');
-                 if (parts.length !== 3) return null;
-                 const year = parseInt(parts[0], 10);
-                 const month = parseInt(parts[1], 10) - 1; // Month is 0-indexed
-                 const day = parseInt(parts[2], 10);
-                 const date = new Date(Date.UTC(year, month, day));
-                 if (!isNaN(date.getTime())) {
-                     const displayMonth = date.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' });
-                     const displayDay = date.getUTCDate();
-                     const displayYear = date.getUTCFullYear();
-                     return `${displayMonth} ${displayDay}, ${displayYear}`;
-                 }
-                 return null; // Return null if the date string is invalid
-             }
+            const trimmed = locStr.trim();
+            const commaMatch = trimmed.match(/^(.*?),\s*([A-Za-z. ]{2,})$/);
 
-            /**
-             * Gets the UTC midnight Date object for a given Date.
-             * @param {Date} date - The input date.
-             * @returns {Date|null} The Date object set to midnight UTC or null if invalid.
-             */
-            function getUtcMidnight(date) {
-                if (!date || isNaN(date.getTime())) return null;
-                return new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
-            }
-
-            /**
-             * Calculates the distance between two lat/lon points using Haversine formula.
-             * @param {number} lat1 Latitude of point 1.
-             * @param {number} lon1 Longitude of point 1.
-             * @param {number} lat2 Latitude of point 2.
-             * @param {number} lon2 Longitude of point 2.
-             * @returns {number} Distance in kilometers, or Infinity if coordinates are missing.
-             */
-            function calculateDistance(lat1, lon1, lat2, lon2) {
-                if (lat1 == null || lon1 == null || lat2 == null || lon2 == null) {
-                    return Infinity; // Cannot calculate distance if coordinates are missing
-                }
-                const R = 6371; // Radius of the Earth in km
-                const dLat = (lat2 - lat1) * Math.PI / 180;
-                const dLon = (lon2 - lon1) * Math.PI / 180;
-                const a =
-                    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-                    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
-                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-                const distance = R * c; // Distance in km
-                return distance;
-            }
-
-            /**
-             * Tries to parse a location string into city and state.
-             * Handles formats like "City, ST", "City, State", or just "City".
-             * @param {string} locStr - The location string to parse.
-             * @returns {object} { city: string | null, state: string | null, original: string }
-             */
-            function parseLocationString(locStr) {
-                const result = { city: null, state: null, original: locStr };
-                if (!locStr || typeof locStr !== 'string') return result;
-
-                const trimmed = locStr.trim();
-                // Look for "City, ST" or "City, State" pattern
-                // Allow for spaces around the comma and ensure state is at least 2 letters
-                const commaMatch = trimmed.match(/^(.*?),\s*([A-Za-z. ]{2,})$/);
-
-                if (commaMatch) {
-                    result.city = commaMatch[1].trim().toLowerCase();
-                    let potentialState = commaMatch[2].trim().toLowerCase();
-                    // Basic validation/cleanup for state (e.g., remove periods from D.C.)
-                    potentialState = potentialState.replace(/\./g, '');
-                    result.state = potentialState;
+            if (commaMatch) {
+                result.city = commaMatch[1].trim().toLowerCase();
+                let potentialState = commaMatch[2].trim().toLowerCase();
+                potentialState = potentialState.replace(/\./g, '');
+                result.state = potentialState;
+            } else {
+                if (!/^[A-Za-z]{2}$/.test(trimmed)) {
+                     result.city = trimmed.toLowerCase();
                 } else {
-                    // If no comma pattern, assume the whole string is the city (less accurate)
-                    // Only do this if it doesn't look like just a state abbreviation
-                    if (!/^[A-Za-z]{2}$/.test(trimmed)) {
-                         result.city = trimmed.toLowerCase();
-                    } else {
-                         // If it looks like just a state, treat it as unknown city
-                         result.city = 'unknown';
-                         result.state = trimmed.toLowerCase();
-                    }
+                     result.city = 'unknown';
+                     result.state = trimmed.toLowerCase();
                 }
-                // Handle cases like "Washington D.C." where DC might be parsed as city initially
-                if (result.city === 'washington d c') {
-                    result.city = 'washington';
-                    result.state = 'dc';
-                }
-
-                return result;
+            }
+            if (result.city === 'washington d c') {
+                result.city = 'washington';
+                result.state = 'dc';
             }
 
+            return result;
+        }
 
-            // --- Theme and UI Management ---
+        // --- Theme and UI Management ---
 
-            /**
-             * Updates visibility of major city button sets based on the current category.
-             * @param {string} categoryKey - The key of the current category ('finance', 'ai', 'cyber').
-             */
-            function updateMajorCityButtonsUI(categoryKey) {
-                 const categoryConfig = categories[categoryKey];
-                 if (!financeMajorCitiesDiv || !techMajorCitiesDiv || !categoryConfig) return;
-                 // Hide both sets initially
-                 financeMajorCitiesDiv.classList.add('hidden');
-                 techMajorCitiesDiv.classList.add('hidden');
-                 // Show the correct set for the current category
-                 const citySetToShow = document.getElementById(categoryConfig.majorCitySetId);
-                 if (citySetToShow) {
-                     citySetToShow.classList.remove('hidden');
-                 } else {
-                     console.error(`Major city set ID not found: ${categoryConfig.majorCitySetId}`);
-                 }
+        function updateMajorCityButtonsUI(categoryKey) {
+             const categoryConfig = categories[categoryKey];
+             if (!financeMajorCitiesDiv || !techMajorCitiesDiv || !categoryConfig) return;
+             financeMajorCitiesDiv.classList.add('hidden');
+             techMajorCitiesDiv.classList.add('hidden');
+             const citySetToShow = document.getElementById(categoryConfig.majorCitySetId);
+             if (citySetToShow) {
+                 citySetToShow.classList.remove('hidden');
+             } else {
+                 console.error(`Major city set ID not found: ${categoryConfig.majorCitySetId}`);
              }
+         }
 
+        function updateLocationStatusUI() {
+            if (mobileLocationStatusContainer) mobileLocationStatusContainer.classList.add('hidden');
+             if (locationStatusMobileEl) locationStatusMobileEl.classList.add('hidden');
+            if (!locationStatusEl) return;
 
-            /**
-             * Updates the location status indicator UI.
-             * Hides the mobile version completely and manages the desktop version's visibility.
-             * Uses the global `locationStatus` variable.
-             */
-            function updateLocationStatusUI() {
-                // --- HIDE MOBILE STATUS ---
-                // Ensure the mobile container and its content are always hidden
-                if (mobileLocationStatusContainer) {
-                    mobileLocationStatusContainer.classList.add('hidden');
-                }
-                 if (locationStatusMobileEl) {
-                    locationStatusMobileEl.classList.add('hidden');
-                 }
-                 // --- END HIDE MOBILE STATUS ---
+            let iconClass = 'fa-map-marker-alt';
+            let text = '';
+            let statusClass = '';
 
-
-                // --- MANAGE DESKTOP STATUS ---
-                if (!locationStatusEl) return; // Only proceed if desktop element exists
-
-                let iconClass = 'fa-map-marker-alt';
-                let text = '';
-                let statusClass = '';
-
-                switch (locationStatus) {
-                    case 'pending':
-                        iconClass = 'fa-spinner fa-spin';
-                        text = 'Getting location...';
-                        statusClass = 'status-pending';
-                        break;
-                    case 'success':
-                        iconClass = 'fa-check-circle';
-                        text = 'Sorting nearby';
-                        statusClass = 'status-success';
-                        break;
-                    case 'error':
-                        iconClass = 'fa-exclamation-triangle';
-                        text = 'Location error';
-                        statusClass = 'status-error';
-                        break;
-                    case 'unavailable':
-                    default:
-                        iconClass = 'fa-map-marker-slash';
-                        text = 'Location N/A';
-                        statusClass = 'status-unavailable';
-                        break;
-                }
-
-                // Update the desktop indicator, applying correct visibility class (hidden on small, visible md+)
-                const desktopVisibilityClass = 'hidden md:inline-flex';
-                locationStatusEl.className = `location-status ${statusClass} ${desktopVisibilityClass}`;
-                locationStatusEl.innerHTML = `<i class="fas ${iconClass}"></i><span>${escapeHTML(text)}</span>`;
-                // --- END MANAGE DESKTOP STATUS ---
+            switch (locationStatus) {
+                case 'pending':
+                    iconClass = 'fa-spinner fa-spin'; text = 'Getting location...'; statusClass = 'status-pending'; break;
+                case 'success':
+                    iconClass = 'fa-check-circle'; text = 'Sorting nearby'; statusClass = 'status-success'; break;
+                case 'error':
+                    iconClass = 'fa-exclamation-triangle'; text = 'Location error'; statusClass = 'status-error'; break;
+                case 'unavailable': default:
+                    iconClass = 'fa-map-marker-slash'; text = 'Location N/A'; statusClass = 'status-unavailable'; break;
             }
 
+            const desktopVisibilityClass = 'hidden md:inline-flex';
+            locationStatusEl.className = `location-status ${statusClass} ${desktopVisibilityClass}`;
+            locationStatusEl.innerHTML = `<i class="fas ${iconClass}"></i><span>${escapeHTML(text)}</span>`;
+        }
 
-            /**
-             * Applies the theme and updates UI elements for the selected category.
-             * @param {string} categoryKey - The key of the category to apply ('finance', 'ai', 'cyber').
-             */
-            function applyTheme(categoryKey) {
-                const categoryConfig = categories[categoryKey];
-                if (!categoryConfig) {
-                    console.error(`Invalid category key for theme: ${categoryKey}`);
-                    return;
-                }
-                const themeClass = categoryConfig.themeClass;
-                const buttonId = categoryConfig.buttonId;
-                const titleText = categoryConfig.titleText;
+        function applyTheme(categoryKey) {
+            const categoryConfig = categories[categoryKey];
+            if (!categoryConfig) {
+                console.error(`Invalid category key for theme: ${categoryKey}`); return;
+            }
+            const themeClass = categoryConfig.themeClass;
+            const buttonId = categoryConfig.buttonId;
+            const titleText = categoryConfig.titleText;
 
-                console.log(`Applying theme for: ${categoryKey} (${themeClass})`);
+            console.log(`Applying theme for: ${categoryKey} (${themeClass})`);
 
-                // 1. Update Body Class: Remove all theme classes then add the current one
-                Object.values(categories).forEach(cat => {
-                    document.body.classList.remove(cat.themeClass);
-                });
-                document.body.classList.add(themeClass);
-                currentCategory = categoryKey; // Update global state
+            Object.values(categories).forEach(cat => { document.body.classList.remove(cat.themeClass); });
+            document.body.classList.add(themeClass);
+            currentCategory = categoryKey;
 
-                // 2. Update Active Category Button Visual State
-                Object.values(categories).forEach(cat => {
-                    const btn = document.getElementById(cat.buttonId);
-                    if(btn) btn.classList.remove('active');
-                });
-                const activeBtn = document.getElementById(buttonId);
-                if(activeBtn) activeBtn.classList.add('active');
+            Object.values(categories).forEach(cat => {
+                const btn = document.getElementById(cat.buttonId); if(btn) btn.classList.remove('active');
+            });
+            const activeBtn = document.getElementById(buttonId); if(activeBtn) activeBtn.classList.add('active');
 
-                // 3. Update H1 Title Span
-                if (categoryTitleSpan) categoryTitleSpan.innerHTML = escapeHTML(titleText);
+            if (categoryTitleSpan) categoryTitleSpan.innerHTML = escapeHTML(titleText);
+            if (searchInput) searchInput.placeholder = `Search ${escapeHTML(titleText)} events...`;
 
-                // 4. Update search placeholder
-                if (searchInput) searchInput.placeholder = `Search ${escapeHTML(titleText)} events...`;
+            updateMajorCityButtonsUI(categoryKey);
+            resetLocationFilters();
+        }
 
-                // 5. Update Major City Buttons Visibility
-                updateMajorCityButtonsUI(categoryKey);
+        function resetLocationFilters() {
+             locationFiltersContainer?.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+             if (allLocationsFilterButton) allLocationsFilterButton.classList.add('active');
+             if (locationDropdown) locationDropdown.value = 'all';
+             isDistanceSortActive = userLocation !== null;
+             console.log("Location filters reset. Distance sort active:", isDistanceSortActive);
+         }
 
-                // 6. Reset Location Filter to 'All' (default to distance sort if available)
-                resetLocationFilters();
+        // --- Geolocation ---
+
+        function getUserLocation() {
+            locationStatus = 'pending';
+            isDistanceSortActive = false;
+            updateLocationStatusUI();
+
+            if (!navigator.geolocation) {
+                console.log("Geolocation is not supported.");
+                locationStatus = 'unavailable';
+                updateLocationStatusUI();
+                loadEventsForCategory(); // Trigger load without location
+                return;
             }
 
-             /**
-              * Resets all location filters (buttons and dropdown) to the 'All' state.
-              * Enables distance sorting if user location is available.
-              */
-             function resetLocationFilters() {
-                 // Remove 'active' from all filter buttons
-                 locationFiltersContainer?.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
-                 // Set 'All Locations' button to active
-                 if (allLocationsFilterButton) allLocationsFilterButton.classList.add('active');
-                 // Reset dropdown selection
-                 if (locationDropdown) locationDropdown.value = 'all';
-                 // Set flag indicating distance sort should be attempted (only if location is available)
-                 isDistanceSortActive = userLocation !== null;
-                 console.log("Location filters reset. Distance sort active:", isDistanceSortActive);
-             }
-
-            // --- Geolocation ---
-
-            /**
-             * Tries to get the user's current location using the Geolocation API.
-             * Updates the UI status and triggers data loading afterwards.
-             */
-            function getUserLocation() {
-                locationStatus = 'pending';
-                isDistanceSortActive = false; // Assume no distance sort until success
-                updateLocationStatusUI(); // Update UI (will hide mobile status now)
-
-                if (!navigator.geolocation) {
-                    console.log("Geolocation is not supported.");
-                    locationStatus = 'unavailable';
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    userLocation = { lat: position.coords.latitude, lon: position.coords.longitude };
+                    console.log("User location obtained:", userLocation);
+                    locationStatus = 'success';
+                    isDistanceSortActive = getActiveLocationFilter() === 'all';
                     updateLocationStatusUI();
-                    loadFromCSV(categories[currentCategory].url); // Load events (will sort by date)
-                    return;
-                }
+                    loadEventsForCategory(); // Trigger load with location
+                },
+                (error) => {
+                    console.error("Error getting user location:", error.message);
+                    userLocation = null;
+                    locationStatus = error.code === error.PERMISSION_DENIED ? 'error' : 'unavailable';
+                    isDistanceSortActive = false;
+                    updateLocationStatusUI();
+                    loadEventsForCategory(); // Trigger load without location
+                },
+                { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 }
+            );
+        }
 
-                navigator.geolocation.getCurrentPosition(
-                    (position) => {
-                        // Success callback
-                        userLocation = {
-                            lat: position.coords.latitude,
-                            lon: position.coords.longitude
-                        };
-                        console.log("User location obtained:", userLocation);
-                        locationStatus = 'success';
-                        // Enable distance sort ONLY if the 'All Locations' filter is currently active
-                        isDistanceSortActive = getActiveLocationFilter() === 'all';
-                        updateLocationStatusUI();
-                        loadFromCSV(categories[currentCategory].url); // Load events now that location is known
-                    },
-                    (error) => {
-                        // Error callback
-                        console.error("Error getting user location:", error.message);
-                        userLocation = null;
-                        locationStatus = error.code === error.PERMISSION_DENIED ? 'error' : 'unavailable';
-                        isDistanceSortActive = false; // Disable distance sort
-                        updateLocationStatusUI();
-                        loadFromCSV(categories[currentCategory].url); // Load events (will sort by date)
-                    },
-                    // Geolocation options
-                    { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 } // Low accuracy, 10s timeout, allow cached location up to 1 min old
-                );
+
+        // --- Core Logic: Data Loading and Processing ---
+
+        function setDefaultDateRange() {
+            const today = new Date();
+            const startOfTodayUTC = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+            const threeMonthsFromTodayUTC = new Date(startOfTodayUTC);
+            threeMonthsFromTodayUTC.setUTCMonth(startOfTodayUTC.getUTCMonth() + 3);
+            const defaultStartDateStr = formatDateToYyyyMmDd(startOfTodayUTC);
+            const defaultEndDateStr = formatDateToYyyyMmDd(threeMonthsFromTodayUTC);
+            if (startDateInput) startDateInput.value = defaultStartDateStr;
+            if (endDateInput) endDateInput.value = defaultEndDateStr;
+            updateDateRangeDisplay();
+        }
+
+        /**
+         * *** NEW: Loads event data for the current category, handling single or multiple URLs. ***
+         */
+        function loadEventsForCategory() {
+            const categoryConfig = categories[currentCategory];
+            if (!categoryConfig || !categoryConfig.urls || categoryConfig.urls.length === 0) {
+                console.error(`No URLs defined for category: ${currentCategory}`);
+                handleCSVError(`Configuration error for ${currentCategory}.`);
+                return;
             }
 
+            const urlsToFetch = categoryConfig.urls;
+            const columnConfigs = categoryConfig.columnConfigs;
 
-            // --- Core Logic: Data Loading and Processing ---
+            console.log(`Loading CSV(s) for category '${currentCategory}':`, urlsToFetch);
+            showLoadingState();
 
-            /**
-             * Sets the default date range in the input fields (today to 3 months from today, UTC).
-             */
-            function setDefaultDateRange() {
-                const today = new Date();
-                // Get midnight UTC of today
-                const startOfTodayUTC = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+            // Create an array of Promises, one for each URL to parse
+            const parsePromises = urlsToFetch.map(url => {
+                return new Promise((resolve, reject) => {
+                    Papa.parse(url, {
+                        download: true,
+                        header: true,
+                        skipEmptyLines: true,
+                        complete: (results) => {
+                            // Check for PapaParse specific errors within results
+                            if (results.errors && results.errors.length > 0) {
+                                console.warn(`Parsing errors for ${url}:`, results.errors);
+                                // Optionally resolve with errors or partial data, or reject
+                                // For simplicity, we'll resolve but the handler needs to check results.errors
+                            }
+                             resolve(results);
+                        },
+                        error: (err) => {
+                            console.error(`Network or file error for ${url}:`, err);
+                             // Reject the promise for this specific URL
+                            reject(new Error(`Failed to load or parse ${url}. Error: ${err.message}`));
+                        }
+                    });
+                });
+            });
 
-                // Calculate end date: 3 months from today (UTC)
-                const threeMonthsFromTodayUTC = new Date(startOfTodayUTC);
-                threeMonthsFromTodayUTC.setUTCMonth(startOfTodayUTC.getUTCMonth() + 3); // Add 3 months
+            // Wait for all parsing Promises to settle (either resolve or reject)
+            Promise.allSettled(parsePromises)
+                .then(settledResults => {
+                    // Filter out rejected promises and extract resolved values (PapaParse results)
+                    const successfulResults = settledResults
+                        .filter(result => result.status === 'fulfilled')
+                        .map(result => result.value);
 
-                // Format dates for input fields (YYYY-MM-DD)
-                const defaultStartDateStr = formatDateToYyyyMmDd(startOfTodayUTC);
-                const defaultEndDateStr = formatDateToYyyyMmDd(threeMonthsFromTodayUTC);
+                    // Log any failures
+                    settledResults.forEach((result, index) => {
+                        if (result.status === 'rejected') {
+                             console.error(`Failed to load data from ${urlsToFetch[index]}:`, result.reason);
+                        }
+                    });
 
-                // Set input values
-                if (startDateInput) startDateInput.value = defaultStartDateStr;
-                if (endDateInput) endDateInput.value = defaultEndDateStr;
-
-                // Update the display text for the date range
-                updateDateRangeDisplay();
-            }
-
-            /**
-             * Loads and parses event data from a CSV URL using PapaParse.
-             * @param {string} csvUrl - The URL of the CSV file to load.
-             */
-            function loadFromCSV(csvUrl) {
-                console.log(`Loading CSV for category '${currentCategory}' from:`, csvUrl);
-                // Show loading state
-                if(loadingIndicator) loadingIndicator.style.display = 'block';
-                if(eventsContainer) eventsContainer.innerHTML = '';
-                if(noEventsIndicator) noEventsIndicator.classList.add('hidden');
-                if(paginationControlsEl) paginationControlsEl.classList.add('hidden');
-                if(eventCountEl) eventCountEl.innerHTML = `Loading ${categories[currentCategory]?.name || ''} events...`;
-
-                // Reset state variables for the new category
-                allEvents = [];
-                currentFilteredEvents = [];
-                currentPage = 1;
-                populateLocationDropdown([]); // Clear dropdown while loading
-
-                // Fetch and parse CSV
-                Papa.parse(csvUrl, {
-                    download: true, // Fetch the file
-                    header: true, // Use first row as headers
-                    skipEmptyLines: true, // Ignore empty rows
-                    complete: handleParsedData, // Callback on success
-                    error: (err) => { // Callback on error
-                        console.error(`CSV Error for ${csvUrl}:`, err);
-                        handleCSVError(`Could not fetch or parse ${categories[currentCategory]?.name || 'event'} data.`);
+                    // Proceed if at least one CSV was loaded successfully
+                    if (successfulResults.length > 0) {
+                         handleParsedData(successfulResults, columnConfigs);
+                    } else {
+                         // Handle case where ALL fetches failed
+                         console.error(`All CSV fetches failed for category ${currentCategory}.`);
+                         handleCSVError(`Could not fetch any data for ${categoryConfig.name}.`);
                     }
                 });
-            }
+                // Note: No .catch here because Promise.allSettled doesn't reject overall
+                // unless there's a programming error *before* the promises start.
+                // Individual fetch/parse errors are handled within the .then block.
+        }
 
-            /**
-             * Handles the parsed CSV data from PapaParse.
-             * Processes events, populates dropdowns, and triggers initial display.
-             * @param {object} results - The results object from PapaParse.
-             */
-            function handleParsedData(results) {
-                try {
-                    if(loadingIndicator) loadingIndicator.style.display = 'none'; // Hide loading indicator
+        /**
+         * Sets the UI to a loading state.
+         */
+        function showLoadingState() {
+             if(loadingIndicator) loadingIndicator.style.display = 'block';
+             if(eventsContainer) eventsContainer.innerHTML = '';
+             if(noEventsIndicator) noEventsIndicator.classList.add('hidden');
+             if(paginationControlsEl) paginationControlsEl.classList.add('hidden');
+             if(eventCountEl) eventCountEl.innerHTML = `Loading ${categories[currentCategory]?.name || ''} events...`;
+             allEvents = [];
+             currentFilteredEvents = [];
+             currentPage = 1;
+             populateLocationDropdown([]); // Clear dropdown
+        }
 
+        /**
+         * *** REVISED: Handles an array of parsed CSV results, combines, deduplicates, sorts, and updates UI. ***
+         * @param {Array<object>} resultsArray - Array of results objects from PapaParse for each successfully loaded CSV.
+         * @param {Array<object>} columnConfigsArray - Array of column configurations corresponding to each results object.
+         */
+        function handleParsedData(resultsArray, columnConfigsArray) {
+             try {
+                if(loadingIndicator) loadingIndicator.style.display = 'none'; // Hide loading indicator
+
+                let combinedProcessedEvents = [];
+                let totalRowsProcessed = 0;
+
+                // Process data from each successful result
+                resultsArray.forEach((results, index) => {
                     if (results.data && results.data.length > 0) {
-                        const categoryConfig = categories[currentCategory];
-                        if (!categoryConfig || !categoryConfig.columnNames) {
-                            console.error("Missing category configuration for:", currentCategory);
-                            handleCSVError(`Configuration error for ${currentCategory}.`);
-                            return;
+                        const columnNames = columnConfigsArray[index]; // Get the correct column config for this file
+                        if (!columnNames) {
+                            console.error(`Missing column configuration for result index ${index}, category ${currentCategory}`);
+                            return; // Skip this result if config is missing
                         }
-                        const columnNames = categoryConfig.columnNames;
-
-                        // Process the raw data (parse dates, locations, add coords placeholder, initial sort)
-                        allEvents = processEvents(results.data, columnNames);
-
-                        // Populate the location dropdown with unique locations from the data
-                        populateLocationDropdown(allEvents);
-
-                        // Initially, all processed events are considered "filtered"
-                        currentFilteredEvents = [...allEvents];
-                        currentPage = 1; // Reset to first page
-
-                        // Apply default filters (like date range) and display the first page
-                        applyFiltersAndDisplay();
-
+                         // Process the raw data for this specific file
+                        const processedFromFile = processEvents(results.data, columnNames);
+                        combinedProcessedEvents = combinedProcessedEvents.concat(processedFromFile);
+                        totalRowsProcessed += results.data.length; // Count raw rows for logging
                     } else if (results.errors && results.errors.length > 0) {
-                        // Handle errors reported by PapaParse
-                        console.error("CSV Parsing Errors:", results.errors);
-                        handleCSVError(`Error parsing ${categories[currentCategory]?.name || 'event'} data.`);
-                    } else {
-                        // Handle case where CSV is empty or has no valid data rows
-                        showNoEventsMessage(`No ${categories[currentCategory]?.name || 'event'} data found.`);
-                        updateEventCount(0);
-                        populateLocationDropdown([]); // Ensure dropdown is empty
+                         // Log errors from this specific file if processing happened but had issues
+                         console.warn(`CSV Parsing Errors encountered in source ${index}:`, results.errors);
                     }
-                } catch (error) {
-                    // Catch any unexpected errors during processing
-                    console.error("Error in handleParsedData:", error);
-                    handleCSVError(`Error processing ${categories[currentCategory]?.name || 'event'} data.`);
-                }
-            }
-
-            /**
-             * Handles errors during CSV fetching or parsing, updating the UI accordingly.
-             * @param {string} [message] - Optional custom error message.
-             */
-            function handleCSVError(message = `Could not load ${categories[currentCategory]?.name || 'event'} data.`) {
-                if(loadingIndicator) loadingIndicator.style.display = 'none';
-                showNoEventsMessage(message); // Display error message to user
-                updateEventCount(0); // Show 0 events
-                if(paginationControlsEl) paginationControlsEl.classList.add('hidden'); // Hide pagination
-                // Reset event data
-                allEvents = [];
-                currentFilteredEvents = [];
-                populateLocationDropdown([]); // Clear location dropdown
-            }
-
-            /**
-             * Processes raw event data from CSV:
-             * - Parses dates using the defined column name.
-             * - Validates essential fields (date, title, url, location).
-             * - Parses single or multiple location strings (separated by ';').
-             * - Looks up coordinates for parsed locations using the `cityCoordinates` map.
-             * - Adds a placeholder for distance calculation.
-             * - Filters out invalid events.
-             * - Performs an initial sort by date (ascending).
-             * @param {Array<object>} data - Array of raw event objects from PapaParse.
-             * @param {object} columnNames - Object mapping generic names to actual CSV column headers.
-             * @returns {Array<object>} Array of processed and validated event objects.
-             */
-            function processEvents(data, columnNames) {
-                console.log("Processing raw data rows:", data.length);
-                if (!data || data.length === 0) return [];
-
-                const { dateCol, titleCol, descCol, urlCol, locCol } = columnNames;
-                let skippedDateCount = 0, skippedUrlCount = 0, skippedLocationCount = 0, processedCount = 0;
-
-                const processed = data
-                    .map((event, index) => {
-                        // Basic validation: Check if essential columns exist and have some value
-                        if (!event || !event[dateCol] || !event[titleCol] || !event[urlCol] || !event[locCol]) {
-                            // console.warn(`Skipping row ${index + 2}: Missing essential data.`);
-                            return null;
-                        }
-
-                        // Parse Date
-                        let eventDate = parseDate(event[dateCol], event); // Pass entire row for potential fallbacks
-                        if (isNaN(eventDate.getTime())) {
-                            // console.warn(`Skipping row ${index + 2}: Invalid date "${event[dateCol]}"`);
-                            skippedDateCount++;
-                            return null;
-                        }
-
-                        // Validate URL
-                        const url = String(event[urlCol] || '').trim();
-                        if (!url || url === '#') { // Check for empty or placeholder URLs
-                            // console.warn(`Skipping row ${index + 2}: Invalid URL "${event[urlCol]}"`);
-                            skippedUrlCount++;
-                            return null;
-                        }
-
-                        // Process Location(s)
-                        const originalLocationString = String(event[locCol] || '').trim();
-                        if (!originalLocationString) {
-                             // console.warn(`Skipping row ${index + 2}: Missing location`);
-                             skippedLocationCount++;
-                             return null;
-                        }
-
-                        // Split potentially multiple locations separated by semicolon
-                        const parsedLocationsData = originalLocationString.split(';')
-                            .map(locStr => parseLocationString(locStr.trim())) // Parse each part
-                            .filter(parsed => parsed.city && parsed.city !== 'unknown'); // Keep only those where a city was found
-
-                        // If after parsing, no valid city was found, skip the event
-                        if (parsedLocationsData.length === 0) {
-                            // console.warn(`Skipping row ${index + 2}: Could not parse valid city from "${originalLocationString}"`);
-                            skippedLocationCount++;
-                            return null;
-                        }
-
-                        // Attempt to get coordinates for each parsed location
-                        const locationsWithCoords = parsedLocationsData.map(parsedLoc => {
-                            let lookupKey = parsedLoc.city;
-                            if (parsedLoc.state) {
-                                // Prioritize lookup with state if available (e.g., "newark, de")
-                                lookupKey = `${parsedLoc.city}, ${parsedLoc.state}`;
-                            }
-                            // Look up using "city, state" first, then fallback to just "city"
-                            const coords = cityCoordinates[lookupKey] || cityCoordinates[parsedLoc.city];
-                            return { ...parsedLoc, coords: coords || null }; // Store coords or null if not found
-                        });
-
-                        processedCount++;
-                        return {
-                            title: String(event[titleCol] || 'Untitled Event').trim(),
-                            description: String(event[descCol] || 'No description available.').trim(),
-                            url: url,
-                            date: eventDate, // Store the Date object
-                            formattedDate: formatDate(eventDate), // For display (e.g., "Monday, April 23, 2025")
-                            shortDate: formatShortDate(eventDate), // For display (e.g., "Apr 23")
-                            location: originalLocationString, // Keep original string for display consistency
-                            allLocationData: locationsWithCoords, // Array of {city, state, original, coords}
-                            month: eventDate.toLocaleString('default', { month: 'short', timeZone: 'UTC' }), // For date badge
-                            day: eventDate.getUTCDate(), // For date badge
-                            distance: Infinity // Placeholder, calculated later if needed
-                        };
-                    })
-                    .filter(event => event !== null); // Remove null entries (skipped events)
-
-                // Log summary of processing
-                if (skippedDateCount > 0 || skippedUrlCount > 0 || skippedLocationCount > 0) {
-                    console.log(`Finished processing ${currentCategory}. Processed: ${processedCount}, Skipped Dates: ${skippedDateCount}, Skipped URLs: ${skippedUrlCount}, Skipped Locations: ${skippedLocationCount}.`);
-                }
-                console.log(`Valid events after processing ${currentCategory}:`, processed.length);
-
-                // Initial sort by date (ascending)
-                return processed.sort((a, b) => a.date - b.date);
-            }
-
-
-            /**
-             * Populates the location dropdown with unique *parsed* city, state combinations.
-             * Filters out major city locations already represented by buttons for the current category.
-             * @param {Array<object>} events - The array of processed event objects.
-             */
-            function populateLocationDropdown(events) {
-                if (!locationDropdown) return;
-                const uniqueLocationStrings = new Set();
-                const majorCityButtonLocations = new Set();
-
-                // Get locations represented by the currently visible major city buttons
-                const currentMajorCitySetId = categories[currentCategory]?.majorCitySetId;
-                const visibleMajorCityDiv = document.getElementById(currentMajorCitySetId);
-                visibleMajorCityDiv?.querySelectorAll('.major-city-button').forEach(btn => {
-                    // Store the data-location value (which should be "City, ST") in lowercase
-                    majorCityButtonLocations.add(btn.dataset.location?.toLowerCase());
                 });
 
-                // Collect unique locations from events, excluding those covered by major city buttons
-                events.forEach(event => {
-                    event.allLocationData.forEach(locData => {
-                        if (locData.city && locData.city !== 'unknown') {
-                            // Create the "city, st" or "city" string (lowercase) for comparison and dropdown value
-                            const locStringLower = locData.state
-                                ? `${locData.city}, ${locData.state}`
-                                : locData.city;
+                console.log(`Total raw rows processed across all sources for ${currentCategory}: ${totalRowsProcessed}`);
+                console.log(`Events after initial processing (before deduplication): ${combinedProcessedEvents.length}`);
 
-                            // Only add if it's NOT one of the major city button locations
-                            if (!majorCityButtonLocations.has(locStringLower)) {
-                                uniqueLocationStrings.add(locStringLower);
-                            }
-                        }
+                 if (combinedProcessedEvents.length === 0) {
+                     showNoEventsMessage(`No valid ${categories[currentCategory]?.name || 'event'} data found in the source(s).`);
+                     updateEventCount(0);
+                     populateLocationDropdown([]);
+                     return;
+                 }
+
+                // *** ADDED: Deduplication Step ***
+                const seenEvents = new Set();
+                const deduplicatedEvents = [];
+                combinedProcessedEvents.forEach(event => {
+                    if (!event || !event.date || isNaN(event.date.getTime()) || !event.url || !event.location || !event.title) {
+                        console.warn("Skipping event with missing critical data during deduplication:", event);
+                        return; // Skip incomplete events before creating key
+                    }
+                    // Create a unique key based on Title, Date (time), Location, and URL
+                    const uniqueKey = `${event.title.toLowerCase()}|${event.date.getTime()}|${event.location.toLowerCase()}|${event.url}`;
+                    if (!seenEvents.has(uniqueKey)) {
+                        seenEvents.add(uniqueKey);
+                        deduplicatedEvents.push(event);
+                    }
+                });
+                console.log(`Events after deduplication: ${deduplicatedEvents.length}`);
+
+
+                // *** ADDED: Initial Sort by Date (Ascending) After Deduplication ***
+                const finalEvents = deduplicatedEvents.sort((a, b) => a.date - b.date);
+
+                // Update global state with the final, combined, deduplicated, sorted list
+                allEvents = finalEvents;
+                currentFilteredEvents = [...allEvents]; // Initially, filtered list is the full list
+                currentPage = 1; // Reset to first page
+
+                // Populate UI elements
+                populateLocationDropdown(allEvents);
+                applyFiltersAndDisplay(); // Apply default date filters and display the first page
+
+            } catch (error) {
+                console.error("Error in handleParsedData:", error);
+                handleCSVError(`Error processing combined ${categories[currentCategory]?.name || 'event'} data.`);
+            }
+        }
+
+        function handleCSVError(message = `Could not load ${categories[currentCategory]?.name || 'event'} data.`) {
+            if(loadingIndicator) loadingIndicator.style.display = 'none';
+            showNoEventsMessage(message);
+            updateEventCount(0);
+            if(paginationControlsEl) paginationControlsEl.classList.add('hidden');
+            allEvents = [];
+            currentFilteredEvents = [];
+            populateLocationDropdown([]);
+        }
+
+        /**
+         * *** REVISED: Processes raw event data - validates, parses, adds placeholders. Does NOT sort/deduplicate here. ***
+         * @param {Array<object>} data - Array of raw event objects from PapaParse.
+         * @param {object} columnNames - Object mapping generic names to actual CSV column headers for THIS specific data array.
+         * @returns {Array<object>} Array of processed and validated event objects (not yet deduplicated or sorted).
+         */
+        function processEvents(data, columnNames) {
+            // console.log("Processing raw data rows with columns:", columnNames); // Debug which config is used
+            if (!data || data.length === 0 || !columnNames) return [];
+
+            const { dateCol, titleCol, descCol, urlCol, locCol } = columnNames;
+            let skippedDateCount = 0, skippedUrlCount = 0, skippedLocationCount = 0, processedCount = 0;
+
+            const processed = data
+                .map((event, index) => {
+                    // Basic validation
+                    if (!event || !event[dateCol] || !event[titleCol] || !event[urlCol] || !event[locCol]) {
+                        // console.warn(`Skipping row ${index + 2}: Missing essential data.`);
+                        return null;
+                    }
+
+                    // Parse Date
+                    let eventDate = parseDate(event[dateCol], event);
+                    if (isNaN(eventDate.getTime())) {
+                        // console.warn(`Skipping row ${index + 2}: Invalid date "${event[dateCol]}"`);
+                        skippedDateCount++; return null;
+                    }
+
+                    // Validate URL
+                    const url = String(event[urlCol] || '').trim();
+                    if (!url || url === '#') {
+                        // console.warn(`Skipping row ${index + 2}: Invalid URL "${event[urlCol]}"`);
+                        skippedUrlCount++; return null;
+                    }
+
+                    // Process Location(s)
+                    const originalLocationString = String(event[locCol] || '').trim();
+                    if (!originalLocationString) {
+                        // console.warn(`Skipping row ${index + 2}: Missing location`);
+                        skippedLocationCount++; return null;
+                    }
+
+                    const parsedLocationsData = originalLocationString.split(';')
+                        .map(locStr => parseLocationString(locStr.trim()))
+                        .filter(parsed => parsed.city && parsed.city !== 'unknown');
+
+                    if (parsedLocationsData.length === 0) {
+                        // console.warn(`Skipping row ${index + 2}: Could not parse valid city from "${originalLocationString}"`);
+                        skippedLocationCount++; return null;
+                    }
+
+                    const locationsWithCoords = parsedLocationsData.map(parsedLoc => {
+                        let lookupKey = parsedLoc.city;
+                        if (parsedLoc.state) lookupKey = `${parsedLoc.city}, ${parsedLoc.state}`;
+                        const coords = cityCoordinates[lookupKey] || cityCoordinates[parsedLoc.city];
+                        return { ...parsedLoc, coords: coords || null };
                     });
-                });
 
-                // Sort alphabetically
-                const sortedLocations = [...uniqueLocationStrings].sort((a, b) => a.localeCompare(b));
+                    processedCount++;
+                    return {
+                        title: String(event[titleCol] || 'Untitled Event').trim(),
+                        description: String(event[descCol] || 'No description available.').trim(),
+                        url: url,
+                        date: eventDate,
+                        formattedDate: formatDate(eventDate),
+                        shortDate: formatShortDate(eventDate),
+                        location: originalLocationString,
+                        allLocationData: locationsWithCoords,
+                        month: eventDate.toLocaleString('default', { month: 'short', timeZone: 'UTC' }),
+                        day: eventDate.getUTCDate(),
+                        distance: Infinity
+                    };
+                })
+                .filter(event => event !== null); // Remove null entries
 
-                // Populate dropdown
-                locationDropdown.innerHTML = '<option value="all">More Cities...</option>'; // Reset with default option
-                sortedLocations.forEach(locStr => {
-                    const option = document.createElement('option');
-                    // Value should be the "city, st" or "city" string (lowercase)
-                    option.value = escapeHTML(locStr);
-                    // Text content should be nicely capitalized for display
-                    option.textContent = escapeHTML(locStr.split(', ').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(', '));
-                    locationDropdown.appendChild(option);
-                });
-                 locationDropdown.value = 'all'; // Ensure default selection after populating
-            }
+             // Log summary for this specific file processing run
+             // console.log(`Finished processing batch. Valid: ${processed.length}, Skipped Dates: ${skippedDateCount}, Skipped URLs: ${skippedUrlCount}, Skipped Locs: ${skippedLocationCount}.`);
 
-
-            // --- Core Logic: Display and UI Updates ---
-
-            /**
-             * Displays the events for the current page based on `currentFilteredEvents`.
-             * Adjusts items per page based on screen width and updates pagination.
-             */
-            function displayCurrentPage() {
-                 if (!eventsContainer || !noEventsIndicator || !paginationControlsEl) return;
-
-                 eventsContainer.innerHTML = ''; // Clear previous events
-                 noEventsIndicator.classList.add('hidden'); // Hide "no events" message initially
-
-                 // Adjust items per page based on viewport width for responsiveness
-                 // ** DECREASED VALUES **
-                 const screenWidth = window.innerWidth;
-                 if (screenWidth < 640) { itemsPerPage = 3; } // Small screens (mobile) - Reduced from 4
-                 else if (screenWidth < 1024) { itemsPerPage = 6; } // Medium screens (tablet) - Reduced from 8
-                 else { itemsPerPage = 6; } // Large screens (desktop) - Reduced from 9
-
-                 // Recalculate total pages based on current filtered events and itemsPerPage
-                 totalPages = Math.max(1, Math.ceil(currentFilteredEvents.length / itemsPerPage));
-                 // Ensure currentPage is within valid bounds (e.g., if filters reduce total pages)
-                 currentPage = Math.max(1, Math.min(currentPage, totalPages));
-
-                 // Calculate start and end index for pagination
-                 const startIndex = (currentPage - 1) * itemsPerPage;
-                 const endIndex = startIndex + itemsPerPage;
-                 const paginatedItems = currentFilteredEvents.slice(startIndex, endIndex);
-
-                 console.log(`Displaying page ${currentPage}/${totalPages}. Items ${startIndex}-${endIndex - 1} of ${currentFilteredEvents.length}. Items/Page: ${itemsPerPage}. Distance Sort Active: ${isDistanceSortActive}`);
-
-                 if (currentFilteredEvents.length === 0) {
-                     // If no events match filters at all
-                     showNoEventsMessage(); // Show the "no events found" message
-                     paginationControlsEl.classList.add('hidden'); // Hide pagination
-                 } else if (paginatedItems.length === 0 && currentPage > 1) {
-                     // If current page is somehow out of bounds (e.g., after filtering), go back to page 1
-                     console.log("Current page empty, resetting to page 1");
-                     currentPage = 1;
-                     displayCurrentPage(); // Re-render page 1
-                 } else {
-                     // Display the events for the current page
-                     paginatedItems.forEach(event => {
-                         if (!event) return; // Skip if event data is somehow null
-
-                         // Determine location badge class (simple matching based on original string)
-                         let locationBadgeClass = 'generic-badge';
-                         const primaryLocLower = event.location.toLowerCase();
-                         if (primaryLocLower.includes('new york') || primaryLocLower.includes('nyc')) locationBadgeClass = 'nyc-badge';
-                         else if (primaryLocLower.includes('philadelphia') || primaryLocLower.includes('philly')) locationBadgeClass = 'philly-badge';
-                         // Add more specific badges here if needed (e.g., tech hubs)
-
-                         // Generate distance text only if distance sort is active and distance is calculated (not Infinity)
-                         const distanceText = (isDistanceSortActive && event.distance !== Infinity)
-                             ? `<span class="text-xs text-gray-500 ml-auto pl-2 whitespace-nowrap">(${Math.round(event.distance)} km away)</span>`
-                             : '';
-
-                         // Create card element using template literal
-                         const card = document.createElement('div');
-                         card.className = 'event-card relative fade-in'; // Add fade-in animation class
-                         card.innerHTML = `
-                             <div class="date-badge z-10">
-                                 <span class="day">${escapeHTML(String(event.day))}</span>
-                                 <span class="month">${escapeHTML(event.month)}</span>
-                             </div>
-                             <div class="event-card-content pt-12"> <div class="flex items-center justify-between mb-2 flex-wrap">
-                                     <span class="location-badge ${locationBadgeClass} mr-2">
-                                         <i class="fas fa-map-marker-alt mr-1.5 text-xs"></i>${escapeHTML(event.location)}
-                                     </span>
-                                     ${distanceText} </div>
-                                 <h3 class="text-lg font-semibold text-gray-800 mb-2 line-clamp-2 hover:text-indigo-600 transition-colors" title="${escapeHTML(event.title)}">
-                                     ${escapeHTML(event.title)}
-                                 </h3>
-                                 <p class="text-sm text-gray-600 mb-4 line-clamp-3 flex-grow">${escapeHTML(event.description)}</p>
-                                 <div class="text-xs text-gray-500 mb-4 flex items-center">
-                                     <i class="far fa-calendar-alt mr-1.5"></i> ${escapeHTML(event.formattedDate)}
-                                 </div>
-                                 <div class="event-card-footer">
-                                     <button class="view-details w-full text-center bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-sm font-medium py-2 px-4 rounded-md transition-colors duration-150 flex items-center justify-center"
-                                             data-title="${escapeHTML(event.title)}"
-                                             data-date="${escapeHTML(event.formattedDate)}"
-                                             data-description="${escapeHTML(event.description)}"
-                                             data-location="${escapeHTML(event.location)}" /* Pass original location string */
-                                             data-url="${escapeHTML(event.url)}"
-                                             data-month="${escapeHTML(event.month)}"
-                                             data-day="${escapeHTML(String(event.day))}"
-                                             data-start-date-iso="${escapeHTML(formatDateToYyyyMmDd(event.date))}">
-                                         View Details <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                                     </button>
-                                 </div>
-                             </div>`;
-                         eventsContainer.appendChild(card);
-                     });
-
-                     // Update and show pagination controls
-                     updatePaginationControls();
-                     paginationControlsEl.classList.remove('hidden');
-                 }
-             }
-
-            /**
-             * Sets up event delegation for "View Details" buttons on the events container.
-             * This only needs to be called once during initialization.
-             */
-            function setupDetailButtonListener() {
-                if (!eventsContainer) return;
-                // Listen for clicks on the container itself
-                eventsContainer.addEventListener('click', function(e) {
-                    // Find the closest ancestor button with the 'view-details' class
-                    const button = e.target.closest('.view-details');
-                    if (button) {
-                        // Extract event data from the button's data attributes
-                        const eventData = {
-                            title: button.dataset.title,
-                            date: button.dataset.date, // Formatted date string
-                            description: button.dataset.description,
-                            location: button.dataset.location, // Original location string
-                            url: button.dataset.url,
-                            month: button.dataset.month, // Short month name
-                            day: button.dataset.day, // Day number
-                            startDateIso: button.dataset.startDateIso // YYYY-MM-DD format for schema
-                        };
-                        // Show the modal with the extracted data
-                        showEventDetails(eventData);
-                    }
-                });
-            }
-
-            /**
-             * Updates the text indicating the number of events matching the current filters.
-             * @param {number} count - The number of currently filtered events.
-             */
-            function updateEventCount(count) {
-                 if (eventCountEl) {
-                     const categoryName = categories[currentCategory]?.name || 'event';
-                     // Format the count with commas for readability
-                     const formattedCount = count.toLocaleString();
-                     eventCountEl.innerHTML = `Showing ${formattedCount} ${categoryName} event${count !== 1 ? 's' : ''} matching filters`;
-                 }
-             }
+            // *** REMOVED Sorting - will happen after combining and deduplicating ***
+            return processed;
+        }
 
 
-            /**
-             * Shows the "No Events Found" message, optionally with a custom message.
-             * Clears the event container and hides pagination.
-             * @param {string|null} [message=null] - Optional custom message to display.
-             */
-            function showNoEventsMessage(message = null) {
-                // Construct the default message based on the current category
-                const defaultMessage = `No ${categories[currentCategory]?.name || 'events'} match your current criteria. Try adjusting filters.`;
-                // Use the provided message or the default one
-                const displayMessage = message || defaultMessage;
-                 if (noEventsIndicator && noEventsMessage) {
-                     // Set the message text
-                     noEventsMessage.innerHTML = escapeHTML(displayMessage);
-                     // Make the "no events" container visible
-                     noEventsIndicator.classList.remove('hidden');
-                 }
-                 // Clear the events container and hide pagination
-                 if(eventsContainer) eventsContainer.innerHTML = '';
-                 if(paginationControlsEl) paginationControlsEl.classList.add('hidden');
-             }
+        function populateLocationDropdown(events) {
+             if (!locationDropdown) return;
+             const uniqueLocationStrings = new Set();
+             const majorCityButtonLocations = new Set();
 
-            /**
-             * Updates the pagination controls (button states and page info text).
-             */
-            function updatePaginationControls() {
-                 if (!pageInfoEl || !prevPageButton || !nextPageButton) return;
-                 // Update page info text
-                 pageInfoEl.textContent = `Page ${currentPage} of ${totalPages}`;
+             const currentMajorCitySetId = categories[currentCategory]?.majorCitySetId;
+             const visibleMajorCityDiv = document.getElementById(currentMajorCitySetId);
+             visibleMajorCityDiv?.querySelectorAll('.major-city-button').forEach(btn => {
+                 majorCityButtonLocations.add(btn.dataset.location?.toLowerCase());
+             });
 
-                 // Enable/disable previous button
-                 prevPageButton.disabled = (currentPage === 1);
-                 prevPageButton.classList.toggle('disabled:opacity-50', prevPageButton.disabled);
-                 prevPageButton.classList.toggle('disabled:cursor-not-allowed', prevPageButton.disabled);
-                 prevPageButton.classList.toggle('disabled:shadow-none', prevPageButton.disabled); // Remove shadow when disabled
-
-                 // Enable/disable next button
-                 nextPageButton.disabled = (currentPage >= totalPages);
-                 nextPageButton.classList.toggle('disabled:opacity-50', nextPageButton.disabled);
-                 nextPageButton.classList.toggle('disabled:cursor-not-allowed', nextPageButton.disabled);
-                 nextPageButton.classList.toggle('disabled:shadow-none', nextPageButton.disabled); // Remove shadow when disabled
-             }
-
-            /**
-             * Updates the display showing the selected date range based on input values.
-             */
-            function updateDateRangeDisplay() {
-                 if (!dateRangeDisplay) return;
-                 const startDateVal = startDateInput?.value;
-                 const endDateVal = endDateInput?.value;
-                 let text = 'All Dates'; // Default text
-
-                 try {
-                     // Format the start and end dates for display (e.g., "Apr 23, 2025")
-                     const start = startDateVal ? formatDisplayDate(startDateVal) : null;
-                     const end = endDateVal ? formatDisplayDate(endDateVal) : null;
-
-                     // Construct the display string
-                     if (start && end) text = `From ${start} to ${end}`;
-                     else if (start) text = `From ${start}`;
-                     else if (end) text = `Until ${end}`;
-                 } catch (e) {
-                     console.error("Error formatting date range for display:", e);
-                     text = "Invalid Date Range"; // Show error if formatting fails
-                 }
-                 dateRangeDisplay.textContent = text; // Update the element's text
-             }
-
-            /**
-             * Populates and shows the event details modal.
-             * Adds JSON-LD schema for the displayed event.
-             * @param {object} eventData - Data for the event to display.
-             */
-            function showEventDetails(eventData) {
-                 if (!eventData || !eventModal || !modalTitle || !modalContent || !modalLink) return;
-
-                 // Extract data, providing defaults for safety
-                 const title = eventData.title || 'Event Details';
-                 const description = eventData.description || 'No description available.';
-                 const location = eventData.location || 'Location TBD'; // Original string
-                 const formattedDate = eventData.date || 'Date TBD';
-                 const url = eventData.url;
-                 const monthShort = eventData.month || '?';
-                 const dayOfMonth = eventData.day || '?';
-                 const startDateIso = eventData.startDateIso; // YYYY-MM-DD format
-
-                 // Populate Modal Title
-                 modalTitle.textContent = escapeHTML(title);
-
-                 // Populate Modal Content using template literal
-                 modalContent.innerHTML = `
-                     <div class="space-y-5">
-                         <div class="bg-indigo-50 rounded-lg p-4 flex items-start border border-indigo-100">
-                             <div class="mr-5 flex-shrink-0">
-                                 <div class="bg-white rounded-lg shadow p-3 text-center w-16 border border-gray-200">
-                                     <div class="text-xs text-indigo-600 uppercase font-semibold tracking-wide">${escapeHTML(monthShort)}</div>
-                                     <div class="text-3xl font-bold text-gray-800 mt-1">${escapeHTML(String(dayOfMonth))}</div>
-                                 </div>
-                             </div>
-                             <div class="flex-grow mt-1">
-                                 <div class="text-sm text-gray-600 mb-1 font-medium">${escapeHTML(formattedDate)}</div>
-                                 <div class="flex items-center text-gray-700">
-                                     <i class="fas fa-map-marker-alt mr-2 text-indigo-500 fa-fw"></i>
-                                     <span class="font-medium">${escapeHTML(location)}</span>
-                                 </div>
-                             </div>
-                         </div>
-                         <div>
-                             <h4 class="text-lg font-semibold text-gray-800 mb-2">About This Event</h4>
-                             <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">${escapeHTML(description)}</p> </div>
-                         <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
-                             <div class="flex items-center text-blue-800">
-                                 <i class="fas fa-info-circle mr-2 fa-fw"></i>
-                                 <span class="font-medium text-sm">Event Information</span>
-                             </div>
-                              <p class="text-blue-700 text-sm mt-1.5">This is a ${escapeHTML(categories[currentCategory]?.name || 'curated')} event listed by NoLeaf. Please verify details on the official event website.</p>
-                         </div>
-                     </div>`;
-
-                 // Set Modal Link (View Event Website button)
-                 if (url) {
-                     modalLink.href = url;
-                     modalLink.classList.remove('opacity-50', 'cursor-not-allowed');
-                     modalLink.setAttribute('target', '_blank'); // Open in new tab
-                     modalLink.style.display = 'inline-flex'; // Ensure button is visible
-                 } else {
-                     // Hide or disable link if URL is missing
-                     modalLink.href = '#';
-                     modalLink.classList.add('opacity-50', 'cursor-not-allowed');
-                     modalLink.removeAttribute('target');
-                     modalLink.style.display = 'none'; // Hide button if no link
-                 }
-
-
-                 // --- Add Event JSON-LD Schema ---
-                 if (eventSchemaPlaceholder && startDateIso) {
-                     try {
-                         // Use the first location listed (if multiple) for the schema
-                         const primaryLocation = location.split(';')[0].trim();
-                         const eventSchema = {
-                             "@context": "https://schema.org",
-                             "@type": "Event",
-                             "name": title,
-                             "startDate": startDateIso, // Needs YYYY-MM-DD
-                             "description": description,
-                             "url": url,
-                             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", // Assuming physical events
-                             "eventStatus": "https://schema.org/EventScheduled",
-                             "location": {
-                                 "@type": "Place",
-                                 "name": primaryLocation, // Use parsed primary location name
-                                 "address": primaryLocation // Use name as address for simplicity
-                             }
-                             // Add organizer, endDate, image etc. here if available in your data
-                         };
-                         // Add the schema script content
-                         eventSchemaPlaceholder.textContent = JSON.stringify(eventSchema, null, 2);
-                     } catch (e) {
-                         console.error("Error generating event schema:", e);
-                         eventSchemaPlaceholder.textContent = ''; // Clear on error
-                     }
-                 } else {
-                     eventSchemaPlaceholder.textContent = ''; // Clear if no start date
-                 }
-                 // --- End Schema ---
-
-                 // Show the modal
-                 eventModal.classList.remove('hidden');
-                 closeModalButton.focus(); // Set focus to close button for accessibility
-             }
-
-            /**
-             * Clears the event schema script content when the modal is closed.
-             */
-            function clearEventSchema() {
-                if (eventSchemaPlaceholder) eventSchemaPlaceholder.textContent = '';
-            }
-
-            // --- Filtering and Sorting Logic ---
-
-            /**
-             * Gets the currently active location filter value.
-             * Checks dropdown first, then active filter buttons.
-             * @returns {string} The active location filter value ('all' or specific "city, st" / "city").
-             */
-            function getActiveLocationFilter() {
-                // Check dropdown first
-                const selectedDropdownValue = locationDropdown?.value;
-                if (selectedDropdownValue && selectedDropdownValue !== 'all') {
-                    return selectedDropdownValue; // e.g., "newark, de" or "boston" (lowercase)
-                }
-                // If dropdown is 'all', check the active button
-                const activeButton = locationFiltersContainer?.querySelector('.filter-button.active');
-                // Use data-location which should store the specific "City, ST" for major cities or 'all'
-                return activeButton ? (activeButton.dataset.location || 'all') : 'all';
-            }
-
-
-            /**
-             * Filters events based on current criteria (search, location, date).
-             * Sorts by distance if 'All Locations' filter is active & user location is available,
-             * otherwise sorts by date. Updates the display.
-             */
-            function applyFiltersAndDisplay() {
-                const searchTerm = searchInput.value.toLowerCase().trim();
-                const selectedLocationFilter = getActiveLocationFilter(); // e.g., "all", "New York, NY", "newark, de"
-                const startDateVal = startDateInput?.value;
-                const endDateVal = endDateInput?.value;
-
-                // Parse dates, ensuring they are midnight UTC for comparison
-                const startDate = startDateVal ? getUtcMidnight(parseDate(startDateVal)) : null;
-                const endDate = endDateVal ? getUtcMidnight(parseDate(endDateVal)) : null;
-
-                // Determine if distance sort should be active based on filter and location availability
-                // Distance sort is ONLY active if 'All Locations' is selected AND we have the user's location.
-                isDistanceSortActive = (selectedLocationFilter === 'all' && userLocation !== null);
-
-                console.log(`Filtering ${currentCategory}. Search: "${searchTerm}", Location Filter: "${selectedLocationFilter}", Start: ${startDateVal}, End: ${endDateVal}. Distance Sort: ${isDistanceSortActive}`);
-
-                // 1. Filter events based on search, location, and date
-                let filtered = allEvents.filter(event => {
-                    if (!event || !event.date || isNaN(event.date.getTime())) return false; // Basic validation
-
-                    const title = event.title || '';
-                    const description = event.description || '';
-                    const originalLocation = event.location || ''; // Use original string for search matching
-
-                    // --- Search Term Filter ---
-                    // Check title, description, and original location string
-                    const searchMatch = searchTerm === '' ||
-                                         title.toLowerCase().includes(searchTerm) ||
-                                         description.toLowerCase().includes(searchTerm) ||
-                                         originalLocation.toLowerCase().includes(searchTerm);
-
-                    // --- Location Filter ---
-                    let locationFilterMatch = true;
-                    if (selectedLocationFilter !== 'all') {
-                        const filterLower = selectedLocationFilter.toLowerCase();
-                        // Check if the filter matches a major city button's data-location (e.g., "New York, NY")
-                        const majorCityKey = Object.keys(majorCityAliases).find(key => key.toLowerCase() === filterLower);
-
-                        if (majorCityKey) {
-                             // If it's a major city filter, check if the event's *original* location string contains any alias for that city
-                             const aliases = majorCityAliases[majorCityKey];
-                             locationFilterMatch = aliases.some(alias => originalLocation.toLowerCase().includes(alias));
-                        } else {
-                             // Otherwise (dropdown selection), check if any of the event's *parsed* locations match the filter exactly
-                             // This handles cases where an event might have multiple locations listed (e.g., "Newark, DE; Philadelphia, PA")
-                             locationFilterMatch = event.allLocationData.some(locData => {
-                                 // Reconstruct the "city, st" or "city" string (lowercase) from parsed data
-                                 const eventLocLower = `${locData.city}${locData.state ? `, ${locData.state}` : ''}`;
-                                 return eventLocLower === filterLower;
-                             });
-                        }
-                    }
-
-                    // --- Date Filter ---
-                    const eventDateUtc = getUtcMidnight(event.date); // Ensure comparison at midnight UTC
-                    let dateFilterMatch = true;
-                    if (eventDateUtc) {
-                        // Event date must be on or after start date (if specified)
-                        const startMatch = !startDate || (eventDateUtc >= startDate);
-                        // Event date must be on or before end date (if specified)
-                        const endMatch = !endDate || (eventDateUtc <= endDate);
-                        dateFilterMatch = startMatch && endMatch;
-                    } else {
-                        dateFilterMatch = false; // Invalid event date fails filter
-                    }
-
-                    // Event passes if all filters match
-                    return searchMatch && locationFilterMatch && dateFilterMatch;
-                });
-
-                // 2. Calculate distances (if needed) and Sort
-                if (isDistanceSortActive) {
-                    // Calculate distance from user to the *closest* coordinate of the event (if multiple locations)
-                    // console.log("Calculating distances for sorting...");
-                    filtered.forEach(event => {
-                        let minDistance = Infinity;
-                        event.allLocationData.forEach(locData => {
-                            if (locData.coords && userLocation) { // Check if coordinates exist for this location part and user location exists
-                                const dist = calculateDistance(userLocation.lat, userLocation.lon, locData.coords.lat, locData.coords.lon);
-                                if (dist < minDistance) minDistance = dist;
-                            }
-                        });
-                        event.distance = minDistance; // Store the minimum distance found (remains Infinity if no coords found)
-                    });
-                    // Sort primarily by distance (ascending), secondarily by date (ascending)
-                    filtered.sort((a, b) => {
-                        if (a.distance !== b.distance) return a.distance - b.distance;
-                        return a.date - b.date; // Use original Date objects for accurate secondary sorting
-                    });
-                } else {
-                    // Sort by date only (ascending)
-                    // console.log("Sorting by date only.");
-                    filtered.sort((a, b) => a.date - b.date);
-                    // Reset distance for all events if not sorting by it, so it doesn't display stale values
-                    filtered.forEach(event => event.distance = Infinity);
-                }
-
-                // 3. Update state and UI
-                currentFilteredEvents = filtered; // Update the global filtered list
-                 currentPage = 1; // Reset to page 1 after filtering/sorting
-                 displayCurrentPage(); // Display the first page of results
-                 updateEventCount(currentFilteredEvents.length); // Update the count display
-                 updateDateRangeDisplay(); // Update the date range display text
-             }
-
-
-            // --- Event Listeners Setup ---
-
-            /**
-             * Sets up category switcher button listeners.
-             */
-            function setupCategorySwitchers() {
-                Object.keys(categories).forEach(key => {
-                    const button = document.getElementById(categories[key].buttonId);
-                    if (button) {
-                        button.addEventListener('click', () => {
-                            // Only switch if a different category is clicked
-                            if (currentCategory !== key) {
-                                console.log(`Switching to category: ${key}`);
-                                applyTheme(key); // Applies theme, resets location filters, updates city buttons
-                                if(searchInput) searchInput.value = ''; // Clear search on category change
-                                // Keep existing date filters
-                                loadFromCSV(categories[key].url); // Reload data for the new category
-                            }
-                        });
-                    } else { console.error(`Category button not found: ${categories[key].buttonId}`); }
-                });
-            }
-
-             /**
-              * Sets up location filter listeners (Dropdown and ALL buttons).
-              */
-             function setupLocationFilters() {
-                 // Listener for the dropdown
-                 if (locationDropdown) {
-                     locationDropdown.addEventListener('change', function() {
-                         const selectedValue = this.value;
-                         // Deactivate all filter buttons when dropdown is used (except if 'all' is selected)
-                         locationFiltersContainer?.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
-                         if (selectedValue === 'all') {
-                             // Activate the 'All Locations' button if dropdown is set back to 'all'
-                             allLocationsFilterButton?.classList.add('active');
-                             isDistanceSortActive = userLocation !== null; // Enable distance sort if location known
-                         } else {
-                             // Specific city selected via dropdown
-                             isDistanceSortActive = false; // Disable distance sort
+             events.forEach(event => {
+                 event.allLocationData.forEach(locData => {
+                     if (locData.city && locData.city !== 'unknown') {
+                         const locStringLower = locData.state ? `${locData.city}, ${locData.state}` : locData.city;
+                         if (!majorCityButtonLocations.has(locStringLower)) {
+                             uniqueLocationStrings.add(locStringLower);
                          }
-                         applyFiltersAndDisplay(); // Re-filter and display
-                     });
-                 }
-
-                 // Listener for ALL filter buttons (including 'All Locations' and major city buttons)
-                 if (locationFiltersContainer) {
-                     // Use event delegation on the container
-                     locationFiltersContainer.addEventListener('click', function(e) {
-                         // Check if the clicked element is a filter button
-                         const button = e.target.closest('.filter-button');
-                         if (button) {
-                             // Deactivate all other filter buttons in the container
-                             locationFiltersContainer.querySelectorAll('.filter-button').forEach(btn => {
-                                 if (btn !== button) btn.classList.remove('active');
-                             });
-                             // Activate the clicked button
-                             button.classList.add('active');
-                             // Reset dropdown to 'More Cities...' when a button is clicked
-                             if (locationDropdown) locationDropdown.value = 'all';
-                             // Determine if distance sort should be active (only if 'All Locations' clicked and location known)
-                             isDistanceSortActive = button.id === 'all-locations-filter' && userLocation !== null;
-                             console.log(`Button "${button.dataset.location || 'All'}" clicked. Distance sort: ${isDistanceSortActive}`);
-                             applyFiltersAndDisplay(); // Re-filter and display
-                         }
-                     });
-                 }
-             }
-
-            // --- Initialize Event Listeners ---
-
-            // Search input listener (triggers filtering on input)
-            if (searchInput) searchInput.addEventListener('input', applyFiltersAndDisplay);
-            // Date input listeners (triggers filtering on change)
-            if (startDateInput) startDateInput.addEventListener('change', applyFiltersAndDisplay);
-            if (endDateInput) endDateInput.addEventListener('change', applyFiltersAndDisplay);
-
-            // Pagination button listeners
-            if (prevPageButton) {
-                prevPageButton.addEventListener('click', () => {
-                    if (currentPage > 1) {
-                        currentPage--;
-                        displayCurrentPage();
-                        // Scroll towards the top of the events section smoothly for better UX
-                        eventsContainer?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            }
-            if (nextPageButton) {
-                nextPageButton.addEventListener('click', () => {
-                    if (currentPage < totalPages) {
-                        currentPage++;
-                        displayCurrentPage();
-                        // Scroll towards the top of the events section smoothly for better UX
-                         eventsContainer?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            }
-
-            // Event Modal listeners (close button and clicking outside)
-            if (closeModalButton && eventModal) {
-                 closeModalButton.addEventListener('click', () => { eventModal.classList.add('hidden'); clearEventSchema(); });
-                 // Close modal if clicking on the background overlay
-                 eventModal.addEventListener('click', (event) => {
-                     if (event.target === eventModal) {
-                         eventModal.classList.add('hidden');
-                         clearEventSchema();
                      }
                  });
+             });
+
+             const sortedLocations = [...uniqueLocationStrings].sort((a, b) => a.localeCompare(b));
+
+             locationDropdown.innerHTML = '<option value="all">More Cities...</option>';
+             sortedLocations.forEach(locStr => {
+                 const option = document.createElement('option');
+                 option.value = escapeHTML(locStr);
+                 option.textContent = escapeHTML(locStr.split(', ').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(', '));
+                 locationDropdown.appendChild(option);
+             });
+              locationDropdown.value = 'all';
+         }
+
+
+        // --- Core Logic: Display and UI Updates ---
+
+        function displayCurrentPage() {
+             if (!eventsContainer || !noEventsIndicator || !paginationControlsEl) return;
+
+             eventsContainer.innerHTML = '';
+             noEventsIndicator.classList.add('hidden');
+
+             const screenWidth = window.innerWidth;
+             if (screenWidth < 640) { itemsPerPage = 3; }
+             else if (screenWidth < 1024) { itemsPerPage = 6; }
+             else { itemsPerPage = 6; }
+
+             totalPages = Math.max(1, Math.ceil(currentFilteredEvents.length / itemsPerPage));
+             currentPage = Math.max(1, Math.min(currentPage, totalPages));
+
+             const startIndex = (currentPage - 1) * itemsPerPage;
+             const endIndex = startIndex + itemsPerPage;
+             const paginatedItems = currentFilteredEvents.slice(startIndex, endIndex);
+
+             // console.log(`Displaying page ${currentPage}/${totalPages}. Items ${startIndex}-${endIndex - 1} of ${currentFilteredEvents.length}. Items/Page: ${itemsPerPage}. Distance Sort Active: ${isDistanceSortActive}`);
+
+             if (currentFilteredEvents.length === 0) {
+                 showNoEventsMessage();
+                 paginationControlsEl.classList.add('hidden');
+             } else if (paginatedItems.length === 0 && currentPage > 1) {
+                 console.log("Current page empty, resetting to page 1");
+                 currentPage = 1;
+                 displayCurrentPage(); // Re-render page 1
+             } else {
+                 paginatedItems.forEach(event => {
+                     if (!event) return;
+
+                     let locationBadgeClass = 'generic-badge';
+                     const primaryLocLower = event.location.toLowerCase();
+                     if (primaryLocLower.includes('new york') || primaryLocLower.includes('nyc')) locationBadgeClass = 'nyc-badge';
+                     else if (primaryLocLower.includes('philadelphia') || primaryLocLower.includes('philly')) locationBadgeClass = 'philly-badge';
+
+                     const distanceText = (isDistanceSortActive && event.distance !== Infinity)
+                          ? `<span class="text-xs text-gray-500 ml-auto pl-2 whitespace-nowrap">(${Math.round(event.distance)} km away)</span>` : '';
+
+                     const card = document.createElement('div');
+                     card.className = 'event-card relative fade-in';
+                     card.innerHTML = `
+                         <div class="date-badge z-10">
+                             <span class="day">${escapeHTML(String(event.day))}</span>
+                             <span class="month">${escapeHTML(event.month)}</span>
+                         </div>
+                         <div class="event-card-content pt-12"> <div class="flex items-center justify-between mb-2 flex-wrap">
+                                 <span class="location-badge ${locationBadgeClass} mr-2">
+                                     <i class="fas fa-map-marker-alt mr-1.5 text-xs"></i>${escapeHTML(event.location)}
+                                 </span>
+                                 ${distanceText} </div>
+                             <h3 class="text-lg font-semibold text-gray-800 mb-2 line-clamp-2 hover:text-indigo-600 transition-colors" title="${escapeHTML(event.title)}">
+                                 ${escapeHTML(event.title)}
+                             </h3>
+                             <p class="text-sm text-gray-600 mb-4 line-clamp-3 flex-grow">${escapeHTML(event.description)}</p>
+                             <div class="text-xs text-gray-500 mb-4 flex items-center">
+                                 <i class="far fa-calendar-alt mr-1.5"></i> ${escapeHTML(event.formattedDate)}
+                             </div>
+                             <div class="event-card-footer">
+                                 <button class="view-details w-full text-center bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-sm font-medium py-2 px-4 rounded-md transition-colors duration-150 flex items-center justify-center"
+                                         data-title="${escapeHTML(event.title)}"
+                                         data-date="${escapeHTML(event.formattedDate)}"
+                                         data-description="${escapeHTML(event.description)}"
+                                         data-location="${escapeHTML(event.location)}"
+                                         data-url="${escapeHTML(event.url)}"
+                                         data-month="${escapeHTML(event.month)}"
+                                         data-day="${escapeHTML(String(event.day))}"
+                                         data-start-date-iso="${escapeHTML(formatDateToYyyyMmDd(event.date))}">
+                                     View Details <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                                 </button>
+                             </div>
+                         </div>`;
+                     eventsContainer.appendChild(card);
+                 });
+
+                 updatePaginationControls();
+                 paginationControlsEl.classList.remove('hidden');
+             }
+         }
+
+        function setupDetailButtonListener() {
+            if (!eventsContainer) return;
+            eventsContainer.addEventListener('click', function(e) {
+                const button = e.target.closest('.view-details');
+                if (button) {
+                    const eventData = {
+                        title: button.dataset.title,
+                        date: button.dataset.date,
+                        description: button.dataset.description,
+                        location: button.dataset.location,
+                        url: button.dataset.url,
+                        month: button.dataset.month,
+                        day: button.dataset.day,
+                        startDateIso: button.dataset.startDateIso
+                    };
+                    showEventDetails(eventData);
+                }
+            });
+        }
+
+        function updateEventCount(count) {
+             if (eventCountEl) {
+                 const categoryName = categories[currentCategory]?.name || 'event';
+                 const formattedCount = count.toLocaleString();
+                 eventCountEl.innerHTML = `Showing ${formattedCount} ${categoryName} event${count !== 1 ? 's' : ''} matching filters`;
+             }
+         }
+
+        function showNoEventsMessage(message = null) {
+            const defaultMessage = `No ${categories[currentCategory]?.name || 'events'} match your current criteria. Try adjusting filters.`;
+            const displayMessage = message || defaultMessage;
+             if (noEventsIndicator && noEventsMessage) {
+                 noEventsMessage.innerHTML = escapeHTML(displayMessage);
+                 noEventsIndicator.classList.remove('hidden');
+             }
+             if(eventsContainer) eventsContainer.innerHTML = '';
+             if(paginationControlsEl) paginationControlsEl.classList.add('hidden');
+         }
+
+        function updatePaginationControls() {
+             if (!pageInfoEl || !prevPageButton || !nextPageButton) return;
+             pageInfoEl.textContent = `Page ${currentPage} of ${totalPages}`;
+
+             prevPageButton.disabled = (currentPage === 1);
+             prevPageButton.classList.toggle('disabled:opacity-50', prevPageButton.disabled);
+             prevPageButton.classList.toggle('disabled:cursor-not-allowed', prevPageButton.disabled);
+             prevPageButton.classList.toggle('disabled:shadow-none', prevPageButton.disabled);
+
+             nextPageButton.disabled = (currentPage >= totalPages);
+             nextPageButton.classList.toggle('disabled:opacity-50', nextPageButton.disabled);
+             nextPageButton.classList.toggle('disabled:cursor-not-allowed', nextPageButton.disabled);
+             nextPageButton.classList.toggle('disabled:shadow-none', nextPageButton.disabled);
+         }
+
+        function updateDateRangeDisplay() {
+             if (!dateRangeDisplay) return;
+             const startDateVal = startDateInput?.value;
+             const endDateVal = endDateInput?.value;
+             let text = 'All Dates';
+
+             try {
+                 const start = startDateVal ? formatDisplayDate(startDateVal) : null;
+                 const end = endDateVal ? formatDisplayDate(endDateVal) : null;
+                 if (start && end) text = `From ${start} to ${end}`;
+                 else if (start) text = `From ${start}`;
+                 else if (end) text = `Until ${end}`;
+             } catch (e) {
+                 console.error("Error formatting date range for display:", e);
+                 text = "Invalid Date Range";
+             }
+             dateRangeDisplay.textContent = text;
+         }
+
+        function showEventDetails(eventData) {
+             if (!eventData || !eventModal || !modalTitle || !modalContent || !modalLink) return;
+
+             const title = eventData.title || 'Event Details';
+             const description = eventData.description || 'No description available.';
+             const location = eventData.location || 'Location TBD';
+             const formattedDate = eventData.date || 'Date TBD';
+             const url = eventData.url;
+             const monthShort = eventData.month || '?';
+             const dayOfMonth = eventData.day || '?';
+             const startDateIso = eventData.startDateIso;
+
+             modalTitle.textContent = escapeHTML(title);
+             modalContent.innerHTML = `
+                 <div class="space-y-5">
+                     <div class="bg-indigo-50 rounded-lg p-4 flex items-start border border-indigo-100">
+                         <div class="mr-5 flex-shrink-0">
+                             <div class="bg-white rounded-lg shadow p-3 text-center w-16 border border-gray-200">
+                                 <div class="text-xs text-indigo-600 uppercase font-semibold tracking-wide">${escapeHTML(monthShort)}</div>
+                                 <div class="text-3xl font-bold text-gray-800 mt-1">${escapeHTML(String(dayOfMonth))}</div>
+                             </div>
+                         </div>
+                         <div class="flex-grow mt-1">
+                             <div class="text-sm text-gray-600 mb-1 font-medium">${escapeHTML(formattedDate)}</div>
+                             <div class="flex items-center text-gray-700">
+                                 <i class="fas fa-map-marker-alt mr-2 text-indigo-500 fa-fw"></i>
+                                 <span class="font-medium">${escapeHTML(location)}</span>
+                             </div>
+                         </div>
+                     </div>
+                     <div>
+                         <h4 class="text-lg font-semibold text-gray-800 mb-2">About This Event</h4>
+                         <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">${escapeHTML(description)}</p> </div>
+                     <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
+                         <div class="flex items-center text-blue-800">
+                             <i class="fas fa-info-circle mr-2 fa-fw"></i>
+                             <span class="font-medium text-sm">Event Information</span>
+                         </div>
+                          <p class="text-blue-700 text-sm mt-1.5">This is a ${escapeHTML(categories[currentCategory]?.name || 'curated')} event listed by NoLeaf. Please verify details on the official event website.</p>
+                     </div>
+                 </div>`;
+
+             if (url) {
+                 modalLink.href = url;
+                 modalLink.classList.remove('opacity-50', 'cursor-not-allowed');
+                 modalLink.setAttribute('target', '_blank');
+                 modalLink.style.display = 'inline-flex';
+             } else {
+                 modalLink.href = '#';
+                 modalLink.classList.add('opacity-50', 'cursor-not-allowed');
+                 modalLink.removeAttribute('target');
+                 modalLink.style.display = 'none';
+             }
+
+             if (eventSchemaPlaceholder && startDateIso) {
+                 try {
+                     const primaryLocation = location.split(';')[0].trim();
+                     const eventSchema = {
+                         "@context": "https://schema.org",
+                         "@type": "Event",
+                         "name": title,
+                         "startDate": startDateIso,
+                         "description": description,
+                         "url": url,
+                         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                         "eventStatus": "https://schema.org/EventScheduled",
+                         "location": {
+                             "@type": "Place",
+                             "name": primaryLocation,
+                             "address": primaryLocation
+                         }
+                     };
+                     eventSchemaPlaceholder.textContent = JSON.stringify(eventSchema, null, 2);
+                 } catch (e) {
+                     console.error("Error generating event schema:", e);
+                     eventSchemaPlaceholder.textContent = '';
+                 }
+             } else {
+                 eventSchemaPlaceholder.textContent = '';
+             }
+
+             eventModal.classList.remove('hidden');
+             closeModalButton.focus();
+         }
+
+        function clearEventSchema() {
+            if (eventSchemaPlaceholder) eventSchemaPlaceholder.textContent = '';
+        }
+
+        // --- Filtering and Sorting Logic ---
+
+        function getActiveLocationFilter() {
+            const selectedDropdownValue = locationDropdown?.value;
+            if (selectedDropdownValue && selectedDropdownValue !== 'all') {
+                return selectedDropdownValue;
+            }
+            const activeButton = locationFiltersContainer?.querySelector('.filter-button.active');
+            return activeButton ? (activeButton.dataset.location || 'all') : 'all';
+        }
+
+        function applyFiltersAndDisplay() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const selectedLocationFilter = getActiveLocationFilter();
+            const startDateVal = startDateInput?.value;
+            const endDateVal = endDateInput?.value;
+            const startDate = startDateVal ? getUtcMidnight(parseDate(startDateVal)) : null;
+            const endDate = endDateVal ? getUtcMidnight(parseDate(endDateVal)) : null;
+
+            isDistanceSortActive = (selectedLocationFilter === 'all' && userLocation !== null);
+            // console.log(`Filtering ${currentCategory}. Search: "${searchTerm}", Location Filter: "${selectedLocationFilter}", Start: ${startDateVal}, End: ${endDateVal}. Distance Sort: ${isDistanceSortActive}`);
+
+            let filtered = allEvents.filter(event => {
+                if (!event || !event.date || isNaN(event.date.getTime())) return false;
+
+                const title = event.title || '';
+                const description = event.description || '';
+                const originalLocation = event.location || '';
+
+                const searchMatch = searchTerm === '' ||
+                                    title.toLowerCase().includes(searchTerm) ||
+                                    description.toLowerCase().includes(searchTerm) ||
+                                    originalLocation.toLowerCase().includes(searchTerm);
+
+                let locationFilterMatch = true;
+                if (selectedLocationFilter !== 'all') {
+                    const filterLower = selectedLocationFilter.toLowerCase();
+                    const majorCityKey = Object.keys(majorCityAliases).find(key => key.toLowerCase() === filterLower);
+                    if (majorCityKey) {
+                        const aliases = majorCityAliases[majorCityKey];
+                        locationFilterMatch = aliases.some(alias => originalLocation.toLowerCase().includes(alias));
+                    } else {
+                        locationFilterMatch = event.allLocationData.some(locData => {
+                            const eventLocLower = `${locData.city}${locData.state ? `, ${locData.state}` : ''}`;
+                            return eventLocLower === filterLower;
+                        });
+                    }
+                }
+
+                const eventDateUtc = getUtcMidnight(event.date);
+                let dateFilterMatch = true;
+                if (eventDateUtc) {
+                    const startMatch = !startDate || (eventDateUtc >= startDate);
+                    const endMatch = !endDate || (eventDateUtc <= endDate);
+                    dateFilterMatch = startMatch && endMatch;
+                } else { dateFilterMatch = false; }
+
+                return searchMatch && locationFilterMatch && dateFilterMatch;
+            });
+
+            if (isDistanceSortActive) {
+                // console.log("Calculating distances for sorting...");
+                filtered.forEach(event => {
+                    let minDistance = Infinity;
+                    event.allLocationData.forEach(locData => {
+                        if (locData.coords && userLocation) {
+                            const dist = calculateDistance(userLocation.lat, userLocation.lon, locData.coords.lat, locData.coords.lon);
+                            if (dist < minDistance) minDistance = dist;
+                        }
+                    });
+                    event.distance = minDistance;
+                });
+                filtered.sort((a, b) => {
+                    if (a.distance !== b.distance) return a.distance - b.distance;
+                    return a.date - b.date;
+                });
+            } else {
+                // console.log("Sorting by date only.");
+                filtered.sort((a, b) => a.date - b.date);
+                filtered.forEach(event => event.distance = Infinity);
             }
 
-            // Suggest Event Modal listeners (open, close buttons, clicking outside)
-            if (suggestEventButton && suggestModal && closeSuggestModalButton && suggestModalCloseButtonAlt) {
-                suggestEventButton.addEventListener('click', () => { suggestModal.classList.remove('hidden'); closeSuggestModalButton.focus(); });
-                closeSuggestModalButton.addEventListener('click', () => { suggestModal.classList.add('hidden'); });
-                suggestModalCloseButtonAlt.addEventListener('click', () => { suggestModal.classList.add('hidden'); });
-                // Close modal if clicking on the background overlay
-                suggestModal.addEventListener('click', (event) => { if (event.target === suggestModal) suggestModal.classList.add('hidden'); });
-            } else { console.error("Suggest Event modal elements not found."); }
+            currentFilteredEvents = filtered;
+            currentPage = 1;
+            displayCurrentPage();
+            updateEventCount(currentFilteredEvents.length);
+            updateDateRangeDisplay();
+        }
 
-            // Global keydown listener (for Escape key to close modals)
-             window.addEventListener('keydown', (event) => {
-                 if (event.key === 'Escape') {
-                     if (eventModal && !eventModal.classList.contains('hidden')) { eventModal.classList.add('hidden'); clearEventSchema(); }
-                     if (suggestModal && !suggestModal.classList.contains('hidden')) suggestModal.classList.add('hidden');
+
+        // --- Event Listeners Setup ---
+
+        function setupCategorySwitchers() {
+            Object.keys(categories).forEach(key => {
+                const button = document.getElementById(categories[key].buttonId);
+                if (button) {
+                    button.addEventListener('click', () => {
+                        if (currentCategory !== key) {
+                            console.log(`Switching to category: ${key}`);
+                            applyTheme(key);
+                            if(searchInput) searchInput.value = '';
+                            loadEventsForCategory(); // Reload data
+                        }
+                    });
+                } else { console.error(`Category button not found: ${categories[key].buttonId}`); }
+            });
+        }
+
+        function setupLocationFilters() {
+             if (locationDropdown) {
+                 locationDropdown.addEventListener('change', function() {
+                     const selectedValue = this.value;
+                     locationFiltersContainer?.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+                     if (selectedValue === 'all') {
+                         allLocationsFilterButton?.classList.add('active');
+                         isDistanceSortActive = userLocation !== null;
+                     } else {
+                         isDistanceSortActive = false;
+                     }
+                     applyFiltersAndDisplay();
+                 });
+             }
+
+             if (locationFiltersContainer) {
+                 locationFiltersContainer.addEventListener('click', function(e) {
+                     const button = e.target.closest('.filter-button');
+                     if (button) {
+                         locationFiltersContainer.querySelectorAll('.filter-button').forEach(btn => {
+                             if (btn !== button) btn.classList.remove('active');
+                         });
+                         button.classList.add('active');
+                         if (locationDropdown) locationDropdown.value = 'all';
+                         isDistanceSortActive = button.id === 'all-locations-filter' && userLocation !== null;
+                         // console.log(`Button "${button.dataset.location || 'All'}" clicked. Distance sort: ${isDistanceSortActive}`);
+                         applyFiltersAndDisplay();
+                     }
+                 });
+             }
+         }
+
+        // --- Initialize Event Listeners ---
+        if (searchInput) searchInput.addEventListener('input', applyFiltersAndDisplay);
+        if (startDateInput) startDateInput.addEventListener('change', applyFiltersAndDisplay);
+        if (endDateInput) endDateInput.addEventListener('change', applyFiltersAndDisplay);
+
+        if (prevPageButton) {
+            prevPageButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayCurrentPage();
+                    eventsContainer?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
+        if (nextPageButton) {
+            nextPageButton.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayCurrentPage();
+                     eventsContainer?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        }
+
+        if (closeModalButton && eventModal) {
+             closeModalButton.addEventListener('click', () => { eventModal.classList.add('hidden'); clearEventSchema(); });
+             eventModal.addEventListener('click', (event) => {
+                 if (event.target === eventModal) {
+                     eventModal.classList.add('hidden'); clearEventSchema();
                  }
              });
+        }
 
-            // Window resize listener (debounced) to adjust items per page
-             let resizeTimeout;
-             window.addEventListener('resize', () => {
-                  clearTimeout(resizeTimeout);
-                  resizeTimeout = setTimeout(() => {
-                      console.log("Window resized, adjusting items per page and re-displaying.");
-                      // Re-display the current page which will recalculate itemsPerPage and update layout
-                      displayCurrentPage();
-                  }, 250); // Debounce resize events to avoid excessive recalculations
-             });
+        if (suggestEventButton && suggestModal && closeSuggestModalButton && suggestModalCloseButtonAlt) {
+            suggestEventButton.addEventListener('click', () => { suggestModal.classList.remove('hidden'); closeSuggestModalButton.focus(); });
+            closeSuggestModalButton.addEventListener('click', () => { suggestModal.classList.add('hidden'); });
+            suggestModalCloseButtonAlt.addEventListener('click', () => { suggestModal.classList.add('hidden'); });
+            suggestModal.addEventListener('click', (event) => { if (event.target === suggestModal) suggestModal.classList.add('hidden'); });
+        } else { console.error("Suggest Event modal elements not found."); }
 
-            // --- Initial Page Load ---
-            console.log("Initializing page...");
-            applyTheme(currentCategory); // Apply default theme, UI state, reset location filters
-            setDefaultDateRange();     // Set default dates (today to 3 months)
-            setupCategorySwitchers();    // Setup category buttons
-            setupLocationFilters();      // Setup location filter listeners (buttons and dropdown)
-            setupDetailButtonListener(); // Setup event delegation for detail buttons ONCE
-            getUserLocation();           // Try to get location, which triggers loadFromCSV as the final step
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                if (eventModal && !eventModal.classList.contains('hidden')) { eventModal.classList.add('hidden'); clearEventSchema(); }
+                if (suggestModal && !suggestModal.classList.contains('hidden')) suggestModal.classList.add('hidden');
+            }
+        });
 
-        }); // End of DOMContentLoaded
+         let resizeTimeout;
+         window.addEventListener('resize', () => {
+              clearTimeout(resizeTimeout);
+              resizeTimeout = setTimeout(() => {
+                  // console.log("Window resized, adjusting items per page and re-displaying.");
+                  displayCurrentPage();
+              }, 250);
+         });
+
+        // --- Initial Page Load ---
+        console.log("Initializing page...");
+        applyTheme(currentCategory); // Apply default theme, UI state, reset location filters
+        setDefaultDateRange();     // Set default dates (today to 3 months)
+        setupCategorySwitchers();    // Setup category buttons
+        setupLocationFilters();      // Setup location filter listeners
+        setupDetailButtonListener(); // Setup event delegation for detail buttons ONCE
+        getUserLocation();           // Try to get location, which triggers loadEventsForCategory as the final step
+
+    }); // End of DOMContentLoaded
     </script>
 </body>
 </html>
