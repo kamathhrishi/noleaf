@@ -12,28 +12,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NoLeaf | The Most Exhaustive Finance, AI & Cybersecurity Event List (USA)</title>
-    <meta name="description" content="The most exhaustive list of Finance, AI, and Cybersecurity conferences, seminars, and networking events across the United States (NYC, Philly, SF Bay Area, Seattle, Austin, Boston & more). Explore 1800+ events curated by NoLeaf.">
+    <title>NoLeaf | Explore Finance, AI & Cybersecurity Events (USA)</title>
+    <meta name="description" content="Find Finance, AI, and Cybersecurity events near you or filter by city/state. Explore conferences, seminars, and networking events across the United States curated by NoLeaf.">
     <link rel="canonical" href="https://noleaf.app/event-finder/" />
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://noleaf.app/event-finder/">
-    <meta property="og:title" content="NoLeaf | The Most Exhaustive Finance, AI & Cybersecurity Event List (USA)">
-    <meta property="og:description" content="The most exhaustive list of Finance, AI, and Cybersecurity conferences, seminars, and networking events across the United States. Explore 1800+ events curated by NoLeaf.">
-    <meta property="og:image" content="https://noleaf.app/images/noleaf-social-preview.jpg">
-    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:title" content="NoLeaf | Nearby & Filterable Finance, AI & Cybersecurity Events (USA)">
+    <meta property="og:description" content="Find Finance, AI, and Cybersecurity events near you or filter by city/state. Explore conferences, seminars, and networking events across the United States curated by NoLeaf.">
+    <meta property="og:image" content="https://noleaf.app/images/noleaf-social-preview.jpg"> <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://noleaf.app/event-finder/">
-    <meta property="twitter:title" content="NoLeaf | The Most Exhaustive Finance, AI & Cybersecurity Event List (USA)">
-    <meta property="twitter:description" content="The most exhaustive list of Finance, AI, and Cybersecurity conferences, seminars, and networking events across the United States. Explore 1800+ events curated by NoLeaf.">
-    <meta property="twitter:image" content="https://noleaf.app/images/noleaf-social-preview.jpg">
-
-    <script type="application/ld+json" id="website-schema">
+    <meta property="twitter:title" content="NoLeaf | Nearby & Filterable Finance, AI & Cybersecurity Events (USA)">
+    <meta property="twitter:description" content="Find Finance, AI, and Cybersecurity events near you or filter by city/state. Explore conferences, seminars, and networking events across the United States curated by NoLeaf.">
+    <meta property="twitter:image" content="https://noleaf.app/images/noleaf-social-preview.jpg"> <script type="application/ld+json" id="website-schema">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "NoLeaf Event Finder",
       "url": "https://noleaf.app/",
-      "description": "The most exhaustive list of Finance, AI, and Cybersecurity events across the United States.",
+      "description": "Find Finance, AI, and Cybersecurity events near you or filter by city/state across the United States.",
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://noleaf.app/",
@@ -47,9 +44,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         /* Apply body theme classes (will be added/removed by JS) */
         body {
@@ -65,8 +64,8 @@
         /* Card Enhancements */
         .event-card {
             background-color: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05); /* shadow-md equivalent */
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
             display: flex;
@@ -74,56 +73,55 @@
             height: 100%; /* Ensure cards in a row take same height */
         }
         .event-card:hover {
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* shadow-lg equivalent */
             transform: translateY(-5px) scale(1.01);
         }
         .event-card-content {
-            padding: 1.5rem;
+            padding: 1.5rem; /* p-6 */
             flex-grow: 1; /* Allow content to grow */
             display: flex;
             flex-direction: column;
         }
-        .event-card-footer {
+         .event-card-footer {
              margin-top: auto; /* Push footer to bottom */
-             padding-top: 1rem;
-        }
+             padding-top: 1rem; /* pt-4 */
+         }
 
         /* Date Badge */
         .date-badge {
             position: absolute;
-            top: 1rem;
-            left: -0.5rem;
+            top: 1rem; /* top-4 */
+            left: -0.5rem; /* -left-2 */
             /* Background set by theme */
             color: white;
-            padding: 0.5rem 0.75rem 0.5rem 1rem;
-            border-radius: 0 0.5rem 0.5rem 0;
-            font-weight: 600;
-            font-size: 0.875rem;
+            padding: 0.5rem 0.75rem 0.5rem 1rem; /* py-2 pr-3 pl-4 */
+            border-radius: 0 0.5rem 0.5rem 0; /* rounded-r-lg */
+            font-weight: 600; /* font-semibold */
+            font-size: 0.875rem; /* text-sm */
             /* Box shadow set by theme */
             display: flex;
             align-items: center;
-            gap: 0.25rem;
+            gap: 0.25rem; /* gap-1 */
             z-index: 10; /* Ensure badge is above content */
         }
-        .date-badge .day { font-size: 1.125rem; font-weight: 700; line-height: 1; }
-        .date-badge .month { font-size: 0.75rem; line-height: 1; text-transform: uppercase; }
+        .date-badge .day { font-size: 1.125rem; font-weight: 700; line-height: 1; } /* text-lg font-bold leading-none */
+        .date-badge .month { font-size: 0.75rem; line-height: 1; text-transform: uppercase; } /* text-xs leading-none uppercase */
 
         /* Location Badge */
         .location-badge {
             display: inline-flex;
             align-items: center;
-            border-radius: 9999px;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.025em;
-            margin-bottom: 0.5rem;
+            border-radius: 9999px; /* rounded-full */
+            padding: 0.25rem 0.75rem; /* px-3 py-1 */
+            font-size: 0.75rem; /* text-xs */
+            font-weight: 600; /* font-semibold */
+            letter-spacing: 0.025em; /* tracking-wide */
         }
         /* Specific City Badges */
-        .nyc-badge { background-color: rgba(59, 130, 246, 0.1); color: #1d4ed8; border: 1px solid rgba(59, 130, 246, 0.3); }
-        .philly-badge { background-color: rgba(16, 185, 129, 0.1); color: #047857; border: 1px solid rgba(16, 185, 129, 0.3); }
+        .nyc-badge { background-color: rgba(59, 130, 246, 0.1); color: #1d4ed8; border: 1px solid rgba(59, 130, 246, 0.3); } /* Blue */
+        .philly-badge { background-color: rgba(16, 185, 129, 0.1); color: #047857; border: 1px solid rgba(16, 185, 129, 0.3); } /* Emerald */
         /* Generic Badge (used for tech hubs for now, can be customized) */
-        .generic-badge { background-color: #e5e7eb; color: #374151; border: 1px solid #d1d5db; }
+        .generic-badge { background-color: #e5e7eb; color: #374151; border: 1px solid #d1d5db; } /* Gray */
 
 
         /* Header Gradient & Accent (Set by theme) */
@@ -132,15 +130,15 @@
         .gradient-accent:hover { opacity: 0.9; }
 
         /* Logo Text & Gradient (Set by theme) */
-        .logo-text { font-weight: 800; letter-spacing: -0.025em; }
+        .logo-text { font-weight: 800; letter-spacing: -0.025em; } /* font-extrabold tracking-tight */
         .text-gradient { transition: background 0.3s ease; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* *** UPDATED Headline Styling for Responsiveness *** */
+        /* Headline Styling for Responsiveness */
         .headline-logo {
             font-size: 3.75rem; /* text-6xl - Base size for mobile */
             line-height: 1;
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.5rem; /* mb-2 */
         }
         .headline-description {
             font-size: 1.25rem; /* text-xl - Base size for mobile */
@@ -153,7 +151,7 @@
         @media (min-width: 640px) { /* sm breakpoint */
             .headline-logo {
                 font-size: 4.5rem; /* text-7xl */
-                margin-bottom: 0.75rem;
+                margin-bottom: 0.75rem; /* mb-3 */
             }
              .headline-description {
                 font-size: 1.5rem; /* text-2xl */
@@ -163,7 +161,7 @@
         @media (min-width: 1024px) { /* lg breakpoint */
             .headline-logo {
                 font-size: 6rem; /* text-9xl */
-                margin-bottom: 1rem;
+                margin-bottom: 1rem; /* mb-4 */
             }
             .headline-description {
                 font-size: 1.875rem; /* text-3xl */
@@ -182,12 +180,22 @@
         .line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
         .line-clamp-3 { overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 
-        /* Custom Date Input Styling */
+        /* Custom Date Input Styling - REFINED for Mobile */
         input[type="date"] { appearance: none; -webkit-appearance: none; position: relative; background-color: white; }
         input[type="date"].custom-date-input {
-            border: 1px solid #d1d5db; border-radius: 0.375rem; padding: 0.5rem 0.75rem;
-            font-size: 0.875rem; line-height: 1.25rem; color: #374151;
+            border: 1px solid #d1d5db; border-radius: 0.375rem;
+            /* Adjusted padding for mobile */
+            padding: 0.375rem 0.625rem; /* py-1.5 px-2.5 */
+            font-size: 0.875rem; line-height: 1.25rem; color: #374151; /* text-sm text-gray-700 */
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            height: 2.25rem; /* Fixed height to match buttons/select */
+            box-sizing: border-box;
+        }
+        /* Larger padding for larger screens */
+        @media (min-width: 640px) {
+             input[type="date"].custom-date-input {
+                 padding: 0.5rem 0.75rem; /* py-2 px-3 */
+             }
         }
         input[type="date"].custom-date-input:focus {
             outline: none; border-color: #4f46e5; /* Default focus color, can be themed if desired */
@@ -197,29 +205,76 @@
         input[type="date"].custom-date-input::-webkit-calendar-picker-indicator {
             background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="%236b7280" style="width:1rem; height:1rem;"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" /></svg>') no-repeat center;
             background-size: 1rem 1rem; cursor: pointer; opacity: 0.7; transition: opacity 0.2s ease;
+            /* Adjust position slightly if needed */
+            position: absolute;
+            right: 0.5rem; /* Adjust as needed */
+            top: 50%;
+            transform: translateY(-50%);
         }
          input[type="date"].custom-date-input::-webkit-calendar-picker-indicator:hover { opacity: 1; }
+
+        /* Custom Select Dropdown Styling - REFINED for Mobile */
+        select.custom-select-input {
+            appearance: none; -webkit-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"><path stroke="%236b7280" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 8l4 4 4-4"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1em 1em; /* Adjusted size */
+            padding-right: 2rem; /* Make space for the arrow */
+            border: 1px solid #d1d5db; border-radius: 0.375rem; /* border-gray-300 rounded-md */
+            /* REFINED Padding */
+            padding-top: 0.375rem; padding-bottom: 0.375rem; padding-left: 0.625rem; /* py-1.5 pl-2.5 */
+            font-size: 0.875rem; line-height: 1.25rem; color: #374151; /* text-sm text-gray-700 */
+            background-color: white;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+             /* REFINED Limit width */
+             width: auto; /* Allow shrinking */
+             max-width: 150px; /* Further Reduced max width */
+             height: 2.25rem; /* Fixed height to match buttons/date */
+             box-sizing: border-box;
+        }
+        select.custom-select-input:focus {
+            outline: none; border-color: #4f46e5; /* Default focus color, can be themed */
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.3); /* Default focus shadow */
+        }
+
 
         /* Modal Scrollbar */
         .modal-content::-webkit-scrollbar { width: 6px; }
         .modal-content::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
-        .modal-content::-webkit-scrollbar-thumb { background: #a5b4fc; border-radius: 10px; } /* Default thumb */
-        .modal-content::-webkit-scrollbar-thumb:hover { background: #818cf8; }
+        .modal-content::-webkit-scrollbar-thumb { background: #a5b4fc; border-radius: 10px; } /* Default thumb (indigo-300) */
+        .modal-content::-webkit-scrollbar-thumb:hover { background: #818cf8; } /* Default hover (indigo-400) */
 
         /* Fade In Animation */
         .fade-in { animation: fadeIn 0.4s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* Filter Buttons */
+        /* Filter Buttons (Used for All and Major Cities) - REFINED for Mobile */
         .filter-button {
-            transition: all 0.2s ease-in-out; padding: 0.5rem 1rem; border-radius: 9999px;
-            font-size: 0.875rem; font-weight: 500; border: 1px solid transparent;
+            transition: all 0.2s ease-in-out;
+            /* REFINED Padding for Mobile */
+            padding: 0.375rem 0.75rem; /* py-1.5 px-3 */
+            border-radius: 9999px; /* rounded-full */
+            font-size: 0.875rem; font-weight: 500; border: 1px solid transparent; /* text-sm font-medium */
             cursor: pointer;
             white-space: nowrap; /* Prevent button text wrapping */
+            line-height: 1.25rem; /* Ensure consistent height */
+            height: 2.25rem; /* Fixed height to match select/date */
+            box-sizing: border-box;
+            display: inline-flex; /* Ensure vertical alignment */
+            align-items: center; /* Ensure vertical alignment */
         }
+        /* Slightly larger padding for larger screens */
+         @media (min-width: 640px) {
+             .filter-button {
+                 padding: 0.375rem 0.875rem; /* py-1.5 px-3.5 */
+             }
+         }
         .filter-button.active { /* Active state colors set by theme */ }
-        .filter-button:not(.active) { background-color: #e5e7eb; color: #374151; border-color: #d1d5db; }
-        .filter-button:not(.active):hover { background-color: #d1d5db; border-color: #9ca3af; }
+        .filter-button:not(.active) { background-color: #e5e7eb; color: #374151; border-color: #d1d5db; } /* bg-gray-200 text-gray-700 border-gray-300 */
+        .filter-button:not(.active):hover { background-color: #d1d5db; border-color: #9ca3af; } /* hover:bg-gray-300 hover:border-gray-400 */
+
 
         /* Suggestion Modal Specific Styles */
         #suggest-modal .modal-content { /* No specific styles needed currently */ }
@@ -251,56 +306,76 @@
              /* Active background color set by theme */
         }
 
+        /* Location Status Styling */
+        #location-status, #location-status-mobile {
+            font-size: 0.875rem; /* text-sm */
+            padding: 0.5rem 1rem; /* px-4 py-2 */
+            border-radius: 0.375rem; /* rounded-md */
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem; /* space-x-2 */
+            transition: all 0.3s ease;
+        }
+        .status-pending { background-color: #fef3c7; color: #92400e; border: 1px solid #fde68a; } /* amber */
+        .status-success { background-color: #dcfce7; color: #166534; border: 1px solid #bbf7d0; } /* green */
+        .status-error { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; } /* red */
+        .status-unavailable { background-color: #e5e7eb; color: #374151; border: 1px solid #d1d5db; } /* gray */
+
+
         /* --- Theme Specific Styles --- */
 
         /* Default: Finance Theme (Indigo/Blue) */
         .theme-finance { background-color: #f3f4f6; } /* Light gray background */
-        .theme-finance .gradient-bg { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); }
-        .theme-finance .gradient-accent { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
-        .theme-finance .text-gradient { background: linear-gradient(to right, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .theme-finance .filter-button.active { background-color: #4f46e5; color: white; box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2); }
+        .theme-finance .gradient-bg { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); } /* gray-800 to gray-900 */
+        .theme-finance .gradient-accent { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); } /* indigo-600 to purple-600 */
+        .theme-finance .text-gradient { background: linear-gradient(to right, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } /* blue-400 to purple-400 */
+        .theme-finance .filter-button.active { background-color: #4f46e5; color: white; box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2); } /* indigo-600 */
         .theme-finance .date-badge { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); box-shadow: 0 2px 5px rgba(79, 70, 229, 0.3); }
-        .theme-finance #loading i { color: #4f46e5; }
-        .theme-finance .category-switch-button.active { background-color: #4f46e5; } /* Active Finance Button */
-        .theme-finance .event-card .view-details { background-color: #eef2ff; color: #4338ca; } /* Indigo light */
-        .theme-finance .event-card .view-details:hover { background-color: #e0e7ff; }
+        .theme-finance #loading i { color: #4f46e5; } /* indigo-600 */
+        .theme-finance .category-switch-button.active { background-color: #4f46e5; } /* Active Finance Button: indigo-600 */
+        .theme-finance .event-card .view-details { background-color: #eef2ff; color: #4338ca; } /* Indigo light: bg-indigo-50 text-indigo-700 */
+        .theme-finance .event-card .view-details:hover { background-color: #e0e7ff; } /* hover:bg-indigo-100 */
         .theme-finance #modal-content .bg-indigo-50 { background-color: #eef2ff; } /* Modal details box */
         .theme-finance #modal-content .border-indigo-100 { border-color: #e0e7ff; }
         .theme-finance #modal-content .text-indigo-600 { color: #4f46e5; } /* Icon/text color in modal date box */
         .theme-finance #modal-content .text-indigo-500 { color: #6366f1; } /* Icon color in modal date box */
+        .theme-finance input[type="text"]:focus, .theme-finance .custom-date-input:focus, .theme-finance select.custom-select-input:focus { border-color: #4f46e5; box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.3); }
 
 
         /* AI Theme (Teal/Cyan) */
-        .theme-ai { background-color: #f0fdfa; } /* Very light teal background */
-        .theme-ai .gradient-bg { background: linear-gradient(135deg, #0f766e 0%, #115e59 100%); } /* Darker Teal */
-        .theme-ai .gradient-accent { background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 100%); } /* Teal */
-        .theme-ai .text-gradient { background: linear-gradient(to right, #2dd4bf, #5eead4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .theme-ai .filter-button.active { background-color: #14b8a6; color: white; box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2); }
-        .theme-ai .date-badge { background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); box-shadow: 0 2px 5px rgba(20, 184, 166, 0.3); }
-        .theme-ai #loading i { color: #14b8a6; }
-        .theme-ai .category-switch-button.active { background-color: #14b8a6; } /* Active AI Button */
-        .theme-ai .event-card .view-details { background-color: #f0fdfa; color: #0f766e; } /* Teal light */
-        .theme-ai .event-card .view-details:hover { background-color: #ccfbf1; }
+        .theme-ai { background-color: #f0fdfa; } /* Very light teal background (teal-50) */
+        .theme-ai .gradient-bg { background: linear-gradient(135deg, #0f766e 0%, #115e59 100%); } /* Darker Teal: teal-700 to teal-800 */
+        .theme-ai .gradient-accent { background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 100%); } /* Teal: teal-500 to cyan-400 */
+        .theme-ai .text-gradient { background: linear-gradient(to right, #2dd4bf, #5eead4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } /* cyan-400 to cyan-300 */
+        .theme-ai .filter-button.active { background-color: #14b8a6; color: white; box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2); } /* teal-500 */
+        .theme-ai .date-badge { background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%); box-shadow: 0 2px 5px rgba(20, 184, 166, 0.3); } /* teal-500 to teal-600 */
+        .theme-ai #loading i { color: #14b8a6; } /* teal-500 */
+        .theme-ai .category-switch-button.active { background-color: #14b8a6; } /* Active AI Button: teal-500 */
+        .theme-ai .event-card .view-details { background-color: #f0fdfa; color: #0f766e; } /* Teal light: bg-teal-50 text-teal-700 */
+        .theme-ai .event-card .view-details:hover { background-color: #ccfbf1; } /* hover:bg-teal-100 */
         .theme-ai #modal-content .bg-indigo-50 { background-color: #ccfbf1; } /* Use teal light for modal details box */
-        .theme-ai #modal-content .border-indigo-100 { border-color: #99f6e4; }
-        .theme-ai #modal-content .text-indigo-600 { color: #0d9488; } /* Adjust icon/text colors in modal date box */
-        .theme-ai #modal-content .text-indigo-500 { color: #14b8a6; } /* Adjust icon color in modal date box */
+        .theme-ai #modal-content .border-indigo-100 { border-color: #99f6e4; } /* teal-200 */
+        .theme-ai #modal-content .text-indigo-600 { color: #0d9488; } /* Adjust icon/text colors in modal date box: teal-600 */
+        .theme-ai #modal-content .text-indigo-500 { color: #14b8a6; } /* Adjust icon color in modal date box: teal-500 */
+        .theme-ai input[type="text"]:focus, .theme-ai .custom-date-input:focus, .theme-ai select.custom-select-input:focus { border-color: #14b8a6; box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.3); }
+
 
         /* Cybersecurity Theme (Purple/Pink) */
-        .theme-cyber { background-color: #faf5ff; } /* Very light purple background */
-        .theme-cyber .gradient-bg { background: linear-gradient(135deg, #581c87 0%, #3730a3 100%); } /* Dark Purple/Indigo */
-        .theme-cyber .gradient-accent { background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%); } /* Purple/Fuchsia */
-        .theme-cyber .text-gradient { background: linear-gradient(to right, #c084fc, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .theme-cyber .filter-button.active { background-color: #a855f7; color: white; box-shadow: 0 2px 4px rgba(168, 85, 247, 0.2); }
-        .theme-cyber .date-badge { background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%); box-shadow: 0 2px 5px rgba(168, 85, 247, 0.3); }
-        .theme-cyber #loading i { color: #a855f7; }
-        .theme-cyber .category-switch-button.active { background-color: #a855f7; } /* Active Cyber Button */
-        .theme-cyber .event-card .view-details { background-color: #faf5ff; color: #7e22ce; } /* Purple light */
-        .theme-cyber .event-card .view-details:hover { background-color: #f3e8ff; }
-        .theme-cyber #modal-content .bg-indigo-50 { background-color: #f5f3ff; } /* Use purple light for modal details box */
-        .theme-cyber #modal-content .border-indigo-100 { border-color: #e9d5ff; }
-        .theme-cyber #modal-content .text-indigo-600 { color: #9333ea; } /* Adjust icon/text colors in modal date box */
-        .theme-cyber #modal-content .text-indigo-500 { color: #a855f7; } /* Adjust icon color in modal date box */
+        .theme-cyber { background-color: #faf5ff; } /* Very light purple background (purple-50) */
+        .theme-cyber .gradient-bg { background: linear-gradient(135deg, #581c87 0%, #3730a3 100%); } /* Dark Purple/Indigo: purple-900 to indigo-800 */
+        .theme-cyber .gradient-accent { background: linear-gradient(135deg, #a855f7 0%, #d946ef 100%); } /* Purple/Fuchsia: purple-500 to fuchsia-500 */
+        .theme-cyber .text-gradient { background: linear-gradient(to right, #c084fc, #f472b6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } /* purple-400 to pink-400 */
+        .theme-cyber .filter-button.active { background-color: #a855f7; color: white; box-shadow: 0 2px 4px rgba(168, 85, 247, 0.2); } /* purple-500 */
+        .theme-cyber .date-badge { background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%); box-shadow: 0 2px 5px rgba(168, 85, 247, 0.3); } /* purple-500 to purple-600 */
+        .theme-cyber #loading i { color: #a855f7; } /* purple-500 */
+        .theme-cyber .category-switch-button.active { background-color: #a855f7; } /* Active Cyber Button: purple-500 */
+        .theme-cyber .event-card .view-details { background-color: #faf5ff; color: #7e22ce; } /* Purple light: bg-purple-50 text-purple-700 */
+        .theme-cyber .event-card .view-details:hover { background-color: #f3e8ff; } /* hover:bg-purple-100 */
+        .theme-cyber #modal-content .bg-indigo-50 { background-color: #f5f3ff; } /* Use purple light for modal details box: purple-50 */
+        .theme-cyber #modal-content .border-indigo-100 { border-color: #e9d5ff; } /* purple-200 */
+        .theme-cyber #modal-content .text-indigo-600 { color: #9333ea; } /* Adjust icon/text colors in modal date box: purple-600 */
+        .theme-cyber #modal-content .text-indigo-500 { color: #a855f7; } /* Adjust icon color in modal date box: purple-500 */
+        .theme-cyber input[type="text"]:focus, .theme-cyber .custom-date-input:focus, .theme-cyber select.custom-select-input:focus { border-color: #a855f7; box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.3); }
 
         /* Ensure modal details box text/icons adapt */
          #modal-content .bg-indigo-50 .text-gray-800 { color: #1f2937; } /* Ensure main date text stays dark */
@@ -313,10 +388,10 @@
 
     </style>
 </head>
-<body class="theme-finance"> <input type="file" id="csv-file" accept=".csv" class="hidden"> <header class="gradient-bg text-white">
+<body class="theme-finance"> <header class="gradient-bg text-white">
         <div class="container mx-auto px-4 py-12 md:py-20 text-center">
 
-            <div class="mb-8 flex justify-center gap-x-3 sm:gap-x-4 flex-wrap"> <button id="finance-category-button" class="category-switch-button active">
+            <div class="mb-8 flex justify-center gap-x-2 sm:gap-x-4 flex-wrap"> <button id="finance-category-button" class="category-switch-button active">
                     <i class="fas fa-chart-line mr-1.5 sm:mr-2 text-xs sm:text-sm"></i>Finance
                 </button>
                 <button id="ai-category-button" class="category-switch-button">
@@ -330,15 +405,15 @@
             <div class="mb-4">
                 <span class="headline-logo logo-text text-gradient">NoLeaf</span>
                  <p class="text-xs text-gray-400">
-                    Developed by <a href="https://kamathhrishi.github.io/MyWebsite/about/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-300 transition-colors underline decoration-dotted">Hrishikesh Kamath</a>
+                     Developed by <a href="https://kamathhrishi.github.io/MyWebsite/about/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-300 transition-colors underline decoration-dotted">Hrishikesh Kamath</a>
                  </p>
             </div>
 
-             <h1 class="mb-4 max-w-4xl mx-auto">
-                 <span class="headline-description">The Most Exhaustive List of <span id="category-title-span">Finance & Investment</span> Events</span>
+            <h1 class="mb-4 max-w-4xl mx-auto">
+                 <span class="headline-description">Discover Top <span id="category-title-span">Finance & Investment</span> Events Near You</span>
             </h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Explore <span id="total-event-count-display" class="font-bold text-xl text-white">1800+</span> events across the US.
+            <p class="text-base md:text-lg text-gray-400 mb-8 max-w-3xl mx-auto">
+                Explore over 1800+ events from all over the US!
             </p>
 
             <div class="flex flex-wrap gap-4 justify-center">
@@ -354,34 +429,40 @@
 
     <section class="bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
         <div class="container mx-auto px-4 py-3">
-            <div class="flex flex-col md:flex-row md:items-center justify-center flex-wrap gap-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between flex-wrap gap-y-2 gap-x-2 sm:gap-x-3"> <div id="location-filters-container" class="flex items-center justify-center md:justify-start gap-x-1.5 gap-y-1 flex-shrink-0 order-1 md:order-1 flex-wrap"> <button id="all-locations-filter" data-location="all" class="filter-button active">All Locations</button>
 
-                <div id="location-filters-container" class="flex items-center justify-center gap-2 flex-shrink-0 order-1 flex-wrap"> <button id="all-filter" data-location="all" class="filter-button active">All</button>
-                    <div id="finance-location-filters" class="">
-                         <button id="nyc-filter" data-location="nyc" class="filter-button">New York</button>
-                         <button id="philly-filter" data-location="philly" class="filter-button">Philadelphia</button>
+                    <div id="finance-major-cities" class="flex gap-x-1.5 gap-y-1 flex-wrap"> <button data-location="New York, NY" class="filter-button major-city-button">New York</button>
+                        <button data-location="Philadelphia, PA" class="filter-button major-city-button">Philadelphia</button>
                     </div>
-                    <div id="tech-location-filters" class="hidden">
-                        <button id="sf-filter" data-location="sf" class="filter-button">SF Bay Area</button>
-                        <button id="seattle-filter" data-location="seattle" class="filter-button">Seattle</button>
-                        <button id="austin-filter" data-location="austin" class="filter-button">Austin</button>
-                        <button id="boston-filter" data-location="boston" class="filter-button">Boston</button>
+                    <div id="tech-major-cities" class="hidden flex gap-x-1.5 gap-y-1 flex-wrap"> <button data-location="San Francisco, CA" class="filter-button major-city-button">SF Bay Area</button>
+                        <button data-location="Seattle, WA" class="filter-button major-city-button">Seattle</button>
+                        <button data-location="Austin, TX" class="filter-button major-city-button">Austin</button>
+                        <button data-location="Boston, MA" class="filter-button major-city-button">Boston</button>
+                    </div>
+
+                    <div class="relative">
+                        <select id="hidden location-dropdown" class="hidden custom-select-input">
+                            <option value="all">More Cities...</option>
+                            </select>
                     </div>
                 </div>
 
-                <div class="relative flex-grow md:max-w-lg w-full order-3 md:order-2">
+                <div class="relative flex-grow md:max-w-xs lg:max-w-sm w-full order-3 md:order-2">
                     <input type="text" id="search-input"
-                           placeholder="Search Finance & Investment events, types..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition">
-                    <i class="fas fa-search absolute left-3.5 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                </div>
+                           placeholder="Search..."
+                           class="w-full pl-9 pr-4 py-1.5 border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition h-[2.25rem] box-border"> <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i> </div>
 
-                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-x-3 gap-y-2 w-full md:w-auto order-2 md:order-3">
-                    <label for="start-date" class="text-sm font-medium text-gray-600 flex-shrink-0 whitespace-nowrap">Date From:</label>
-                    <input type="date" id="start-date" class="custom-date-input w-full sm:w-auto">
-                    <label for="end-date" class="text-sm font-medium text-gray-600 ml-0 sm:ml-1 flex-shrink-0 whitespace-nowrap">To:</label>
-                    <input type="date" id="end-date" class="custom-date-input w-full sm:w-auto">
+                <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-x-2 gap-y-2 w-full md:w-auto order-2 md:order-3"> <div id="location-status" class="status-pending mr-0 sm:mr-2 hidden md:inline-flex"> <i class="fas fa-map-marker-alt"></i>
+                        <span>Getting location...</span>
+                    </div>
+                    <label for="start-date" class="text-sm font-medium text-gray-600 flex-shrink-0 whitespace-nowrap hidden sm:inline">From:</label> <input type="date" id="start-date" class="custom-date-input w-full sm:w-auto" aria-label="Start Date">
+                    <label for="end-date" class="text-sm font-medium text-gray-600 ml-0 sm:ml-1 flex-shrink-0 whitespace-nowrap hidden sm:inline">To:</label> <input type="date" id="end-date" class="custom-date-input w-full sm:w-auto" aria-label="End Date">
                 </div>
             </div>
+             <div id="mobile-location-status-container" class="hidden text-center pt-2"> <div id="location-status-mobile" class="hidden status-pending"> <i class="fas fa-map-marker-alt"></i>
+                     <span>Getting location...</span>
+                 </div>
+             </div>
         </div>
     </section>
 
@@ -391,7 +472,7 @@
                 <div>
                     <h2 class="text-3xl font-bold text-gray-800 mb-1">Upcoming Events</h2>
                     <div id="event-count" class="text-gray-600">Loading events...</div>
-                    </div>
+                 </div>
                 <div id="current-date-range" class="flex items-center text-sm text-gray-500 mt-2 md:mt-0 bg-gray-200 px-3 py-1.5 rounded-full">
                     <i class="far fa-calendar-alt mr-2 text-gray-600"></i>
                     <span id="date-range-display">All Dates</span>
@@ -438,7 +519,8 @@
                 </p>
             </div>
              <div class="mt-8 pt-8 border-t border-gray-700">
-                <p class="text-gray-500 text-sm">&copy; 2025 NoLeaf. All rights reserved. | <a href="#" class="hover:text-indigo-300">Privacy Policy</a></p> </div>
+                <p class="text-gray-500 text-sm">&copy; 2025 NoLeaf. All rights reserved. | <a href="#" class="hover:text-indigo-300">Privacy Policy</a></p>
+            </div>
         </div>
     </footer>
 
@@ -451,7 +533,7 @@
                 </button>
             </div>
             <div id="modal-content" class="p-5 md:p-8 overflow-y-auto modal-content flex-grow space-y-6">
-                 </div>
+                </div>
             <div class="p-5 md:p-6 border-t border-gray-200 bg-gray-50 flex justify-end">
                 <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" class="gradient-accent hover:opacity-90 text-white font-medium rounded-lg px-6 py-2.5 inline-flex items-center transition-all shadow hover:shadow-md transform hover:-translate-y-0.5">
                     View Event Website <i class="fas fa-external-link-alt ml-2 text-xs"></i>
@@ -472,23 +554,23 @@
             </div>
             <div class="p-5 md:p-8 overflow-y-auto modal-content flex-grow space-y-4">
                  <p class="text-gray-700 leading-relaxed">
-                      Know of a great finance, AI, or cybersecurity event in the US that we missed? We'd love to hear about it!
+                     Know of a great finance, AI, or cybersecurity event in the US that we missed? We'd love to hear about it!
                  </p>
                  <p class="text-gray-700 leading-relaxed">
-                      Please send the event details (name, date, location, website link) to:
+                     Please send the event details (name, date, location, website link) to:
                  </p>
                  <div class="bg-indigo-50 border border-indigo-200 rounded-md p-3 text-center">
-                      <a href="mailto:kamathhrishi@gmail.com" class="text-indigo-700 font-medium hover:text-indigo-900 hover:underline break-all">
-                           <i class="fas fa-envelope mr-2"></i>kamathhrishi@gmail.com
-                      </a>
+                     <a href="mailto:kamathhrishi@gmail.com" class="text-indigo-700 font-medium hover:text-indigo-900 hover:underline break-all">
+                         <i class="fas fa-envelope mr-2"></i>kamathhrishi@gmail.com
+                     </a>
                  </div>
                  <p class="text-sm text-gray-500 mt-3">
-                      We'll review your suggestion and add it if it fits our criteria. Thanks for helping keep NoLeaf up-to-date!
+                     We'll review your suggestion and add it if it fits our criteria. Thanks for helping keep NoLeaf up-to-date!
                  </p>
             </div>
             <div class="p-4 md:p-5 border-t border-gray-200 bg-gray-50 flex justify-end">
                  <button id="suggest-modal-close-button-alt" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium rounded-lg px-5 py-2 transition-colors">
-                      Close
+                     Close
                  </button>
             </div>
         </div>
@@ -498,14 +580,19 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // --- Global State ---
-            let allEvents = []; // Holds raw data for the current category
-            let currentFilteredEvents = []; // Holds filtered data for display
-            let currentPage = 1;
-            let totalPages = 1;
-            let itemsPerPage = 9; // Default, adjusted dynamically
-            let currentCategory = 'finance'; // Default category
+            let allEvents = []; // Holds all events loaded from CSV for the current category
+            let currentFilteredEvents = []; // Holds events matching current filters
+            let currentPage = 1; // Current page number for pagination
+            let totalPages = 1; // Total number of pages based on filtered events
+            // ** DECREASED ** Initial items per page values
+            let itemsPerPage = 6; // Default for large screens (changed from 9)
+            let currentCategory = 'finance'; // Default category ('finance', 'ai', 'cyber')
+            let userLocation = null; // User's geolocation { lat: number, lon: number } | null
+            let locationStatus = 'pending'; // Geolocation status: 'pending', 'success', 'error', 'unavailable'
+            let isDistanceSortActive = true; // Flag to determine if sorting by distance is active
 
             // --- Configuration ---
+            // Defines settings for each event category
             const categories = {
                 finance: {
                     name: 'Finance & Investment',
@@ -513,7 +600,7 @@
                     themeClass: 'theme-finance',
                     buttonId: 'finance-category-button',
                     titleText: 'Finance & Investment',
-                    locationFilterSetId: 'finance-location-filters',
+                    majorCitySetId: 'finance-major-cities',
                     columnNames: { dateCol: "Event Date", titleCol: "Title", descCol: "Description", urlCol: "URL", locCol: "Event City" }
                 },
                 ai: {
@@ -522,7 +609,7 @@
                     themeClass: 'theme-ai',
                     buttonId: 'ai-category-button',
                     titleText: 'Artificial Intelligence',
-                    locationFilterSetId: 'tech-location-filters',
+                    majorCitySetId: 'tech-major-cities',
                     columnNames: { dateCol: "Event Date", titleCol: "Title", descCol: "Description", urlCol: "URL", locCol: "Event City" }
                 },
                 cyber: {
@@ -531,18 +618,66 @@
                     themeClass: 'theme-cyber',
                     buttonId: 'cyber-category-button',
                     titleText: 'Cybersecurity',
-                    locationFilterSetId: 'tech-location-filters',
+                    majorCitySetId: 'tech-major-cities',
                     columnNames: { dateCol: "Event Date", titleCol: "Title", descCol: "Description", urlCol: "URL", locCol: "Event City" }
                 }
             };
 
+            // --- Major City Definitions (Keys match button data-location) ---
+            // Used to group variations of city names for major city filters
+            const majorCityAliases = {
+                 'New York, NY': ['new york', 'nyc'],
+                 'Philadelphia, PA': ['philadelphia', 'philly'],
+                 'San Francisco, CA': ['san francisco', 'bay area', 'palo alto', 'mountain view', 'san jose', 'menlo park', 'santa clara'],
+                 'Seattle, WA': ['seattle', 'redmond', 'bellevue'],
+                 'Austin, TX': ['austin'],
+                 'Boston, MA': ['boston', 'cambridge'],
+             };
+
+            // --- Pre-compiled City Coordinates ---
+            // Used for distance calculation. Keys should be lowercase "city, st" or just "city".
+            // ** IMPORTANT: EXPAND THIS LIST FOR FULL COVERAGE OF YOUR DATA **
+            const cityCoordinates = {
+                // Finance Hubs
+                "new york, ny": { lat: 40.7128, lon: -74.0060 },
+                "philadelphia, pa": { lat: 39.9526, lon: -75.1652 },
+                // Tech Hubs
+                "san francisco, ca": { lat: 37.7749, lon: -122.4194 },
+                "palo alto, ca": { lat: 37.4419, lon: -122.1430 },
+                "mountain view, ca": { lat: 37.3861, lon: -122.0839 },
+                "san jose, ca": { lat: 37.3387, lon: -121.8853 },
+                "menlo park, ca": { lat: 37.4541, lon: -122.1833 },
+                "santa clara, ca": { lat: 37.3541, lon: -121.9552 },
+                "seattle, wa": { lat: 47.6062, lon: -122.3321 },
+                "redmond, wa": { lat: 47.6740, lon: -122.1215 },
+                "bellevue, wa": { lat: 47.6101, lon: -122.2015 },
+                "austin, tx": { lat: 30.2672, lon: -97.7431 },
+                "boston, ma": { lat: 42.3601, lon: -71.0589 },
+                "cambridge, ma": { lat: 42.3736, lon: -71.1097 },
+                // Other examples
+                "san diego, ca": { lat: 32.7157, lon: -117.1611 },
+                "las vegas, nv": { lat: 36.1699, lon: -115.1398 },
+                "newark, de": { lat: 39.6837, lon: -75.7497 }, // Delaware
+                "newark, nj": { lat: 40.7357, lon: -74.1724 }, // New Jersey!
+                "chicago, il": { lat: 41.8781, lon: -87.6298 },
+                "los angeles, ca": { lat: 34.0522, lon: -118.2437 },
+                "dallas, tx": { lat: 32.7767, lon: -96.7970 },
+                "houston, tx": { lat: 29.7604, lon: -95.3698 },
+                "miami, fl": { lat: 25.7617, lon: -80.1918 },
+                "atlanta, ga": { lat: 33.7490, lon: -84.3880 },
+                "denver, co": { lat: 39.7392, lon: -104.9903 },
+                "washington, dc": { lat: 38.9072, lon: -77.0369 }
+                // Add more cities and their coordinates here...
+            };
+
+
             // --- DOM Elements ---
+            // Get references to frequently used elements in the HTML
             const eventsContainer = document.getElementById('events-container');
             const loadingIndicator = document.getElementById('loading');
             const noEventsIndicator = document.getElementById('no-events');
             const noEventsMessage = document.getElementById('no-events-message');
             const eventCountEl = document.getElementById('event-count');
-            // *** REMOVED DOM refs for total count ***
             const paginationControlsEl = document.getElementById('pagination-controls');
             const prevPageButton = document.getElementById('prev-page');
             const nextPageButton = document.getElementById('next-page');
@@ -551,6 +686,9 @@
             const startDateInput = document.getElementById('start-date');
             const endDateInput = document.getElementById('end-date');
             const dateRangeDisplay = document.getElementById('date-range-display');
+            const locationStatusEl = document.getElementById('location-status'); // Desktop status
+            const locationStatusMobileEl = document.getElementById('location-status-mobile'); // Mobile status
+            const mobileLocationStatusContainer = document.getElementById('mobile-location-status-container'); // Container for mobile status
             const eventModal = document.getElementById('event-modal');
             const modalTitle = document.getElementById('modal-title');
             const modalContent = document.getElementById('modal-content');
@@ -562,105 +700,108 @@
             const suggestModalCloseButtonAlt = document.getElementById('suggest-modal-close-button-alt');
             const categoryTitleSpan = document.getElementById('category-title-span');
             const locationFiltersContainer = document.getElementById('location-filters-container');
-            const financeLocationFilters = document.getElementById('finance-location-filters');
-            const techLocationFilters = document.getElementById('tech-location-filters');
-            const allFilterButton = document.getElementById('all-filter');
-            const locationFilterButtons = locationFiltersContainer.querySelectorAll('.filter-button:not(#all-filter)');
-            const eventSchemaPlaceholder = document.getElementById('event-schema-placeholder');
+            const allLocationsFilterButton = document.getElementById('all-locations-filter');
+            const locationDropdown = document.getElementById('location-dropdown');
+            const financeMajorCitiesDiv = document.getElementById('finance-major-cities');
+            const techMajorCitiesDiv = document.getElementById('tech-major-cities');
+            const majorCityButtons = document.querySelectorAll('.major-city-button'); // All major city buttons
+            const eventSchemaPlaceholder = document.getElementById('event-schema-placeholder'); // For JSON-LD
 
 
             // --- Helper Functions ---
 
             /**
-             * Formats a Date object into YYYY-MM-DD string.
+             * Formats a Date object into YYYY-MM-DD string (UTC).
+             * @param {Date} date - The date object to format.
+             * @returns {string} The formatted date string or empty string if invalid.
              */
             function formatDateToYyyyMmDd(date) {
                 if (!date || isNaN(date.getTime())) return '';
-                const year = date.getFullYear();
-                const month = (date.getMonth() + 1).toString().padStart(2, '0');
-                const day = date.getDate().toString().padStart(2, '0');
+                const year = date.getUTCFullYear();
+                const month = (date.getUTCMonth() + 1).toString().padStart(2, '0'); // Months are 0-indexed
+                const day = date.getUTCDate().toString().padStart(2, '0');
                 return `${year}-${month}-${day}`;
             }
 
             /**
-             * Escapes HTML special characters for safe insertion into textContent or attributes.
+             * Escapes HTML special characters to prevent XSS.
+             * @param {string} str - The string to escape.
+             * @returns {string} The escaped string.
              */
             function escapeHTML(str) {
                 if (typeof str !== 'string') return str;
-                return str.replace(/[<>"']/g, match => ({
-                    '<': '&lt;',
-                    '>': '&gt;',
-                    '"': '&quot;',
-                    "'": '&#39;'
-                })[match]);
+                return str.replace(/&/g, '&amp;')
+                          .replace(/</g, '&lt;')
+                          .replace(/>/g, '&gt;')
+                          .replace(/"/g, '&quot;')
+                          .replace(/'/g, '&#39;');
             }
 
-
-             /**
-              * Parses a date string into a UTC Date object.
-              */
-             function parseDate(dateStr, eventRow = null) {
+            /**
+             * Parses a date string into a UTC Date object. Handles YYYY-MM-DD, MM/DD/YYYY,
+             * and attempts general parsing. Uses eventRow for potential fallbacks (e.g., AI category).
+             * @param {string} dateStr - The date string to parse.
+             * @param {object|null} eventRow - The full event data row (optional, for fallbacks).
+             * @returns {Date} A Date object (UTC midnight) or Date(NaN) if parsing fails.
+             */
+            function parseDate(dateStr, eventRow = null) {
                  if (typeof dateStr !== 'string' || !dateStr) return new Date(NaN);
                  let date = new Date(NaN);
                  const trimmedDateStr = dateStr.trim();
 
-                 // Try YYYY-MM-DD format (assumed UTC)
+                 // Try YYYY-MM-DD format first (ensure it's treated as UTC)
                  if (/^\d{4}-\d{2}-\d{2}/.test(trimmedDateStr)) {
-                     date = new Date(trimmedDateStr.substring(0, 10) + 'T00:00:00Z');
+                     date = new Date(trimmedDateStr.substring(0, 10) + 'T00:00:00Z'); // Explicitly UTC
                      if (!isNaN(date.getTime())) return date;
-                     date = new Date(NaN);
+                     date = new Date(NaN); // Reset if invalid
                  }
 
-                 // Try M/D/YYYY format (assume UTC)
+                 // Try MM/DD/YYYY format
                  if (/^\d{1,2}\/\d{1,2}\/\d{4}/.test(trimmedDateStr)) {
-                     const datePart = trimmedDateStr.split(' ')[0];
+                     const datePart = trimmedDateStr.split(' ')[0]; // Ignore time part if present
                      const parts = datePart.split('/');
                      if (parts.length === 3) {
-                          date = new Date(Date.UTC(parseInt(parts[2], 10), parseInt(parts[0], 10) - 1, parseInt(parts[1], 10)));
-                          if (!isNaN(date.getTime())) return date;
-                          date = new Date(NaN);
-                     }
-                 }
-
-                 // Try "Month Day, Year" format
-                 if (isNaN(date.getTime())) {
-                     const potentialDate = new Date(trimmedDateStr + ' UTC');
-                     if (!isNaN(potentialDate.getTime())) {
-                         date = new Date(Date.UTC(potentialDate.getUTCFullYear(), potentialDate.getUTCMonth(), potentialDate.getUTCDate()));
+                         // Month is 0-indexed in Date constructor
+                         date = new Date(Date.UTC(parseInt(parts[2], 10), parseInt(parts[0], 10) - 1, parseInt(parts[1], 10)));
                          if (!isNaN(date.getTime())) return date;
-                          date = new Date(NaN);
+                         date = new Date(NaN); // Reset if invalid
                      }
                  }
 
-                 // Fallback check for AI category's potential duplicate 'Event date' column
-                 const currentConfig = categories[currentCategory];
-                 // Only apply fallback if it's the AI category (identified by titleCol being 'Title')
-                 if (isNaN(date.getTime()) && currentConfig && currentConfig.columnNames.titleCol === 'Title' && currentCategory === 'ai' && eventRow && eventRow['Event date'] && dateStr !== eventRow['Event date']) {
-                      const fallbackDateStr = eventRow['Event date'];
-                      const trimmedFallback = fallbackDateStr.trim();
-                      if (/^\d{4}-\d{2}-\d{2}/.test(trimmedFallback)) {
-                          date = new Date(trimmedFallback.substring(0, 10) + 'T00:00:00Z');
-                      } else if (/^\d{1,2}\/\d{1,2}\/\d{4}/.test(trimmedFallback)) {
-                           const datePart = trimmedFallback.split(' ')[0];
-                           const parts = datePart.split('/');
-                           if (parts.length === 3) {
-                               date = new Date(Date.UTC(parseInt(parts[2], 10), parseInt(parts[0], 10) - 1, parseInt(parts[1], 10)));
-                           }
-                      } else {
-                           const potentialFallbackDate = new Date(trimmedFallback + ' UTC');
-                           if (!isNaN(potentialFallbackDate.getTime())) {
-                               date = new Date(Date.UTC(potentialFallbackDate.getUTCFullYear(), potentialFallbackDate.getUTCMonth(), potentialFallbackDate.getUTCDate()));
-                           }
+                 // Try general JS Date parsing (less reliable, use as fallback)
+                 if (isNaN(date.getTime())) {
+                     // Append UTC to hint the timezone if not already present
+                     const potentialDate = new Date(trimmedDateStr.includes('UTC') ? trimmedDateStr : trimmedDateStr + ' UTC');
+                      if (!isNaN(potentialDate.getTime())) {
+                          // Ensure it's midnight UTC
+                          date = new Date(Date.UTC(potentialDate.getUTCFullYear(), potentialDate.getUTCMonth(), potentialDate.getUTCDate()));
+                          if (!isNaN(date.getTime())) return date;
+                          date = new Date(NaN); // Reset if invalid
                       }
-                      if (!isNaN(date.getTime())) return date;
-                      date = new Date(NaN);
                  }
-                 return date;
-             }
 
+                 // Specific fallback for AI category if primary date failed and a known fallback column exists
+                 const currentConfig = categories[currentCategory];
+                 // Check if it's AI, date is invalid, eventRow exists, 'Event date' column exists, and the original dateStr is different from the fallback
+                 if (isNaN(date.getTime()) && currentCategory === 'ai' && eventRow && eventRow['Event date'] && dateStr !== eventRow['Event date']) {
+                     const fallbackDateStr = eventRow['Event date'];
+                     // console.log(`Attempting fallback date parse for AI: "${fallbackDateStr}" (original: "${dateStr}")`);
+                     date = parseDate(fallbackDateStr); // Recursive call with fallback date (without passing eventRow again)
+                     if (!isNaN(date.getTime())) return date;
+                     date = new Date(NaN); // Reset if fallback also failed
+                 }
+
+                 // Log if still invalid after all attempts
+                 if (isNaN(date.getTime())) {
+                     // console.warn(`Could not parse date: "${dateStr}" for category ${currentCategory}`);
+                 }
+                 return date; // Return the parsed date or Date(NaN)
+             }
 
             /**
              * Formats a Date object into a long format (e.g., "Monday, April 23, 2025").
+             * @param {Date} date - The date object to format.
+             * @returns {string} The formatted date string or "Invalid Date".
              */
             function formatDate(date) {
                 if (!date || isNaN(date.getTime())) return "Invalid Date";
@@ -671,6 +812,8 @@
 
             /**
              * Formats a Date object into a short format (e.g., "Apr 23").
+             * @param {Date} date - The date object to format.
+             * @returns {string} The formatted short date string or "N/A".
              */
             function formatShortDate(date) {
                 if (!date || isNaN(date.getTime())) return "N/A";
@@ -681,13 +824,15 @@
 
             /**
              * Formats a YYYY-MM-DD date string for display (e.g., "Apr 23, 2025").
+             * @param {string} dateStr - The date string in YYYY-MM-DD format.
+             * @returns {string|null} The formatted display date or null if invalid.
              */
             function formatDisplayDate(dateStr) {
                  if (!dateStr) return null;
                  const parts = dateStr.split('-');
                  if (parts.length !== 3) return null;
                  const year = parseInt(parts[0], 10);
-                 const month = parseInt(parts[1], 10) - 1;
+                 const month = parseInt(parts[1], 10) - 1; // Month is 0-indexed
                  const day = parseInt(parts[2], 10);
                  const date = new Date(Date.UTC(year, month, day));
                  if (!isNaN(date.getTime())) {
@@ -696,69 +841,185 @@
                      const displayYear = date.getUTCFullYear();
                      return `${displayMonth} ${displayDay}, ${displayYear}`;
                  }
-                 return null;
-            }
+                 return null; // Return null if the date string is invalid
+             }
 
             /**
              * Gets the UTC midnight Date object for a given Date.
+             * @param {Date} date - The input date.
+             * @returns {Date|null} The Date object set to midnight UTC or null if invalid.
              */
             function getUtcMidnight(date) {
                 if (!date || isNaN(date.getTime())) return null;
                 return new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
             }
 
+            /**
+             * Calculates the distance between two lat/lon points using Haversine formula.
+             * @param {number} lat1 Latitude of point 1.
+             * @param {number} lon1 Longitude of point 1.
+             * @param {number} lat2 Latitude of point 2.
+             * @param {number} lon2 Longitude of point 2.
+             * @returns {number} Distance in kilometers, or Infinity if coordinates are missing.
+             */
+            function calculateDistance(lat1, lon1, lat2, lon2) {
+                if (lat1 == null || lon1 == null || lat2 == null || lon2 == null) {
+                    return Infinity; // Cannot calculate distance if coordinates are missing
+                }
+                const R = 6371; // Radius of the Earth in km
+                const dLat = (lat2 - lat1) * Math.PI / 180;
+                const dLon = (lon2 - lon1) * Math.PI / 180;
+                const a =
+                    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+                const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                const distance = R * c; // Distance in km
+                return distance;
+            }
+
+            /**
+             * Tries to parse a location string into city and state.
+             * Handles formats like "City, ST", "City, State", or just "City".
+             * @param {string} locStr - The location string to parse.
+             * @returns {object} { city: string | null, state: string | null, original: string }
+             */
+            function parseLocationString(locStr) {
+                const result = { city: null, state: null, original: locStr };
+                if (!locStr || typeof locStr !== 'string') return result;
+
+                const trimmed = locStr.trim();
+                // Look for "City, ST" or "City, State" pattern
+                // Allow for spaces around the comma and ensure state is at least 2 letters
+                const commaMatch = trimmed.match(/^(.*?),\s*([A-Za-z. ]{2,})$/);
+
+                if (commaMatch) {
+                    result.city = commaMatch[1].trim().toLowerCase();
+                    let potentialState = commaMatch[2].trim().toLowerCase();
+                    // Basic validation/cleanup for state (e.g., remove periods from D.C.)
+                    potentialState = potentialState.replace(/\./g, '');
+                    result.state = potentialState;
+                } else {
+                    // If no comma pattern, assume the whole string is the city (less accurate)
+                    // Only do this if it doesn't look like just a state abbreviation
+                    if (!/^[A-Za-z]{2}$/.test(trimmed)) {
+                         result.city = trimmed.toLowerCase();
+                    } else {
+                         // If it looks like just a state, treat it as unknown city
+                         result.city = 'unknown';
+                         result.state = trimmed.toLowerCase();
+                    }
+                }
+                // Handle cases like "Washington D.C." where DC might be parsed as city initially
+                if (result.city === 'washington d c') {
+                    result.city = 'washington';
+                    result.state = 'dc';
+                }
+
+                return result;
+            }
+
 
             // --- Theme and UI Management ---
 
             /**
-             * Updates the visibility of location filter sets based on the category.
+             * Updates visibility of major city button sets based on the current category.
+             * @param {string} categoryKey - The key of the current category ('finance', 'ai', 'cyber').
              */
-            function updateLocationFiltersUI(categoryKey) {
-                const financeFilters = document.getElementById('finance-location-filters');
-                const techFilters = document.getElementById('tech-location-filters');
+            function updateMajorCityButtonsUI(categoryKey) {
+                 const categoryConfig = categories[categoryKey];
+                 if (!financeMajorCitiesDiv || !techMajorCitiesDiv || !categoryConfig) return;
+                 // Hide both sets initially
+                 financeMajorCitiesDiv.classList.add('hidden');
+                 techMajorCitiesDiv.classList.add('hidden');
+                 // Show the correct set for the current category
+                 const citySetToShow = document.getElementById(categoryConfig.majorCitySetId);
+                 if (citySetToShow) {
+                     citySetToShow.classList.remove('hidden');
+                 } else {
+                     console.error(`Major city set ID not found: ${categoryConfig.majorCitySetId}`);
+                 }
+             }
 
-                if (!financeFilters || !techFilters) {
-                    console.error("Location filter containers not found!");
-                    return;
+
+            /**
+             * Updates the location status indicator UI.
+             * Hides the mobile version completely and manages the desktop version's visibility.
+             * Uses the global `locationStatus` variable.
+             */
+            function updateLocationStatusUI() {
+                // --- HIDE MOBILE STATUS ---
+                // Ensure the mobile container and its content are always hidden
+                if (mobileLocationStatusContainer) {
+                    mobileLocationStatusContainer.classList.add('hidden');
+                }
+                 if (locationStatusMobileEl) {
+                    locationStatusMobileEl.classList.add('hidden');
+                 }
+                 // --- END HIDE MOBILE STATUS ---
+
+
+                // --- MANAGE DESKTOP STATUS ---
+                if (!locationStatusEl) return; // Only proceed if desktop element exists
+
+                let iconClass = 'fa-map-marker-alt';
+                let text = '';
+                let statusClass = '';
+
+                switch (locationStatus) {
+                    case 'pending':
+                        iconClass = 'fa-spinner fa-spin';
+                        text = 'Getting location...';
+                        statusClass = 'status-pending';
+                        break;
+                    case 'success':
+                        iconClass = 'fa-check-circle';
+                        text = 'Sorting nearby';
+                        statusClass = 'status-success';
+                        break;
+                    case 'error':
+                        iconClass = 'fa-exclamation-triangle';
+                        text = 'Location error';
+                        statusClass = 'status-error';
+                        break;
+                    case 'unavailable':
+                    default:
+                        iconClass = 'fa-map-marker-slash';
+                        text = 'Location N/A';
+                        statusClass = 'status-unavailable';
+                        break;
                 }
 
-                financeFilters.classList.add('hidden');
-                techFilters.classList.add('hidden');
-
-                const categoryConfig = categories[categoryKey];
-                if (categoryConfig) {
-                    const filterSetToShow = document.getElementById(categoryConfig.locationFilterSetId);
-                    if (filterSetToShow) {
-                        filterSetToShow.classList.remove('hidden');
-                    } else {
-                        console.error(`Location filter set ID not found: ${categoryConfig.locationFilterSetId}`);
-                    }
-                }
-                setActiveFilter(allFilterButton); // Reset to 'All' visually
+                // Update the desktop indicator, applying correct visibility class (hidden on small, visible md+)
+                const desktopVisibilityClass = 'hidden md:inline-flex';
+                locationStatusEl.className = `location-status ${statusClass} ${desktopVisibilityClass}`;
+                locationStatusEl.innerHTML = `<i class="fas ${iconClass}"></i><span>${escapeHTML(text)}</span>`;
+                // --- END MANAGE DESKTOP STATUS ---
             }
 
 
             /**
              * Applies the theme and updates UI elements for the selected category.
+             * @param {string} categoryKey - The key of the category to apply ('finance', 'ai', 'cyber').
              */
             function applyTheme(categoryKey) {
                 const categoryConfig = categories[categoryKey];
                 if (!categoryConfig) {
-                     console.error(`Invalid category key for theme: ${categoryKey}`);
-                     return;
+                    console.error(`Invalid category key for theme: ${categoryKey}`);
+                    return;
                 }
                 const themeClass = categoryConfig.themeClass;
                 const buttonId = categoryConfig.buttonId;
-                const titleText = categoryConfig.titleText; // Contains '&' directly
+                const titleText = categoryConfig.titleText;
 
                 console.log(`Applying theme for: ${categoryKey} (${themeClass})`);
 
-                // 1. Update Body Class
+                // 1. Update Body Class: Remove all theme classes then add the current one
                 Object.values(categories).forEach(cat => {
                     document.body.classList.remove(cat.themeClass);
                 });
                 document.body.classList.add(themeClass);
-                currentCategory = categoryKey;
+                currentCategory = categoryKey; // Update global state
 
                 // 2. Update Active Category Button Visual State
                 Object.values(categories).forEach(cat => {
@@ -768,62 +1029,150 @@
                 const activeBtn = document.getElementById(buttonId);
                 if(activeBtn) activeBtn.classList.add('active');
 
-                // 3. Update H1 Title Span (Use innerHTML to render '&' correctly)
-                if (categoryTitleSpan) categoryTitleSpan.innerHTML = titleText; // Use innerHTML
+                // 3. Update H1 Title Span
+                if (categoryTitleSpan) categoryTitleSpan.innerHTML = escapeHTML(titleText);
 
-                // 4. Update search placeholder (Escape for attribute safety)
-                searchInput.placeholder = `Search ${escapeHTML(titleText)} events, types...`;
+                // 4. Update search placeholder
+                if (searchInput) searchInput.placeholder = `Search ${escapeHTML(titleText)} events...`;
 
-                 // 5. Update visible location filters
-                updateLocationFiltersUI(categoryKey);
+                // 5. Update Major City Buttons Visibility
+                updateMajorCityButtonsUI(categoryKey);
+
+                // 6. Reset Location Filter to 'All' (default to distance sort if available)
+                resetLocationFilters();
             }
+
+             /**
+              * Resets all location filters (buttons and dropdown) to the 'All' state.
+              * Enables distance sorting if user location is available.
+              */
+             function resetLocationFilters() {
+                 // Remove 'active' from all filter buttons
+                 locationFiltersContainer?.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+                 // Set 'All Locations' button to active
+                 if (allLocationsFilterButton) allLocationsFilterButton.classList.add('active');
+                 // Reset dropdown selection
+                 if (locationDropdown) locationDropdown.value = 'all';
+                 // Set flag indicating distance sort should be attempted (only if location is available)
+                 isDistanceSortActive = userLocation !== null;
+                 console.log("Location filters reset. Distance sort active:", isDistanceSortActive);
+             }
+
+            // --- Geolocation ---
+
+            /**
+             * Tries to get the user's current location using the Geolocation API.
+             * Updates the UI status and triggers data loading afterwards.
+             */
+            function getUserLocation() {
+                locationStatus = 'pending';
+                isDistanceSortActive = false; // Assume no distance sort until success
+                updateLocationStatusUI(); // Update UI (will hide mobile status now)
+
+                if (!navigator.geolocation) {
+                    console.log("Geolocation is not supported.");
+                    locationStatus = 'unavailable';
+                    updateLocationStatusUI();
+                    loadFromCSV(categories[currentCategory].url); // Load events (will sort by date)
+                    return;
+                }
+
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        // Success callback
+                        userLocation = {
+                            lat: position.coords.latitude,
+                            lon: position.coords.longitude
+                        };
+                        console.log("User location obtained:", userLocation);
+                        locationStatus = 'success';
+                        // Enable distance sort ONLY if the 'All Locations' filter is currently active
+                        isDistanceSortActive = getActiveLocationFilter() === 'all';
+                        updateLocationStatusUI();
+                        loadFromCSV(categories[currentCategory].url); // Load events now that location is known
+                    },
+                    (error) => {
+                        // Error callback
+                        console.error("Error getting user location:", error.message);
+                        userLocation = null;
+                        locationStatus = error.code === error.PERMISSION_DENIED ? 'error' : 'unavailable';
+                        isDistanceSortActive = false; // Disable distance sort
+                        updateLocationStatusUI();
+                        loadFromCSV(categories[currentCategory].url); // Load events (will sort by date)
+                    },
+                    // Geolocation options
+                    { enableHighAccuracy: false, timeout: 10000, maximumAge: 60000 } // Low accuracy, 10s timeout, allow cached location up to 1 min old
+                );
+            }
+
 
             // --- Core Logic: Data Loading and Processing ---
 
             /**
-             * Sets the default date range in the input fields.
+             * Sets the default date range in the input fields (today to 3 months from today, UTC).
              */
             function setDefaultDateRange() {
                 const today = new Date();
-                const oneMonthFromToday = new Date(today);
-                oneMonthFromToday.setMonth(today.getMonth() + 1);
-                const defaultStartDateStr = formatDateToYyyyMmDd(today);
-                const defaultEndDateStr = formatDateToYyyyMmDd(oneMonthFromToday);
+                // Get midnight UTC of today
+                const startOfTodayUTC = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+
+                // Calculate end date: 3 months from today (UTC)
+                const threeMonthsFromTodayUTC = new Date(startOfTodayUTC);
+                threeMonthsFromTodayUTC.setUTCMonth(startOfTodayUTC.getUTCMonth() + 3); // Add 3 months
+
+                // Format dates for input fields (YYYY-MM-DD)
+                const defaultStartDateStr = formatDateToYyyyMmDd(startOfTodayUTC);
+                const defaultEndDateStr = formatDateToYyyyMmDd(threeMonthsFromTodayUTC);
+
+                // Set input values
                 if (startDateInput) startDateInput.value = defaultStartDateStr;
                 if (endDateInput) endDateInput.value = defaultEndDateStr;
+
+                // Update the display text for the date range
                 updateDateRangeDisplay();
             }
 
             /**
-             * Loads and parses event data from a CSV URL for the current category view.
+             * Loads and parses event data from a CSV URL using PapaParse.
+             * @param {string} csvUrl - The URL of the CSV file to load.
              */
             function loadFromCSV(csvUrl) {
                 console.log(`Loading CSV for category '${currentCategory}' from:`, csvUrl);
-                loadingIndicator.style.display = 'block';
-                eventsContainer.innerHTML = '';
-                noEventsIndicator.classList.add('hidden');
-                paginationControlsEl.classList.add('hidden');
-                eventCountEl.innerHTML = `Loading ${categories[currentCategory]?.name || ''} events...`; // Use innerHTML
+                // Show loading state
+                if(loadingIndicator) loadingIndicator.style.display = 'block';
+                if(eventsContainer) eventsContainer.innerHTML = '';
+                if(noEventsIndicator) noEventsIndicator.classList.add('hidden');
+                if(paginationControlsEl) paginationControlsEl.classList.add('hidden');
+                if(eventCountEl) eventCountEl.innerHTML = `Loading ${categories[currentCategory]?.name || ''} events...`;
+
+                // Reset state variables for the new category
                 allEvents = [];
                 currentFilteredEvents = [];
                 currentPage = 1;
+                populateLocationDropdown([]); // Clear dropdown while loading
 
+                // Fetch and parse CSV
                 Papa.parse(csvUrl, {
-                    download: true, header: true, skipEmptyLines: true,
-                    complete: handleParsedData,
-                    error: (err) => {
-                         console.error(`CSV Error for ${csvUrl}:`, err);
-                         handleCSVError(`Could not fetch or parse ${categories[currentCategory]?.name || 'event'} data.`); // Use innerHTML in handleCSVError
+                    download: true, // Fetch the file
+                    header: true, // Use first row as headers
+                    skipEmptyLines: true, // Ignore empty rows
+                    complete: handleParsedData, // Callback on success
+                    error: (err) => { // Callback on error
+                        console.error(`CSV Error for ${csvUrl}:`, err);
+                        handleCSVError(`Could not fetch or parse ${categories[currentCategory]?.name || 'event'} data.`);
                     }
                 });
             }
 
             /**
-             * Handles the parsed CSV data for the current category.
+             * Handles the parsed CSV data from PapaParse.
+             * Processes events, populates dropdowns, and triggers initial display.
+             * @param {object} results - The results object from PapaParse.
              */
             function handleParsedData(results) {
                 try {
-                    loadingIndicator.style.display = 'none';
+                    if(loadingIndicator) loadingIndicator.style.display = 'none'; // Hide loading indicator
+
                     if (results.data && results.data.length > 0) {
                         const categoryConfig = categories[currentCategory];
                         if (!categoryConfig || !categoryConfig.columnNames) {
@@ -832,136 +1181,278 @@
                             return;
                         }
                         const columnNames = categoryConfig.columnNames;
+
+                        // Process the raw data (parse dates, locations, add coords placeholder, initial sort)
                         allEvents = processEvents(results.data, columnNames);
+
+                        // Populate the location dropdown with unique locations from the data
+                        populateLocationDropdown(allEvents);
+
+                        // Initially, all processed events are considered "filtered"
                         currentFilteredEvents = [...allEvents];
-                        currentPage = 1;
+                        currentPage = 1; // Reset to first page
+
+                        // Apply default filters (like date range) and display the first page
                         applyFiltersAndDisplay();
 
                     } else if (results.errors && results.errors.length > 0) {
+                        // Handle errors reported by PapaParse
                         console.error("CSV Parsing Errors:", results.errors);
                         handleCSVError(`Error parsing ${categories[currentCategory]?.name || 'event'} data.`);
                     } else {
-                        showNoEventsMessage(`No ${categories[currentCategory]?.name || 'event'} data found in the source file.`);
+                        // Handle case where CSV is empty or has no valid data rows
+                        showNoEventsMessage(`No ${categories[currentCategory]?.name || 'event'} data found.`);
                         updateEventCount(0);
+                        populateLocationDropdown([]); // Ensure dropdown is empty
                     }
                 } catch (error) {
+                    // Catch any unexpected errors during processing
                     console.error("Error in handleParsedData:", error);
                     handleCSVError(`Error processing ${categories[currentCategory]?.name || 'event'} data.`);
                 }
             }
 
             /**
-             * Handles errors during CSV fetching or parsing for the current view.
+             * Handles errors during CSV fetching or parsing, updating the UI accordingly.
+             * @param {string} [message] - Optional custom error message.
              */
             function handleCSVError(message = `Could not load ${categories[currentCategory]?.name || 'event'} data.`) {
-                loadingIndicator.style.display = 'none';
-                showNoEventsMessage(message); // Message might contain category name with '&', so showNoEventsMessage uses innerHTML
-                updateEventCount(0);
-                paginationControlsEl.classList.add('hidden');
+                if(loadingIndicator) loadingIndicator.style.display = 'none';
+                showNoEventsMessage(message); // Display error message to user
+                updateEventCount(0); // Show 0 events
+                if(paginationControlsEl) paginationControlsEl.classList.add('hidden'); // Hide pagination
+                // Reset event data
                 allEvents = [];
                 currentFilteredEvents = [];
+                populateLocationDropdown([]); // Clear location dropdown
             }
 
             /**
-             * Processes raw event data from the CSV.
+             * Processes raw event data from CSV:
+             * - Parses dates using the defined column name.
+             * - Validates essential fields (date, title, url, location).
+             * - Parses single or multiple location strings (separated by ';').
+             * - Looks up coordinates for parsed locations using the `cityCoordinates` map.
+             * - Adds a placeholder for distance calculation.
+             * - Filters out invalid events.
+             * - Performs an initial sort by date (ascending).
+             * @param {Array<object>} data - Array of raw event objects from PapaParse.
+             * @param {object} columnNames - Object mapping generic names to actual CSV column headers.
+             * @returns {Array<object>} Array of processed and validated event objects.
              */
             function processEvents(data, columnNames) {
                 console.log("Processing raw data rows:", data.length);
-                if (!(data.length > 0 && data[0])) return [];
+                if (!data || data.length === 0) return [];
 
-                const dateCol = columnNames.dateCol;
-                const titleCol = columnNames.titleCol;
-                const descCol = columnNames.descCol;
-                const urlCol = columnNames.urlCol;
-                const locCol = columnNames.locCol;
-
-                let skippedDateCount = 0;
-                let skippedUrlCount = 0;
+                const { dateCol, titleCol, descCol, urlCol, locCol } = columnNames;
+                let skippedDateCount = 0, skippedUrlCount = 0, skippedLocationCount = 0, processedCount = 0;
 
                 const processed = data
                     .map((event, index) => {
-                        let eventDate = parseDate(event[dateCol], event);
+                        // Basic validation: Check if essential columns exist and have some value
+                        if (!event || !event[dateCol] || !event[titleCol] || !event[urlCol] || !event[locCol]) {
+                            // console.warn(`Skipping row ${index + 2}: Missing essential data.`);
+                            return null;
+                        }
+
+                        // Parse Date
+                        let eventDate = parseDate(event[dateCol], event); // Pass entire row for potential fallbacks
                         if (isNaN(eventDate.getTime())) {
-                             skippedDateCount++;
-                             return null;
+                            // console.warn(`Skipping row ${index + 2}: Invalid date "${event[dateCol]}"`);
+                            skippedDateCount++;
+                            return null;
                         }
+
+                        // Validate URL
                         const url = String(event[urlCol] || '').trim();
-                        if (!url || url === '#') {
-                             skippedUrlCount++;
+                        if (!url || url === '#') { // Check for empty or placeholder URLs
+                            // console.warn(`Skipping row ${index + 2}: Invalid URL "${event[urlCol]}"`);
+                            skippedUrlCount++;
+                            return null;
+                        }
+
+                        // Process Location(s)
+                        const originalLocationString = String(event[locCol] || '').trim();
+                        if (!originalLocationString) {
+                             // console.warn(`Skipping row ${index + 2}: Missing location`);
+                             skippedLocationCount++;
                              return null;
                         }
+
+                        // Split potentially multiple locations separated by semicolon
+                        const parsedLocationsData = originalLocationString.split(';')
+                            .map(locStr => parseLocationString(locStr.trim())) // Parse each part
+                            .filter(parsed => parsed.city && parsed.city !== 'unknown'); // Keep only those where a city was found
+
+                        // If after parsing, no valid city was found, skip the event
+                        if (parsedLocationsData.length === 0) {
+                            // console.warn(`Skipping row ${index + 2}: Could not parse valid city from "${originalLocationString}"`);
+                            skippedLocationCount++;
+                            return null;
+                        }
+
+                        // Attempt to get coordinates for each parsed location
+                        const locationsWithCoords = parsedLocationsData.map(parsedLoc => {
+                            let lookupKey = parsedLoc.city;
+                            if (parsedLoc.state) {
+                                // Prioritize lookup with state if available (e.g., "newark, de")
+                                lookupKey = `${parsedLoc.city}, ${parsedLoc.state}`;
+                            }
+                            // Look up using "city, state" first, then fallback to just "city"
+                            const coords = cityCoordinates[lookupKey] || cityCoordinates[parsedLoc.city];
+                            return { ...parsedLoc, coords: coords || null }; // Store coords or null if not found
+                        });
+
+                        processedCount++;
                         return {
                             title: String(event[titleCol] || 'Untitled Event').trim(),
                             description: String(event[descCol] || 'No description available.').trim(),
                             url: url,
-                            date: eventDate,
-                            formattedDate: formatDate(eventDate),
-                            shortDate: formatShortDate(eventDate),
-                            location: String(event[locCol] || 'Location TBD').trim(),
-                            month: eventDate.toLocaleString('default', { month: 'short', timeZone: 'UTC' }),
-                            day: eventDate.getUTCDate()
+                            date: eventDate, // Store the Date object
+                            formattedDate: formatDate(eventDate), // For display (e.g., "Monday, April 23, 2025")
+                            shortDate: formatShortDate(eventDate), // For display (e.g., "Apr 23")
+                            location: originalLocationString, // Keep original string for display consistency
+                            allLocationData: locationsWithCoords, // Array of {city, state, original, coords}
+                            month: eventDate.toLocaleString('default', { month: 'short', timeZone: 'UTC' }), // For date badge
+                            day: eventDate.getUTCDate(), // For date badge
+                            distance: Infinity // Placeholder, calculated later if needed
                         };
                     })
-                    .filter(event => event !== null)
-                    .sort((a, b) => a.date - b.date);
+                    .filter(event => event !== null); // Remove null entries (skipped events)
 
-                if (skippedDateCount > 0 || skippedUrlCount > 0) {
-                    console.log(`Finished processing ${currentCategory}. Skipped ${skippedDateCount} dates, ${skippedUrlCount} URLs.`);
+                // Log summary of processing
+                if (skippedDateCount > 0 || skippedUrlCount > 0 || skippedLocationCount > 0) {
+                    console.log(`Finished processing ${currentCategory}. Processed: ${processedCount}, Skipped Dates: ${skippedDateCount}, Skipped URLs: ${skippedUrlCount}, Skipped Locations: ${skippedLocationCount}.`);
                 }
                 console.log(`Valid events after processing ${currentCategory}:`, processed.length);
-                return processed;
+
+                // Initial sort by date (ascending)
+                return processed.sort((a, b) => a.date - b.date);
             }
 
-            // --- *** REMOVED loadAllEventCounts function *** ---
+
+            /**
+             * Populates the location dropdown with unique *parsed* city, state combinations.
+             * Filters out major city locations already represented by buttons for the current category.
+             * @param {Array<object>} events - The array of processed event objects.
+             */
+            function populateLocationDropdown(events) {
+                if (!locationDropdown) return;
+                const uniqueLocationStrings = new Set();
+                const majorCityButtonLocations = new Set();
+
+                // Get locations represented by the currently visible major city buttons
+                const currentMajorCitySetId = categories[currentCategory]?.majorCitySetId;
+                const visibleMajorCityDiv = document.getElementById(currentMajorCitySetId);
+                visibleMajorCityDiv?.querySelectorAll('.major-city-button').forEach(btn => {
+                    // Store the data-location value (which should be "City, ST") in lowercase
+                    majorCityButtonLocations.add(btn.dataset.location?.toLowerCase());
+                });
+
+                // Collect unique locations from events, excluding those covered by major city buttons
+                events.forEach(event => {
+                    event.allLocationData.forEach(locData => {
+                        if (locData.city && locData.city !== 'unknown') {
+                            // Create the "city, st" or "city" string (lowercase) for comparison and dropdown value
+                            const locStringLower = locData.state
+                                ? `${locData.city}, ${locData.state}`
+                                : locData.city;
+
+                            // Only add if it's NOT one of the major city button locations
+                            if (!majorCityButtonLocations.has(locStringLower)) {
+                                uniqueLocationStrings.add(locStringLower);
+                            }
+                        }
+                    });
+                });
+
+                // Sort alphabetically
+                const sortedLocations = [...uniqueLocationStrings].sort((a, b) => a.localeCompare(b));
+
+                // Populate dropdown
+                locationDropdown.innerHTML = '<option value="all">More Cities...</option>'; // Reset with default option
+                sortedLocations.forEach(locStr => {
+                    const option = document.createElement('option');
+                    // Value should be the "city, st" or "city" string (lowercase)
+                    option.value = escapeHTML(locStr);
+                    // Text content should be nicely capitalized for display
+                    option.textContent = escapeHTML(locStr.split(', ').map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(', '));
+                    locationDropdown.appendChild(option);
+                });
+                 locationDropdown.value = 'all'; // Ensure default selection after populating
+            }
 
 
             // --- Core Logic: Display and UI Updates ---
 
             /**
-             * Displays the events for the current page.
+             * Displays the events for the current page based on `currentFilteredEvents`.
+             * Adjusts items per page based on screen width and updates pagination.
              */
             function displayCurrentPage() {
-                 eventsContainer.innerHTML = '';
-                 noEventsIndicator.classList.add('hidden');
+                 if (!eventsContainer || !noEventsIndicator || !paginationControlsEl) return;
 
+                 eventsContainer.innerHTML = ''; // Clear previous events
+                 noEventsIndicator.classList.add('hidden'); // Hide "no events" message initially
+
+                 // Adjust items per page based on viewport width for responsiveness
+                 // ** DECREASED VALUES **
                  const screenWidth = window.innerWidth;
-                 if (screenWidth < 640) { itemsPerPage = 4; }
-                 else if (screenWidth < 1024) { itemsPerPage = 8; }
-                 else { itemsPerPage = 9; }
+                 if (screenWidth < 640) { itemsPerPage = 3; } // Small screens (mobile) - Reduced from 4
+                 else if (screenWidth < 1024) { itemsPerPage = 6; } // Medium screens (tablet) - Reduced from 8
+                 else { itemsPerPage = 6; } // Large screens (desktop) - Reduced from 9
 
+                 // Recalculate total pages based on current filtered events and itemsPerPage
                  totalPages = Math.max(1, Math.ceil(currentFilteredEvents.length / itemsPerPage));
+                 // Ensure currentPage is within valid bounds (e.g., if filters reduce total pages)
                  currentPage = Math.max(1, Math.min(currentPage, totalPages));
 
+                 // Calculate start and end index for pagination
                  const startIndex = (currentPage - 1) * itemsPerPage;
                  const endIndex = startIndex + itemsPerPage;
                  const paginatedItems = currentFilteredEvents.slice(startIndex, endIndex);
 
-                 console.log(`Displaying page ${currentPage}/${totalPages}. Items ${startIndex}-${endIndex - 1} (PerPage: ${itemsPerPage}) for ${currentCategory}`);
+                 console.log(`Displaying page ${currentPage}/${totalPages}. Items ${startIndex}-${endIndex - 1} of ${currentFilteredEvents.length}. Items/Page: ${itemsPerPage}. Distance Sort Active: ${isDistanceSortActive}`);
 
                  if (currentFilteredEvents.length === 0) {
-                     showNoEventsMessage(); // Uses default message which includes category name
-                     paginationControlsEl.classList.add('hidden');
+                     // If no events match filters at all
+                     showNoEventsMessage(); // Show the "no events found" message
+                     paginationControlsEl.classList.add('hidden'); // Hide pagination
                  } else if (paginatedItems.length === 0 && currentPage > 1) {
-                     currentPage--;
-                     displayCurrentPage();
+                     // If current page is somehow out of bounds (e.g., after filtering), go back to page 1
+                     console.log("Current page empty, resetting to page 1");
+                     currentPage = 1;
+                     displayCurrentPage(); // Re-render page 1
                  } else {
+                     // Display the events for the current page
                      paginatedItems.forEach(event => {
-                         if (!event) return;
-                         let locationBadgeClass = 'generic-badge';
-                         const locLower = event.location.toLowerCase();
-                         if (locLower.includes('new york') || locLower.includes('nyc')) locationBadgeClass = 'nyc-badge';
-                         else if (locLower.includes('philadelphia') || locLower.includes('philly')) locationBadgeClass = 'philly-badge';
+                         if (!event) return; // Skip if event data is somehow null
 
+                         // Determine location badge class (simple matching based on original string)
+                         let locationBadgeClass = 'generic-badge';
+                         const primaryLocLower = event.location.toLowerCase();
+                         if (primaryLocLower.includes('new york') || primaryLocLower.includes('nyc')) locationBadgeClass = 'nyc-badge';
+                         else if (primaryLocLower.includes('philadelphia') || primaryLocLower.includes('philly')) locationBadgeClass = 'philly-badge';
+                         // Add more specific badges here if needed (e.g., tech hubs)
+
+                         // Generate distance text only if distance sort is active and distance is calculated (not Infinity)
+                         const distanceText = (isDistanceSortActive && event.distance !== Infinity)
+                             ? `<span class="text-xs text-gray-500 ml-auto pl-2 whitespace-nowrap">(${Math.round(event.distance)} km away)</span>`
+                             : '';
+
+                         // Create card element using template literal
                          const card = document.createElement('div');
-                         card.className = 'event-card relative fade-in';
-                         // Use escapeHTML for data attributes and textContent
+                         card.className = 'event-card relative fade-in'; // Add fade-in animation class
                          card.innerHTML = `
                              <div class="date-badge z-10">
                                  <span class="day">${escapeHTML(String(event.day))}</span>
                                  <span class="month">${escapeHTML(event.month)}</span>
                              </div>
-                             <div class="event-card-content pt-12">
-                                 <span class="location-badge ${locationBadgeClass}"><i class="fas fa-map-marker-alt mr-1.5 text-xs"></i>${escapeHTML(event.location)}</span>
+                             <div class="event-card-content pt-12"> <div class="flex items-center justify-between mb-2 flex-wrap">
+                                     <span class="location-badge ${locationBadgeClass} mr-2">
+                                         <i class="fas fa-map-marker-alt mr-1.5 text-xs"></i>${escapeHTML(event.location)}
+                                     </span>
+                                     ${distanceText} </div>
                                  <h3 class="text-lg font-semibold text-gray-800 mb-2 line-clamp-2 hover:text-indigo-600 transition-colors" title="${escapeHTML(event.title)}">
                                      ${escapeHTML(event.title)}
                                  </h3>
@@ -971,9 +1462,12 @@
                                  </div>
                                  <div class="event-card-footer">
                                      <button class="view-details w-full text-center bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-sm font-medium py-2 px-4 rounded-md transition-colors duration-150 flex items-center justify-center"
-                                             data-title="${escapeHTML(event.title)}" data-date="${escapeHTML(event.formattedDate)}"
-                                             data-description="${escapeHTML(event.description)}" data-location="${escapeHTML(event.location)}"
-                                             data-url="${escapeHTML(event.url)}" data-month="${escapeHTML(event.month)}"
+                                             data-title="${escapeHTML(event.title)}"
+                                             data-date="${escapeHTML(event.formattedDate)}"
+                                             data-description="${escapeHTML(event.description)}"
+                                             data-location="${escapeHTML(event.location)}" /* Pass original location string */
+                                             data-url="${escapeHTML(event.url)}"
+                                             data-month="${escapeHTML(event.month)}"
                                              data-day="${escapeHTML(String(event.day))}"
                                              data-start-date-iso="${escapeHTML(formatDateToYyyyMmDd(event.date))}">
                                          View Details <i class="fas fa-arrow-right ml-2 text-xs"></i>
@@ -982,111 +1476,144 @@
                              </div>`;
                          eventsContainer.appendChild(card);
                      });
-                     addDetailButtonListeners();
+
+                     // Update and show pagination controls
                      updatePaginationControls();
                      paginationControlsEl.classList.remove('hidden');
                  }
-            }
+             }
 
             /**
-             * Adds click event listeners to "View Details" buttons.
+             * Sets up event delegation for "View Details" buttons on the events container.
+             * This only needs to be called once during initialization.
              */
-            function addDetailButtonListeners() {
-                const oldButtons = eventsContainer.querySelectorAll('.view-details');
-                oldButtons.forEach(button => {
-                    const newButton = button.cloneNode(true);
-                    button.parentNode.replaceChild(newButton, button);
-                });
-                eventsContainer.querySelectorAll('.view-details').forEach(button => {
-                    button.addEventListener('click', function() {
+            function setupDetailButtonListener() {
+                if (!eventsContainer) return;
+                // Listen for clicks on the container itself
+                eventsContainer.addEventListener('click', function(e) {
+                    // Find the closest ancestor button with the 'view-details' class
+                    const button = e.target.closest('.view-details');
+                    if (button) {
+                        // Extract event data from the button's data attributes
                         const eventData = {
-                            title: this.dataset.title, date: this.dataset.date, description: this.dataset.description,
-                            location: this.dataset.location, url: this.dataset.url, month: this.dataset.month, day: this.dataset.day,
-                            startDateIso: this.dataset.startDateIso
+                            title: button.dataset.title,
+                            date: button.dataset.date, // Formatted date string
+                            description: button.dataset.description,
+                            location: button.dataset.location, // Original location string
+                            url: button.dataset.url,
+                            month: button.dataset.month, // Short month name
+                            day: button.dataset.day, // Day number
+                            startDateIso: button.dataset.startDateIso // YYYY-MM-DD format for schema
                         };
+                        // Show the modal with the extracted data
                         showEventDetails(eventData);
-                    });
+                    }
                 });
             }
 
             /**
              * Updates the text indicating the number of events matching the current filters.
+             * @param {number} count - The number of currently filtered events.
              */
             function updateEventCount(count) {
                  if (eventCountEl) {
                      const categoryName = categories[currentCategory]?.name || 'event';
-                     // Use innerHTML here because categoryName might contain '&'
-                     eventCountEl.innerHTML = `Showing ${count.toLocaleString()} ${categoryName} event${count !== 1 ? 's' : ''} matching filters`;
+                     // Format the count with commas for readability
+                     const formattedCount = count.toLocaleString();
+                     eventCountEl.innerHTML = `Showing ${formattedCount} ${categoryName} event${count !== 1 ? 's' : ''} matching filters`;
                  }
-            }
+             }
 
 
             /**
-             * Shows the "No Events Found" message.
+             * Shows the "No Events Found" message, optionally with a custom message.
+             * Clears the event container and hides pagination.
+             * @param {string|null} [message=null] - Optional custom message to display.
              */
-            function showNoEventsMessage(message = `No ${categories[currentCategory]?.name || 'events'} match your current criteria.`) {
+            function showNoEventsMessage(message = null) {
+                // Construct the default message based on the current category
+                const defaultMessage = `No ${categories[currentCategory]?.name || 'events'} match your current criteria. Try adjusting filters.`;
+                // Use the provided message or the default one
+                const displayMessage = message || defaultMessage;
                  if (noEventsIndicator && noEventsMessage) {
-                     // Use innerHTML here as the default message uses categoryName which might have '&'
-                     noEventsMessage.innerHTML = message;
+                     // Set the message text
+                     noEventsMessage.innerHTML = escapeHTML(displayMessage);
+                     // Make the "no events" container visible
                      noEventsIndicator.classList.remove('hidden');
                  }
-                 eventsContainer.innerHTML = '';
-                 paginationControlsEl.classList.add('hidden');
-            }
+                 // Clear the events container and hide pagination
+                 if(eventsContainer) eventsContainer.innerHTML = '';
+                 if(paginationControlsEl) paginationControlsEl.classList.add('hidden');
+             }
 
             /**
-             * Updates the pagination controls.
+             * Updates the pagination controls (button states and page info text).
              */
             function updatePaginationControls() {
                  if (!pageInfoEl || !prevPageButton || !nextPageButton) return;
+                 // Update page info text
                  pageInfoEl.textContent = `Page ${currentPage} of ${totalPages}`;
+
+                 // Enable/disable previous button
                  prevPageButton.disabled = (currentPage === 1);
                  prevPageButton.classList.toggle('disabled:opacity-50', prevPageButton.disabled);
                  prevPageButton.classList.toggle('disabled:cursor-not-allowed', prevPageButton.disabled);
-                 prevPageButton.classList.toggle('disabled:shadow-none', prevPageButton.disabled);
+                 prevPageButton.classList.toggle('disabled:shadow-none', prevPageButton.disabled); // Remove shadow when disabled
+
+                 // Enable/disable next button
                  nextPageButton.disabled = (currentPage >= totalPages);
                  nextPageButton.classList.toggle('disabled:opacity-50', nextPageButton.disabled);
                  nextPageButton.classList.toggle('disabled:cursor-not-allowed', nextPageButton.disabled);
-                 nextPageButton.classList.toggle('disabled:shadow-none', nextPageButton.disabled);
-            }
+                 nextPageButton.classList.toggle('disabled:shadow-none', nextPageButton.disabled); // Remove shadow when disabled
+             }
 
             /**
-             * Updates the display showing the selected date range.
+             * Updates the display showing the selected date range based on input values.
              */
             function updateDateRangeDisplay() {
                  if (!dateRangeDisplay) return;
                  const startDateVal = startDateInput?.value;
                  const endDateVal = endDateInput?.value;
-                 let text = 'All Dates';
+                 let text = 'All Dates'; // Default text
+
                  try {
+                     // Format the start and end dates for display (e.g., "Apr 23, 2025")
                      const start = startDateVal ? formatDisplayDate(startDateVal) : null;
                      const end = endDateVal ? formatDisplayDate(endDateVal) : null;
+
+                     // Construct the display string
                      if (start && end) text = `From ${start} to ${end}`;
                      else if (start) text = `From ${start}`;
                      else if (end) text = `Until ${end}`;
                  } catch (e) {
                      console.error("Error formatting date range for display:", e);
-                     text = "Invalid Date Range";
+                     text = "Invalid Date Range"; // Show error if formatting fails
                  }
-                 dateRangeDisplay.textContent = text;
-            }
+                 dateRangeDisplay.textContent = text; // Update the element's text
+             }
 
             /**
              * Populates and shows the event details modal.
+             * Adds JSON-LD schema for the displayed event.
+             * @param {object} eventData - Data for the event to display.
              */
             function showEventDetails(eventData) {
-                 if (!eventData) return;
+                 if (!eventData || !eventModal || !modalTitle || !modalContent || !modalLink) return;
+
+                 // Extract data, providing defaults for safety
                  const title = eventData.title || 'Event Details';
                  const description = eventData.description || 'No description available.';
-                 const location = eventData.location || 'Location TBD';
+                 const location = eventData.location || 'Location TBD'; // Original string
                  const formattedDate = eventData.date || 'Date TBD';
                  const url = eventData.url;
                  const monthShort = eventData.month || '?';
                  const dayOfMonth = eventData.day || '?';
-                 const startDateIso = eventData.startDateIso;
+                 const startDateIso = eventData.startDateIso; // YYYY-MM-DD format
 
-                 modalTitle.textContent = escapeHTML(title); // Use textContent for safety
-                 // Use escapeHTML for potentially user-influenced data
+                 // Populate Modal Title
+                 modalTitle.textContent = escapeHTML(title);
+
+                 // Populate Modal Content using template literal
                  modalContent.innerHTML = `
                      <div class="space-y-5">
                          <div class="bg-indigo-50 rounded-lg p-4 flex items-start border border-indigo-100">
@@ -1106,136 +1633,223 @@
                          </div>
                          <div>
                              <h4 class="text-lg font-semibold text-gray-800 mb-2">About This Event</h4>
-                             <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">${escapeHTML(description)}</p>
-                         </div>
+                             <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">${escapeHTML(description)}</p> </div>
                          <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
                              <div class="flex items-center text-blue-800">
                                  <i class="fas fa-info-circle mr-2 fa-fw"></i>
                                  <span class="font-medium text-sm">Event Information</span>
                              </div>
-                              <p class="text-blue-700 text-sm mt-1.5">This is a ${categories[currentCategory]?.name || 'curated'} event listed by NoLeaf.</p>
+                              <p class="text-blue-700 text-sm mt-1.5">This is a ${escapeHTML(categories[currentCategory]?.name || 'curated')} event listed by NoLeaf. Please verify details on the official event website.</p>
                          </div>
                      </div>`;
-                 modalLink.href = url; // URL is assumed safe from config/CSV
-                 modalLink.classList.remove('opacity-50', 'cursor-not-allowed');
-                 modalLink.setAttribute('target', '_blank');
+
+                 // Set Modal Link (View Event Website button)
+                 if (url) {
+                     modalLink.href = url;
+                     modalLink.classList.remove('opacity-50', 'cursor-not-allowed');
+                     modalLink.setAttribute('target', '_blank'); // Open in new tab
+                     modalLink.style.display = 'inline-flex'; // Ensure button is visible
+                 } else {
+                     // Hide or disable link if URL is missing
+                     modalLink.href = '#';
+                     modalLink.classList.add('opacity-50', 'cursor-not-allowed');
+                     modalLink.removeAttribute('target');
+                     modalLink.style.display = 'none'; // Hide button if no link
+                 }
+
 
                  // --- Add Event JSON-LD Schema ---
                  if (eventSchemaPlaceholder && startDateIso) {
                      try {
+                         // Use the first location listed (if multiple) for the schema
+                         const primaryLocation = location.split(';')[0].trim();
                          const eventSchema = {
-                             "@context": "https://schema.org", "@type": "Event",
-                             "name": title, "startDate": startDateIso, "description": description, "url": url,
-                             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+                             "@context": "https://schema.org",
+                             "@type": "Event",
+                             "name": title,
+                             "startDate": startDateIso, // Needs YYYY-MM-DD
+                             "description": description,
+                             "url": url,
+                             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", // Assuming physical events
                              "eventStatus": "https://schema.org/EventScheduled",
-                             "location": { "@type": "Place", "name": location, "address": location }
+                             "location": {
+                                 "@type": "Place",
+                                 "name": primaryLocation, // Use parsed primary location name
+                                 "address": primaryLocation // Use name as address for simplicity
+                             }
+                             // Add organizer, endDate, image etc. here if available in your data
                          };
+                         // Add the schema script content
                          eventSchemaPlaceholder.textContent = JSON.stringify(eventSchema, null, 2);
-                         console.log("Added Event Schema:", eventSchema);
                      } catch (e) {
-                          console.error("Error generating event schema:", e);
-                          eventSchemaPlaceholder.textContent = '';
+                         console.error("Error generating event schema:", e);
+                         eventSchemaPlaceholder.textContent = ''; // Clear on error
                      }
                  } else {
-                      eventSchemaPlaceholder.textContent = '';
+                     eventSchemaPlaceholder.textContent = ''; // Clear if no start date
                  }
                  // --- End Schema ---
 
+                 // Show the modal
                  eventModal.classList.remove('hidden');
-                 closeModalButton.focus();
-            }
+                 closeModalButton.focus(); // Set focus to close button for accessibility
+             }
 
             /**
-             * Clears the event schema when the modal is closed.
+             * Clears the event schema script content when the modal is closed.
              */
             function clearEventSchema() {
-                 if (eventSchemaPlaceholder) eventSchemaPlaceholder.textContent = '';
+                if (eventSchemaPlaceholder) eventSchemaPlaceholder.textContent = '';
             }
 
-            // --- Filtering Logic ---
+            // --- Filtering and Sorting Logic ---
 
             /**
-             * Sets the visual active state for the location filter buttons.
+             * Gets the currently active location filter value.
+             * Checks dropdown first, then active filter buttons.
+             * @returns {string} The active location filter value ('all' or specific "city, st" / "city").
              */
-            function setActiveFilter(activeButton) {
-                 locationFiltersContainer.querySelectorAll('.filter-button').forEach(button => button.classList.remove('active'));
-                 if (activeButton) activeButton.classList.add('active');
-                 else if (allFilterButton) allFilterButton.classList.add('active');
+            function getActiveLocationFilter() {
+                // Check dropdown first
+                const selectedDropdownValue = locationDropdown?.value;
+                if (selectedDropdownValue && selectedDropdownValue !== 'all') {
+                    return selectedDropdownValue; // e.g., "newark, de" or "boston" (lowercase)
+                }
+                // If dropdown is 'all', check the active button
+                const activeButton = locationFiltersContainer?.querySelector('.filter-button.active');
+                // Use data-location which should store the specific "City, ST" for major cities or 'all'
+                return activeButton ? (activeButton.dataset.location || 'all') : 'all';
             }
 
+
             /**
-             * Filters events based on current criteria and updates display.
+             * Filters events based on current criteria (search, location, date).
+             * Sorts by distance if 'All Locations' filter is active & user location is available,
+             * otherwise sorts by date. Updates the display.
              */
             function applyFiltersAndDisplay() {
                 const searchTerm = searchInput.value.toLowerCase().trim();
-                const activeFilterButton = locationFiltersContainer.querySelector('.filter-button.active');
-                const currentLocationFilter = activeFilterButton ? activeFilterButton.dataset.location : 'all';
+                const selectedLocationFilter = getActiveLocationFilter(); // e.g., "all", "New York, NY", "newark, de"
                 const startDateVal = startDateInput?.value;
                 const endDateVal = endDateInput?.value;
+
+                // Parse dates, ensuring they are midnight UTC for comparison
                 const startDate = startDateVal ? getUtcMidnight(parseDate(startDateVal)) : null;
                 const endDate = endDateVal ? getUtcMidnight(parseDate(endDateVal)) : null;
 
-                console.log(`Filtering ${currentCategory} with StartDate:`, startDate, "EndDate:", endDate, "Location:", currentLocationFilter, "Search:", searchTerm);
+                // Determine if distance sort should be active based on filter and location availability
+                // Distance sort is ONLY active if 'All Locations' is selected AND we have the user's location.
+                isDistanceSortActive = (selectedLocationFilter === 'all' && userLocation !== null);
 
-                currentFilteredEvents = allEvents.filter(event => {
-                     if (!event || !event.date || isNaN(event.date.getTime())) return false;
-                     const title = event.title || '';
-                     const description = event.description || '';
-                     const location = event.location || '';
+                console.log(`Filtering ${currentCategory}. Search: "${searchTerm}", Location Filter: "${selectedLocationFilter}", Start: ${startDateVal}, End: ${endDateVal}. Distance Sort: ${isDistanceSortActive}`);
 
-                     const searchMatch = searchTerm === '' ||
-                                       title.toLowerCase().includes(searchTerm) ||
-                                       description.toLowerCase().includes(searchTerm) ||
-                                       location.toLowerCase().includes(searchTerm);
+                // 1. Filter events based on search, location, and date
+                let filtered = allEvents.filter(event => {
+                    if (!event || !event.date || isNaN(event.date.getTime())) return false; // Basic validation
 
+                    const title = event.title || '';
+                    const description = event.description || '';
+                    const originalLocation = event.location || ''; // Use original string for search matching
+
+                    // --- Search Term Filter ---
+                    // Check title, description, and original location string
+                    const searchMatch = searchTerm === '' ||
+                                         title.toLowerCase().includes(searchTerm) ||
+                                         description.toLowerCase().includes(searchTerm) ||
+                                         originalLocation.toLowerCase().includes(searchTerm);
+
+                    // --- Location Filter ---
                     let locationFilterMatch = true;
-                    if (currentLocationFilter !== 'all') {
-                        const locLower = location.toLowerCase();
-                        switch (currentLocationFilter) {
-                            case 'nyc': locationFilterMatch = locLower.includes('new york') || locLower.includes('nyc'); break;
-                            case 'philly': locationFilterMatch = locLower.includes('philadelphia') || locLower.includes('philly'); break;
-                            case 'sf': locationFilterMatch = locLower.includes('san francisco') || locLower.includes('bay area') || locLower.includes('palo alto') || locLower.includes('mountain view') || locLower.includes('san jose') || locLower.includes('menlo park') || locLower.includes('santa clara'); break;
-                            case 'seattle': locationFilterMatch = locLower.includes('seattle') || locLower.includes('redmond') || locLower.includes('bellevue'); break;
-                            case 'austin': locationFilterMatch = locLower.includes('austin'); break;
-                            case 'boston': locationFilterMatch = locLower.includes('boston') || locLower.includes('cambridge'); break;
-                            default: locationFilterMatch = false;
+                    if (selectedLocationFilter !== 'all') {
+                        const filterLower = selectedLocationFilter.toLowerCase();
+                        // Check if the filter matches a major city button's data-location (e.g., "New York, NY")
+                        const majorCityKey = Object.keys(majorCityAliases).find(key => key.toLowerCase() === filterLower);
+
+                        if (majorCityKey) {
+                             // If it's a major city filter, check if the event's *original* location string contains any alias for that city
+                             const aliases = majorCityAliases[majorCityKey];
+                             locationFilterMatch = aliases.some(alias => originalLocation.toLowerCase().includes(alias));
+                        } else {
+                             // Otherwise (dropdown selection), check if any of the event's *parsed* locations match the filter exactly
+                             // This handles cases where an event might have multiple locations listed (e.g., "Newark, DE; Philadelphia, PA")
+                             locationFilterMatch = event.allLocationData.some(locData => {
+                                 // Reconstruct the "city, st" or "city" string (lowercase) from parsed data
+                                 const eventLocLower = `${locData.city}${locData.state ? `, ${locData.state}` : ''}`;
+                                 return eventLocLower === filterLower;
+                             });
                         }
                     }
 
-                     const eventDateUtc = getUtcMidnight(event.date);
-                     let dateFilterMatch = true;
-                     if (eventDateUtc) {
-                         const startMatch = !startDate || (eventDateUtc >= startDate);
-                         const endMatch = !endDate || (eventDateUtc <= endDate);
-                         dateFilterMatch = startMatch && endMatch;
-                     } else { dateFilterMatch = false; }
+                    // --- Date Filter ---
+                    const eventDateUtc = getUtcMidnight(event.date); // Ensure comparison at midnight UTC
+                    let dateFilterMatch = true;
+                    if (eventDateUtc) {
+                        // Event date must be on or after start date (if specified)
+                        const startMatch = !startDate || (eventDateUtc >= startDate);
+                        // Event date must be on or before end date (if specified)
+                        const endMatch = !endDate || (eventDateUtc <= endDate);
+                        dateFilterMatch = startMatch && endMatch;
+                    } else {
+                        dateFilterMatch = false; // Invalid event date fails filter
+                    }
 
-                     return searchMatch && locationFilterMatch && dateFilterMatch;
-                 });
+                    // Event passes if all filters match
+                    return searchMatch && locationFilterMatch && dateFilterMatch;
+                });
 
-                 currentPage = 1;
-                 displayCurrentPage();
-                 updateEventCount(currentFilteredEvents.length);
-                 updateDateRangeDisplay();
-            }
+                // 2. Calculate distances (if needed) and Sort
+                if (isDistanceSortActive) {
+                    // Calculate distance from user to the *closest* coordinate of the event (if multiple locations)
+                    // console.log("Calculating distances for sorting...");
+                    filtered.forEach(event => {
+                        let minDistance = Infinity;
+                        event.allLocationData.forEach(locData => {
+                            if (locData.coords && userLocation) { // Check if coordinates exist for this location part and user location exists
+                                const dist = calculateDistance(userLocation.lat, userLocation.lon, locData.coords.lat, locData.coords.lon);
+                                if (dist < minDistance) minDistance = dist;
+                            }
+                        });
+                        event.distance = minDistance; // Store the minimum distance found (remains Infinity if no coords found)
+                    });
+                    // Sort primarily by distance (ascending), secondarily by date (ascending)
+                    filtered.sort((a, b) => {
+                        if (a.distance !== b.distance) return a.distance - b.distance;
+                        return a.date - b.date; // Use original Date objects for accurate secondary sorting
+                    });
+                } else {
+                    // Sort by date only (ascending)
+                    // console.log("Sorting by date only.");
+                    filtered.sort((a, b) => a.date - b.date);
+                    // Reset distance for all events if not sorting by it, so it doesn't display stale values
+                    filtered.forEach(event => event.distance = Infinity);
+                }
+
+                // 3. Update state and UI
+                currentFilteredEvents = filtered; // Update the global filtered list
+                 currentPage = 1; // Reset to page 1 after filtering/sorting
+                 displayCurrentPage(); // Display the first page of results
+                 updateEventCount(currentFilteredEvents.length); // Update the count display
+                 updateDateRangeDisplay(); // Update the date range display text
+             }
 
 
             // --- Event Listeners Setup ---
 
             /**
-             * Sets up category switcher listeners.
+             * Sets up category switcher button listeners.
              */
             function setupCategorySwitchers() {
                 Object.keys(categories).forEach(key => {
                     const button = document.getElementById(categories[key].buttonId);
                     if (button) {
                         button.addEventListener('click', () => {
+                            // Only switch if a different category is clicked
                             if (currentCategory !== key) {
                                 console.log(`Switching to category: ${key}`);
-                                applyTheme(key);
-                                searchInput.value = '';
-                                updateDateRangeDisplay();
-                                loadFromCSV(categories[key].url);
+                                applyTheme(key); // Applies theme, resets location filters, updates city buttons
+                                if(searchInput) searchInput.value = ''; // Clear search on category change
+                                // Keep existing date filters
+                                loadFromCSV(categories[key].url); // Reload data for the new category
                             }
                         });
                     } else { console.error(`Category button not found: ${categories[key].buttonId}`); }
@@ -1243,70 +1857,129 @@
             }
 
              /**
-              * Sets up location filter listeners.
+              * Sets up location filter listeners (Dropdown and ALL buttons).
               */
              function setupLocationFilters() {
-                  locationFiltersContainer.querySelectorAll('.filter-button').forEach(button => {
-                       button.addEventListener('click', function() {
-                           setActiveFilter(this);
-                           applyFiltersAndDisplay();
-                       });
-                  });
+                 // Listener for the dropdown
+                 if (locationDropdown) {
+                     locationDropdown.addEventListener('change', function() {
+                         const selectedValue = this.value;
+                         // Deactivate all filter buttons when dropdown is used (except if 'all' is selected)
+                         locationFiltersContainer?.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+                         if (selectedValue === 'all') {
+                             // Activate the 'All Locations' button if dropdown is set back to 'all'
+                             allLocationsFilterButton?.classList.add('active');
+                             isDistanceSortActive = userLocation !== null; // Enable distance sort if location known
+                         } else {
+                             // Specific city selected via dropdown
+                             isDistanceSortActive = false; // Disable distance sort
+                         }
+                         applyFiltersAndDisplay(); // Re-filter and display
+                     });
+                 }
+
+                 // Listener for ALL filter buttons (including 'All Locations' and major city buttons)
+                 if (locationFiltersContainer) {
+                     // Use event delegation on the container
+                     locationFiltersContainer.addEventListener('click', function(e) {
+                         // Check if the clicked element is a filter button
+                         const button = e.target.closest('.filter-button');
+                         if (button) {
+                             // Deactivate all other filter buttons in the container
+                             locationFiltersContainer.querySelectorAll('.filter-button').forEach(btn => {
+                                 if (btn !== button) btn.classList.remove('active');
+                             });
+                             // Activate the clicked button
+                             button.classList.add('active');
+                             // Reset dropdown to 'More Cities...' when a button is clicked
+                             if (locationDropdown) locationDropdown.value = 'all';
+                             // Determine if distance sort should be active (only if 'All Locations' clicked and location known)
+                             isDistanceSortActive = button.id === 'all-locations-filter' && userLocation !== null;
+                             console.log(`Button "${button.dataset.location || 'All'}" clicked. Distance sort: ${isDistanceSortActive}`);
+                             applyFiltersAndDisplay(); // Re-filter and display
+                         }
+                     });
+                 }
              }
 
             // --- Initialize Event Listeners ---
 
-            searchInput.addEventListener('input', applyFiltersAndDisplay);
+            // Search input listener (triggers filtering on input)
+            if (searchInput) searchInput.addEventListener('input', applyFiltersAndDisplay);
+            // Date input listeners (triggers filtering on change)
             if (startDateInput) startDateInput.addEventListener('change', applyFiltersAndDisplay);
             if (endDateInput) endDateInput.addEventListener('change', applyFiltersAndDisplay);
 
-            prevPageButton.addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage--; displayCurrentPage();
-                    window.scrollTo({ top: eventsContainer.offsetTop - 80, behavior: 'smooth' });
-                }
-            });
-            nextPageButton.addEventListener('click', () => {
-                if (currentPage < totalPages) {
-                    currentPage++; displayCurrentPage();
-                    window.scrollTo({ top: eventsContainer.offsetTop - 80, behavior: 'smooth' });
-                }
-            });
+            // Pagination button listeners
+            if (prevPageButton) {
+                prevPageButton.addEventListener('click', () => {
+                    if (currentPage > 1) {
+                        currentPage--;
+                        displayCurrentPage();
+                        // Scroll towards the top of the events section smoothly for better UX
+                        eventsContainer?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            }
+            if (nextPageButton) {
+                nextPageButton.addEventListener('click', () => {
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        displayCurrentPage();
+                        // Scroll towards the top of the events section smoothly for better UX
+                         eventsContainer?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            }
 
-            closeModalButton.addEventListener('click', () => { eventModal.classList.add('hidden'); clearEventSchema(); });
-            eventModal.addEventListener('click', (event) => { if (event.target === eventModal) { eventModal.classList.add('hidden'); clearEventSchema(); } });
+            // Event Modal listeners (close button and clicking outside)
+            if (closeModalButton && eventModal) {
+                 closeModalButton.addEventListener('click', () => { eventModal.classList.add('hidden'); clearEventSchema(); });
+                 // Close modal if clicking on the background overlay
+                 eventModal.addEventListener('click', (event) => {
+                     if (event.target === eventModal) {
+                         eventModal.classList.add('hidden');
+                         clearEventSchema();
+                     }
+                 });
+            }
 
+            // Suggest Event Modal listeners (open, close buttons, clicking outside)
             if (suggestEventButton && suggestModal && closeSuggestModalButton && suggestModalCloseButtonAlt) {
                 suggestEventButton.addEventListener('click', () => { suggestModal.classList.remove('hidden'); closeSuggestModalButton.focus(); });
                 closeSuggestModalButton.addEventListener('click', () => { suggestModal.classList.add('hidden'); });
                 suggestModalCloseButtonAlt.addEventListener('click', () => { suggestModal.classList.add('hidden'); });
+                // Close modal if clicking on the background overlay
                 suggestModal.addEventListener('click', (event) => { if (event.target === suggestModal) suggestModal.classList.add('hidden'); });
             } else { console.error("Suggest Event modal elements not found."); }
 
+            // Global keydown listener (for Escape key to close modals)
              window.addEventListener('keydown', (event) => {
-                  if (event.key === 'Escape') {
-                      if (!eventModal.classList.contains('hidden')) { eventModal.classList.add('hidden'); clearEventSchema(); }
-                      if (!suggestModal.classList.contains('hidden')) suggestModal.classList.add('hidden');
-                  }
+                 if (event.key === 'Escape') {
+                     if (eventModal && !eventModal.classList.contains('hidden')) { eventModal.classList.add('hidden'); clearEventSchema(); }
+                     if (suggestModal && !suggestModal.classList.contains('hidden')) suggestModal.classList.add('hidden');
+                 }
              });
 
+            // Window resize listener (debounced) to adjust items per page
              let resizeTimeout;
              window.addEventListener('resize', () => {
                   clearTimeout(resizeTimeout);
                   resizeTimeout = setTimeout(() => {
                       console.log("Window resized, adjusting items per page and re-displaying.");
+                      // Re-display the current page which will recalculate itemsPerPage and update layout
                       displayCurrentPage();
-                  }, 250);
+                  }, 250); // Debounce resize events to avoid excessive recalculations
              });
 
             // --- Initial Page Load ---
             console.log("Initializing page...");
-            applyTheme(currentCategory); // Apply default theme & UI
-            setDefaultDateRange();       // Set default dates
+            applyTheme(currentCategory); // Apply default theme, UI state, reset location filters
+            setDefaultDateRange();     // Set default dates (today to 3 months)
             setupCategorySwitchers();    // Setup category buttons
-            setupLocationFilters();      // Setup location filter buttons
-            // *** REMOVED call to load total count ***
-            loadFromCSV(categories[currentCategory].url); // Load initial category data
+            setupLocationFilters();      // Setup location filter listeners (buttons and dropdown)
+            setupDetailButtonListener(); // Setup event delegation for detail buttons ONCE
+            getUserLocation();           // Try to get location, which triggers loadFromCSV as the final step
 
         }); // End of DOMContentLoaded
     </script>
