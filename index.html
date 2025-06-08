@@ -1,1872 +1,1934 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y90Q1DKJCC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-Y90Q1DKJCC');
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoLeaf.app - AI Agent Search Platform</title>
-    <style>
-        <style>
-       * {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-}
-
-body {
-   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-   min-height: 100vh;
-   color: #333;
-}
-
-.container {
-   max-width: 1200px;
-   margin: 0 auto;
-   padding: 0 20px;
-}
-
-/* Hero Section */
-.hero {
-   text-align: center;
-   padding: 60px 0 40px;
-   color: white;
-}
-
-.hero h1 {
-   font-size: 3.5rem;
-   font-weight: 700;
-   margin-bottom: 20px;
-   background: linear-gradient(45deg, #fff, #f0f8ff);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   background-clip: text;
-}
-
-.hero p {
-   font-size: 1.4rem;
-   opacity: 0.9;
-   max-width: 600px;
-   margin: 0 auto 40px;
-   line-height: 1.6;
-}
-
-/* Updated Waitlist CTA */
-.waitlist-cta {
-   background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
-   border: 1px solid rgba(255, 255, 255, 0.2);
-   border-radius: 20px;
-   padding: 20px;
-   margin: 0 auto 40px;
-   max-width: 700px;
-   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-   backdrop-filter: blur(8px);
-   -webkit-backdrop-filter: blur(8px);
-   transition: all 0.3s ease;
-}
-
-.waitlist-cta:hover {
-   transform: translateY(-3px);
-   box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
-   background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 100%);
-}
-
-.waitlist-content {
-   display: flex;
-   align-items: center;
-   gap: 15px;
-   color: white;
-}
-
-.waitlist-icon {
-   font-size: 1.8rem;
-   flex-shrink: 0;
-   opacity: 0.9;
-}
-
-.waitlist-text {
-   flex: 1;
-   font-size: 1rem;
-   line-height: 1.5;
-   opacity: 0.95;
-}
-
-.waitlist-label {
-   font-weight: 600;
-   color: #e6f3ff;
-}
-
-.waitlist-btn {
-   background: rgba(255, 255, 255, 0.9);
-   color: #667eea;
-   border: 2px solid rgba(255, 255, 255, 0.3);
-   padding: 12px 24px;
-   border-radius: 25px;
-   font-weight: 700;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   white-space: nowrap;
-   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-}
-
-.waitlist-btn:hover {
-   background: white;
-   color: #5a6fd8;
-   border-color: rgba(255, 255, 255, 0.5);
-   transform: translateY(-2px);
-   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
-}
-
-.search-container {
-   position: relative;
-   max-width: 600px;
-   margin: 0 auto 60px;
-}
-
-.search-bar {
-   width: 100%;
-   padding: 20px 60px 20px 25px;
-   font-size: 1.1rem;
-   border: none;
-   border-radius: 50px;
-   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-   outline: none;
-   transition: all 0.3s ease;
-}
-
-.search-bar:focus {
-   box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-   transform: translateY(-2px);
-}
-
-.search-icon {
-   position: absolute;
-   right: 25px;
-   top: 50%;
-   transform: translateY(-50%);
-   color: #666;
-   font-size: 1.2rem;
-}
-
-/* Main Content */
-.main-content {
-   background: white;
-   min-height: 70vh;
-   border-radius: 20px 20px 0 0;
-   padding: 40px 0;
-   box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
-}
-
-/* Filters */
-.filters {
-   display: flex;
-   gap: 15px;
-   margin-bottom: 30px;
-   flex-wrap: wrap;
-   justify-content: center;
-}
-
-.filter-btn {
-   padding: 10px 20px;
-   border: 2px solid #e1e5e9;
-   background: white;
-   border-radius: 25px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   font-weight: 500;
-}
-
-.filter-btn:hover, .filter-btn.active {
-   border-color: #667eea;
-   background: #667eea;
-   color: white;
-}
-
-/* Cards Grid */
-.cards-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-   gap: 20px;
-   margin-bottom: 40px;
-   align-items: stretch;
-}
-
-.agent-card {
-   background: white;
-   border-radius: 15px;
-   padding: 25px;
-   box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-   transition: all 0.3s ease;
-   border: 1px solid #f0f0f0;
-   position: relative;
-   overflow: hidden;
-   display: flex;
-   flex-direction: column;
-   height: 400px;
-}
-
-.agent-card:hover {
-   transform: translateY(-5px);
-   box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-.card-header {
-   min-height: 70px;
-   display: flex;
-   justify-content: flex-start;
-   align-items: flex-start;
-   margin-bottom: 12px;
-   gap: 12px;
-}
-
-.agent-logo {
-   width: 50px;
-   height: 50px;
-   border-radius: 10px;
-   background: linear-gradient(135deg, #667eea, #764ba2);
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   color: white;
-   font-weight: bold;
-   font-size: 1.2rem;
-   flex-shrink: 0;
-}
-
-.agent-info {
-   flex: 1;
-   overflow: hidden;
-}
-
-.agent-name {
-   font-size: 1.2rem;
-   font-weight: 700;
-   color: #2d3748;
-   margin-bottom: 4px;
-   line-height: 1.3;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   white-space: nowrap;
-}
-
-.agent-tagline {
-   font-size: 0.85rem;
-   color: #718096;
-   font-style: italic;
-   line-height: 1.4;
-   margin-top: 2px;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   white-space: nowrap;
-}
-
-.agent-description {
-   color: #718096;
-   line-height: 1.6;
-   margin-bottom: 15px;
-   flex: 1;
-   display: -webkit-box;
-   -webkit-line-clamp: 4;
-   -webkit-box-orient: vertical;
-   overflow: hidden;
-}
-
-.card-meta {
-   min-height: 60px;
-   display: flex;
-   flex-wrap: wrap;
-   gap: 8px;
-   margin-bottom: 15px;
-   align-content: flex-start;
-}
-
-.meta-badge {
-   padding: 4px 10px;
-   background: #f7fafc;
-   border-radius: 15px;
-   font-size: 0.8rem;
-   color: #4a5568;
-   border: 1px solid #e2e8f0;
-   white-space: nowrap;
-}
-
-.pricing-badge {
-   position: absolute;
-   top: 15px;
-   right: 15px;
-   padding: 4px 12px;
-   border-radius: 15px;
-   font-size: 0.8rem;
-   font-weight: 600;
-   z-index: 1;
-}
-
-.pricing-free {
-   background: #c6f6d5;
-   color: #2f855a;
-}
-
-.pricing-paid {
-   background: #fed7d7;
-   color: #c53030;
-}
-
-.pricing-freemium {
-   background: #fef5e7;
-   color: #dd6b20;
-}
-
-.card-content {
-   flex: 1;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
-}
-
-.card-footer {
-   margin-top: auto;
-   padding-top: 15px;
-   display: flex;
-   justify-content: center;
-   border-top: 1px solid #f0f0f0;
-}
-
-.btn {
-   padding: 12px 24px;
-   border-radius: 8px;
-   text-decoration: none;
-   font-weight: 600;
-   transition: all 0.3s ease;
-   border: none;
-   cursor: pointer;
-   text-align: center;
-}
-
-.btn-primary {
-   background: linear-gradient(135deg, #667eea, #764ba2);
-   color: white;
-}
-
-.btn-primary:hover {
-   transform: translateY(-2px);
-   box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-}
-
-/* Modal Styles */
-.modal-overlay {
-   display: none;
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: rgba(0, 0, 0, 0.7);
-   z-index: 1000;
-   opacity: 0;
-   transition: opacity 0.3s ease;
-}
-
-.modal-overlay.show {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   padding: 20px;
-   opacity: 1;
-}
-
-.modal-content {
-   background: white;
-   border-radius: 20px;
-   padding: 30px;
-   max-width: 800px;
-   width: 100%;
-   max-height: 90vh;
-   overflow-y: auto;
-   position: relative;
-   transform: translateY(50px);
-   transition: transform 0.3s ease;
-}
-
-.modal-overlay.show .modal-content {
-   transform: translateY(0);
-}
-
-.modal-close {
-   position: absolute;
-   top: 20px;
-   right: 20px;
-   background: #f7fafc;
-   border: none;
-   border-radius: 50%;
-   width: 40px;
-   height: 40px;
-   cursor: pointer;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   font-size: 18px;
-   color: #718096;
-   transition: all 0.3s ease;
-}
-
-.modal-close:hover {
-   background: #e2e8f0;
-   color: #4a5568;
-}
-
-.modal-header {
-   display: flex;
-   align-items: center;
-   gap: 20px;
-   margin-bottom: 25px;
-   padding-right: 50px;
-}
-
-.modal-logo {
-   width: 80px;
-   height: 80px;
-   border-radius: 15px;
-   background: linear-gradient(135deg, #667eea, #764ba2);
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   color: white;
-   font-weight: bold;
-   font-size: 1.8rem;
-   flex-shrink: 0;
-}
-
-.modal-title {
-   font-size: 2rem;
-   font-weight: 700;
-   color: #2d3748;
-   margin-bottom: 8px;
-}
-
-.modal-tagline {
-   color: #667eea;
-   font-size: 1.1rem;
-   font-weight: 500;
-}
-
-.modal-pricing-badge {
-   align-self: flex-start;
-   padding: 8px 16px;
-   border-radius: 25px;
-   font-size: 0.9rem;
-   font-weight: 600;
-   margin-left: auto;
-}
-
-.modal-section {
-   margin-bottom: 25px;
-}
-
-.modal-section-title {
-   font-size: 1.2rem;
-   font-weight: 600;
-   color: #2d3748;
-   margin-bottom: 12px;
-   border-bottom: 2px solid #e2e8f0;
-   padding-bottom: 8px;
-}
-
-.modal-description {
-   color: #4a5568;
-   line-height: 1.7;
-   font-size: 1rem;
-}
-
-.modal-details-grid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-   gap: 15px;
-   margin-bottom: 20px;
-}
-
-.modal-detail-item {
-   background: #f7fafc;
-   padding: 15px;
-   border-radius: 10px;
-   border: 1px solid #e2e8f0;
-}
-
-.modal-detail-label {
-   font-size: 0.85rem;
-   color: #718096;
-   font-weight: 500;
-   margin-bottom: 5px;
-}
-
-.modal-detail-value {
-   font-size: 1rem;
-   color: #2d3748;
-   font-weight: 600;
-}
-
-.modal-tags {
-   display: flex;
-   flex-wrap: wrap;
-   gap: 8px;
-}
-
-.modal-tag {
-   padding: 6px 14px;
-   background: #667eea;
-   color: white;
-   border-radius: 20px;
-   font-size: 0.85rem;
-   font-weight: 500;
-}
-
-.modal-integrations, .modal-llms {
-   display: flex;
-   flex-wrap: wrap;
-   gap: 8px;
-}
-
-.modal-integration, .modal-llm {
-   padding: 8px 14px;
-   background: #e6fffa;
-   color: #285e61;
-   border-radius: 20px;
-   font-size: 0.9rem;
-   font-weight: 500;
-   border: 1px solid #b2f5ea;
-}
-
-.modal-actions {
-   display: flex;
-   gap: 15px;
-   margin-top: 30px;
-   padding-top: 20px;
-   border-top: 1px solid #e2e8f0;
-}
-
-.btn-secondary {
-   background: #f7fafc;
-   color: #4a5568;
-   border: 1px solid #e2e8f0;
-}
-
-.btn-secondary:hover {
-   background: #edf2f7;
-   border-color: #cbd5e0;
-}
-
-/* Updated Waitlist Modal */
-.waitlist-modal {
-   background: white;
-   border-radius: 20px;
-   padding: 40px;
-   max-width: 500px;
-   width: 100%;
-   max-height: 90vh;
-   overflow-y: auto;
-   position: relative;
-   transform: translateY(50px);
-   transition: transform 0.3s ease;
-}
-
-.modal-overlay.show .waitlist-modal {
-   transform: translateY(0);
-}
-
-.waitlist-modal h2 {
-   font-size: 2rem;
-   font-weight: 700;
-   margin-bottom: 16px;
-   background: linear-gradient(135deg, #667eea, #764ba2);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   background-clip: text;
-   text-align: center;
-}
-
-.waitlist-modal p {
-   color: #718096;
-   margin-bottom: 30px;
-   text-align: center;
-   line-height: 1.6;
-}
-
-/* Fixed Form Styling */
-.waitlist-form {
-   display: flex;
-   flex-direction: column;
-   gap: 20px;
-   width: 100%;
-}
-
-/* Form group styling - FIXED */
-.form-group {
-   margin-bottom: 20px;
-   width: 100%;
-}
-
-.form-label {
-   display: block;
-   margin-bottom: 8px;
-   font-weight: 600;
-   color: #374151;
-   font-size: 0.95rem;
-   text-align: left;
-}
-
-/* Required field asterisk */
-.required {
-   color: #ef4444;
-   font-weight: 700;
-   margin-left: 3px;
-}
-
-/* FIXED Input Styling */
-.waitlist-input {
-   width: 100%;
-   padding: 15px 20px;
-   border: 2px solid #e2e8f0;
-   border-radius: 12px;
-   font-size: 1rem;
-   transition: all 0.3s ease;
-   outline: none;
-   box-sizing: border-box;
-   font-family: inherit;
-   background: white;
-   display: block;
-}
-
-.waitlist-input:focus {
-   border-color: #667eea;
-   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-.waitlist-textarea {
-   min-height: 120px;
-   resize: vertical;
-   font-family: inherit;
-}
-
-/* Input validation states - FIXED */
-.waitlist-input:required:invalid {
-   border-color: #fecaca;
-   background-color: #fef2f2;
-}
-
-.waitlist-input:required:valid {
-   border-color: #bbf7d0;
-   background-color: #f0fdf4;
-}
-
-.waitlist-input:focus:required:invalid {
-   border-color: #ef4444;
-   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
-}
-
-.waitlist-input:focus:required:valid {
-   border-color: #22c55e;
-   box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
-}
-
-/* Optional field styling */
-.waitlist-input:not([required]) {
-   border-color: #e5e7eb;
-}
-
-.waitlist-input:not([required]):focus {
-   border-color: #667eea;
-   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-.waitlist-submit {
-   background: linear-gradient(135deg, #667eea, #764ba2);
-   color: white;
-   border: none;
-   padding: 16px 32px;
-   border-radius: 12px;
-   font-size: 1.1rem;
-   font-weight: 600;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   transform: translateY(0);
-   width: 100%;
-   margin-top: 10px;
-}
-
-.waitlist-submit:hover {
-   transform: translateY(-2px);
-   box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-   background: linear-gradient(135deg, #5a6fd8, #6a42a0);
-}
-
-.waitlist-submit:disabled {
-   opacity: 0.7;
-   cursor: not-allowed;
-   transform: none;
-   background: #9ca3af;
-}
-
-/* Pagination */
-.pagination {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   gap: 10px;
-   margin-top: 40px;
-}
-
-.pagination-btn {
-   padding: 10px 15px;
-   border: 1px solid #e2e8f0;
-   background: white;
-   border-radius: 8px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   font-weight: 500;
-}
-
-.pagination-btn:hover:not(.disabled) {
-   background: #667eea;
-   color: white;
-   border-color: #667eea;
-}
-
-.pagination-btn.active {
-   background: #667eea;
-   color: white;
-   border-color: #667eea;
-}
-
-.pagination-btn.disabled {
-   opacity: 0.5;
-   cursor: not-allowed;
-}
-
-.pagination-info {
-   color: #718096;
-   font-size: 0.9rem;
-   margin: 0 20px;
-}
-
-/* Empty State */
-.empty-state {
-   text-align: center;
-   padding: 60px 20px;
-   color: #718096;
-}
-
-.empty-state h3 {
-   font-size: 1.5rem;
-   margin-bottom: 10px;
-   color: #4a5568;
-}
-
-/* Loading State */
-.loading {
-   text-align: center;
-   padding: 60px 20px;
-}
-
-.loading-spinner {
-   width: 40px;
-   height: 40px;
-   border: 4px solid #f3f3f3;
-   border-top: 4px solid #667eea;
-   border-radius: 50%;
-   animation: spin 1s linear infinite;
-   margin: 0 auto 20px;
-}
-
-@keyframes spin {
-   0% { transform: rotate(0deg); }
-   100% { transform: rotate(360deg); }
-}
-
-/* Error State */
-.error-state {
-   text-align: center;
-   padding: 60px 20px;
-   color: #e53e3e;
-}
-
-.error-state h3 {
-   font-size: 1.5rem;
-   margin-bottom: 10px;
-   color: #c53030;
-}
-
-.retry-btn {
-   padding: 10px 20px;
-   background: #667eea;
-   color: white;
-   border: none;
-   border-radius: 8px;
-   cursor: pointer;
-   font-weight: 600;
-   margin-top: 15px;
-   transition: all 0.3s ease;
-}
-
-.retry-btn:hover {
-   background: #5a6fd8;
-}
-
-/* Enhanced Mobile Responsive Styles */
-@media (max-width: 768px) {
-   .container {
-       padding: 0 15px;
-   }
-
-   /* Hero Section Mobile */
-   .hero {
-       padding: 40px 0 30px;
-   }
-
-   .hero h1 {
-       font-size: 2.2rem;
-       line-height: 1.2;
-       margin-bottom: 15px;
-   }
-
-   .hero p {
-       font-size: 1rem;
-       margin-bottom: 30px;
-       padding: 0 10px;
-   }
-
-   /* Search Bar Mobile */
-   .search-container {
-       margin-bottom: 40px;
-   }
-
-   .search-bar {
-       padding: 15px 50px 15px 20px;
-       font-size: 1rem;
-   }
-
-   .search-icon {
-       right: 20px;
-       font-size: 1.1rem;
-   }
-
-   /* Waitlist CTA Mobile */
-   .waitlist-cta {
-       padding: 15px;
-       margin: 0 auto 30px;
-       max-width: 100%;
-   }
-
-   .waitlist-content {
-       flex-direction: column;
-       text-align: center;
-       gap: 12px;
-   }
-
-   .waitlist-text {
-       font-size: 0.9rem;
-   }
-
-   .waitlist-btn {
-       align-self: center;
-       padding: 10px 20px;
-       font-size: 0.9rem;
-   }
-
-   /* Main Content Mobile */
-   .main-content {
-       padding: 30px 0;
-       border-radius: 15px 15px 0 0;
-   }
-
-   /* Filters Mobile */
-   .filters {
-       justify-content: flex-start;
-       overflow-x: auto;
-       padding-bottom: 10px;
-       margin-bottom: 25px;
-       gap: 10px;
-   }
-
-   .filter-btn {
-       white-space: nowrap;
-       padding: 8px 16px;
-       font-size: 0.9rem;
-       min-width: max-content;
-   }
-
-   /* Cards Grid Mobile */
-   .cards-grid {
-       grid-template-columns: 1fr;
-       gap: 20px;
-       margin-bottom: 30px;
-   }
-
-   .agent-card {
-       padding: 20px;
-       height: auto;
-       min-height: 320px;
-   }
-
-   .card-header {
-       margin-bottom: 12px;
-       gap: 12px;
-   }
-
-   .agent-logo {
-       width: 45px;
-       height: 45px;
-       font-size: 1.1rem;
-   }
-
-   .agent-name {
-       font-size: 1.2rem;
-   }
-
-   .agent-description {
-       font-size: 0.9rem;
-       margin-bottom: 15px;
-   }
-
-   .meta-badge {
-       font-size: 0.8rem;
-       padding: 4px 10px;
-   }
-
-   .pricing-badge {
-       top: 15px;
-       right: 15px;
-       padding: 4px 12px;
-       font-size: 0.8rem;
-   }
-
-   /* Card Footer Mobile */
-   .card-footer {
-       padding-top: 15px;
-   }
-
-   .btn {
-       padding: 10px 20px;
-       font-size: 0.9rem;
-   }
-
-   /* Modal Mobile */
-   .modal-overlay {
-       padding: 15px;
-   }
-
-   .modal-content {
-       margin: 0;
-       padding: 20px;
-       max-height: 95vh;
-       border-radius: 15px;
-   }
-
-   .modal-close {
-       top: 15px;
-       right: 15px;
-       width: 35px;
-       height: 35px;
-       font-size: 16px;
-   }
-
-   .modal-header {
-       flex-direction: column;
-       text-align: center;
-       padding-right: 0;
-       margin-bottom: 20px;
-       gap: 15px;
-   }
-
-   .modal-logo {
-       width: 70px;
-       height: 70px;
-       font-size: 1.6rem;
-   }
-
-   .modal-title {
-       font-size: 1.6rem;
-       margin-bottom: 5px;
-   }
-
-   .modal-tagline {
-       font-size: 1rem;
-   }
-
-   .modal-pricing-badge {
-       margin: 0;
-       align-self: center;
-   }
-
-   .modal-section {
-       margin-bottom: 20px;
-   }
-
-   .modal-section-title {
-       font-size: 1.1rem;
-       margin-bottom: 10px;
-   }
-
-   .modal-description {
-       font-size: 0.95rem;
-   }
-
-   .modal-details-grid {
-       grid-template-columns: 1fr;
-       gap: 10px;
-   }
-
-   .modal-detail-item {
-       padding: 12px;
-   }
-
-   .modal-actions {
-       flex-direction: column;
-       gap: 10px;
-   }
-
-   /* Waitlist Modal Mobile - FIXED ALIGNMENT */
-   .waitlist-modal {
-       padding: 25px;
-       border-radius: 15px;
-       max-width: 95%;
-       width: 95%;
-   }
-
-   .waitlist-modal h2 {
-       font-size: 1.6rem;
-       margin-bottom: 12px;
-       text-align: center;
-   }
-
-   .waitlist-modal p {
-       font-size: 0.9rem;
-       margin-bottom: 25px;
-       text-align: center;
-   }
-
-   .waitlist-form {
-       display: flex;
-       flex-direction: column;
-       gap: 15px;
-       width: 100%;
-   }
-
-   .form-group {
-       margin-bottom: 15px;
-       width: 100%;
-       display: flex;
-       flex-direction: column;
-   }
-
-   .form-label {
-       font-size: 0.9rem;
-       margin-bottom: 6px;
-       text-align: left;
-       display: block;
-       width: 100%;
-   }
-
-   .waitlist-input {
-       padding: 12px 15px;
-       font-size: 0.95rem;
-       width: 100%;
-       box-sizing: border-box;
-       display: block;
-   }
-
-   .waitlist-textarea {
-       min-height: 100px;
-       width: 100%;
-       box-sizing: border-box;
-       resize: vertical;
-   }
-
-   .waitlist-submit {
-       padding: 14px 28px;
-       font-size: 1rem;
-       width: 100%;
-       margin-top: 10px;
-   }
-
-   /* Pagination Mobile */
-   .pagination {
-       flex-wrap: wrap;
-       gap: 8px;
-       margin-top: 30px;
-   }
-
-   .pagination-btn {
-       padding: 8px 12px;
-       font-size: 0.9rem;
-   }
-
-   .pagination-info {
-       font-size: 0.85rem;
-       margin: 0 10px;
-       order: -1;
-       width: 100%;
-       text-align: center;
-       margin-bottom: 10px;
-   }
-
-   /* Loading/Error/Empty States Mobile */
-.loading, .error-state, .empty-state {
-   padding: 40px 15px;
-}
-
-.loading-spinner {
-   width: 35px;
-   height: 35px;
-   margin-bottom: 15px;
-}
-
-.empty-state h3, .error-state h3 {
-   font-size: 1.3rem;
-   margin-bottom: 8px;
-}
-
-.empty-state p, .error-state p {
-   font-size: 0.9rem;
-}
-
-.retry-btn {
-   padding: 8px 16px;
-   font-size: 0.9rem;
-}
-}
-
-/* Extra Small Mobile (320px - 480px) */
-@media (max-width: 480px) {
-   .hero h1 {
-       font-size: 1.8rem;
-   }
-
-   .hero p {
-       font-size: 0.95rem;
-   }
-
-   .search-bar {
-       padding: 12px 45px 12px 15px;
-       font-size: 0.95rem;
-   }
-
-   .waitlist-text {
-       font-size: 0.85rem;
-   }
-
-   .waitlist-btn {
-       padding: 8px 16px;
-       font-size: 0.85rem;
-   }
-
-   .agent-card {
-       padding: 15px;
-   }
-
-   .agent-name {
-       font-size: 1.1rem;
-   }
-
-   .modal-title {
-       font-size: 1.4rem;
-   }
-
-   .waitlist-modal {
-       padding: 20px;
-       max-width: 98%;
-       width: 98%;
-   }
-
-   .waitlist-modal h2 {
-       font-size: 1.4rem;
-   }
-
-   .form-label {
-       font-size: 0.85rem;
-   }
-
-   .waitlist-input {
-       padding: 10px 12px;
-       font-size: 0.9rem;
-   }
-
-   .waitlist-submit {
-       padding: 12px 24px;
-       font-size: 0.95rem;
-   }
-}
-
-/* Landscape Mobile */
-@media (max-width: 768px) and (orientation: landscape) {
-   .hero {
-       padding: 30px 0 25px;
-   }
-
-   .hero h1 {
-       font-size: 2rem;
-   }
-
-   .modal-content, .waitlist-modal {
-       max-height: 90vh;
-   }
-}
-
-/* Touch-friendly improvements */
-@media (hover: none) and (pointer: coarse) {
-   .btn, .filter-btn, .pagination-btn, .waitlist-btn {
-       min-height: 44px;
-       min-width: 44px;
-   }
-
-   .modal-close {
-       min-height: 44px;
-       min-width: 44px;
-   }
-
-   .search-bar {
-       min-height: 50px;
-   }
-
-   .waitlist-input {
-       min-height: 48px;
-   }
-}
-
-/* Notification Styles */
-.notification {
-   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-   backdrop-filter: blur(10px);
-}
-
-.notification-success {
-   background: linear-gradient(135deg, #48bb78, #38a169) !important;
-}
-
-.notification-error {
-   background: linear-gradient(135deg, #f56565, #e53e3e) !important;
-}
-
-.notification-info {
-   background: linear-gradient(135deg, #667eea, #764ba2) !important;
-}
-</style>
-</style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y90Q1DKJCC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Y90Q1DKJCC');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoLeaf.app - AI Agent Search Platform</title>
+    <style>
+       * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        color: #333;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Events Page Navigation Banner */
+    .events-nav-banner {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 12px;
+        padding: 15px 25px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        max-width: 600px;
+    }
+
+    .events-nav-text {
+        color: white;
+        font-size: 1rem;
+        font-weight: 500;
+        opacity: 0.9;
+    }
+
+    .events-nav-btn {
+        color: #667eea;
+        background-color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 700;
+        padding: 10px 20px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        white-space: nowrap;
+    }
+
+    .events-nav-btn:hover {
+        background-color: #f0f2ff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+
+    /* Hero Section */
+    .hero {
+        text-align: center;
+        /* Adjusted padding to accommodate nav */
+        padding: 20px 0 40px;
+        color: white;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        background: linear-gradient(45deg, #fff, #f0f8ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .hero p {
+        font-size: 1.4rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto 40px;
+        line-height: 1.6;
+    }
+
+    /* Updated Waitlist CTA */
+    .waitlist-cta {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 20px;
+        margin: 0 auto 40px;
+        max-width: 700px;
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .waitlist-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.08) 100%);
+    }
+
+    .waitlist-content {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: white;
+        text-align: left;
+    }
+
+    .waitlist-icon {
+        font-size: 1.8rem;
+        flex-shrink: 0;
+        opacity: 0.9;
+    }
+
+    .waitlist-text {
+        flex: 1;
+        font-size: 1rem;
+        line-height: 1.5;
+        opacity: 0.95;
+    }
+
+    .waitlist-label {
+        font-weight: 600;
+        color: #e6f3ff;
+    }
+
+    .waitlist-btn {
+        background: rgba(255, 255, 255, 0.9);
+        color: #667eea;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        padding: 12px 24px;
+        border-radius: 25px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .waitlist-btn:hover {
+        background: white;
+        color: #5a6fd8;
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .search-container {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto 60px;
+    }
+
+    .search-bar {
+        width: 100%;
+        padding: 20px 60px 20px 25px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+    .search-bar:focus {
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        transform: translateY(-2px);
+    }
+
+    .search-icon {
+        position: absolute;
+        right: 25px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #666;
+        font-size: 1.2rem;
+    }
+
+    /* Main Content */
+    .main-content {
+        background: white;
+        min-height: 70vh;
+        border-radius: 20px 20px 0 0;
+        padding: 40px 0;
+        box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Filters */
+    .filters {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        padding: 10px 20px;
+        border: 2px solid #e1e5e9;
+        background: white;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+        border-color: #667eea;
+        background: #667eea;
+        color: white;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 20px;
+        margin-bottom: 40px;
+        align-items: stretch;
+    }
+
+    .agent-card {
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        border: 1px solid #f0f0f0;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 400px;
+    }
+
+    .agent-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .card-header {
+        min-height: 70px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        gap: 12px;
+    }
+
+    .agent-logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+    }
+
+    .agent-info {
+        flex: 1;
+        overflow: hidden;
+    }
+
+    .agent-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 4px;
+        line-height: 1.3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .agent-tagline {
+        font-size: 0.85rem;
+        color: #718096;
+        font-style: italic;
+        line-height: 1.4;
+        margin-top: 2px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .agent-description {
+        color: #718096;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        flex: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .card-meta {
+        min-height: 60px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 15px;
+        align-content: flex-start;
+    }
+
+    .meta-badge {
+        padding: 4px 10px;
+        background: #f7fafc;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        color: #4a5568;
+        border: 1px solid #e2e8f0;
+        white-space: nowrap;
+    }
+
+    .pricing-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 4px 12px;
+        border-radius: 15px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 1;
+    }
+
+    .pricing-free {
+        background: #c6f6d5;
+        color: #2f855a;
+    }
+
+    .pricing-paid {
+        background: #fed7d7;
+        color: #c53030;
+    }
+
+    .pricing-freemium {
+        background: #fef5e7;
+        color: #dd6b20;
+    }
+
+    .card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-footer {
+        margin-top: auto;
+        padding-top: 15px;
+        display: flex;
+        justify-content: center;
+        border-top: 1px solid #f0f0f0;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.show {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        opacity: 1;
+    }
+
+    .modal-content {
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        max-width: 800px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        transform: translateY(50px);
+        transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.show .modal-content {
+        transform: translateY(0);
+    }
+
+    .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #f7fafc;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        color: #718096;
+        transition: all 0.3s ease;
+    }
+
+    .modal-close:hover {
+        background: #e2e8f0;
+        color: #4a5568;
+    }
+
+    .modal-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
+        padding-right: 50px;
+    }
+
+    .modal-logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 15px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.8rem;
+        flex-shrink: 0;
+    }
+
+    .modal-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 8px;
+    }
+
+    .modal-tagline {
+        color: #667eea;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .modal-pricing-badge {
+        align-self: flex-start;
+        padding: 8px 16px;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-left: auto;
+    }
+
+    .modal-section {
+        margin-bottom: 25px;
+    }
+
+    .modal-section-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 12px;
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 8px;
+    }
+
+    .modal-description {
+        color: #4a5568;
+        line-height: 1.7;
+        font-size: 1rem;
+    }
+
+    .modal-details-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .modal-detail-item {
+        background: #f7fafc;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #e2e8f0;
+    }
+
+    .modal-detail-label {
+        font-size: 0.85rem;
+        color: #718096;
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+
+    .modal-detail-value {
+        font-size: 1rem;
+        color: #2d3748;
+        font-weight: 600;
+    }
+
+    .modal-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .modal-tag {
+        padding: 6px 14px;
+        background: #667eea;
+        color: white;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    .modal-integrations, .modal-llms {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .modal-integration, .modal-llm {
+        padding: 8px 14px;
+        background: #e6fffa;
+        color: #285e61;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border: 1px solid #b2f5ea;
+    }
+
+    .modal-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .btn-secondary {
+        background: #f7fafc;
+        color: #4a5568;
+        border: 1px solid #e2e8f0;
+    }
+
+    .btn-secondary:hover {
+        background: #edf2f7;
+        border-color: #cbd5e0;
+    }
+
+    /* Updated Waitlist Modal */
+    .waitlist-modal {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        max-width: 500px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        position: relative;
+        transform: translateY(50px);
+        transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.show .waitlist-modal {
+        transform: translateY(0);
+    }
+
+    .waitlist-modal h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-align: center;
+    }
+
+    .waitlist-modal p {
+        color: #718096;
+        margin-bottom: 30px;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    /* Fixed Form Styling */
+    .waitlist-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    /* Form group styling - FIXED */
+    .form-group {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #374151;
+        font-size: 0.95rem;
+        text-align: left;
+    }
+
+    /* Required field asterisk */
+    .required {
+        color: #ef4444;
+        font-weight: 700;
+        margin-left: 3px;
+    }
+
+    /* FIXED Input Styling */
+    .waitlist-input {
+        width: 100%;
+        padding: 15px 20px;
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        outline: none;
+        box-sizing: border-box;
+        font-family: inherit;
+        background: white;
+        display: block;
+    }
+
+    .waitlist-input:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .waitlist-textarea {
+        min-height: 120px;
+        resize: vertical;
+        font-family: inherit;
+    }
+
+    /* Input validation states - FIXED */
+    .waitlist-input:required:invalid {
+        border-color: #fecaca;
+        background-color: #fef2f2;
+    }
+
+    .waitlist-input:required:valid {
+        border-color: #bbf7d0;
+        background-color: #f0fdf4;
+    }
+
+    .waitlist-input:focus:required:invalid {
+        border-color: #ef4444;
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+
+    .waitlist-input:focus:required:valid {
+        border-color: #22c55e;
+        box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+    }
+
+    /* Optional field styling */
+    .waitlist-input:not([required]) {
+        border-color: #e5e7eb;
+    }
+
+    .waitlist-input:not([required]):focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+
+    .waitlist-submit {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        padding: 16px 32px;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        transform: translateY(0);
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .waitlist-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        background: linear-gradient(135deg, #5a6fd8, #6a42a0);
+    }
+
+    .waitlist-submit:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+        transform: none;
+        background: #9ca3af;
+    }
+
+    /* Pagination */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 40px;
+    }
+
+    .pagination-btn {
+        padding: 10px 15px;
+        border: 1px solid #e2e8f0;
+        background: white;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+    .pagination-btn:hover:not(.disabled) {
+        background: #667eea;
+        color: white;
+        border-color: #667eea;
+    }
+
+    .pagination-btn.active {
+        background: #667eea;
+        color: white;
+        border-color: #667eea;
+    }
+
+    .pagination-btn.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .pagination-info {
+        color: #718096;
+        font-size: 0.9rem;
+        margin: 0 20px;
+    }
+
+    /* Empty State */
+    .empty-state {
+        text-align: center;
+        padding: 60px 20px;
+        color: #718096;
+    }
+
+    .empty-state h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #4a5568;
+    }
+
+    /* Loading State */
+    .loading {
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #667eea;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Error State */
+    .error-state {
+        text-align: center;
+        padding: 60px 20px;
+        color: #e53e3e;
+    }
+
+    .error-state h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #c53030;
+    }
+
+    .retry-btn {
+        padding: 10px 20px;
+        background: #667eea;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        margin-top: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .retry-btn:hover {
+        background: #5a6fd8;
+    }
+
+    /* Enhanced Mobile Responsive Styles */
+    @media (max-width: 768px) {
+        .container {
+            padding: 0 15px;
+        }
+
+        /* Nav Mobile */
+        .events-nav-banner {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+            padding: 15px;
+        }
+        .events-nav-text {
+            font-size: 0.9rem;
+        }
+        .events-nav-btn {
+            font-size: 0.9rem;
+            padding: 8px 18px;
+        }
+
+        /* Hero Section Mobile */
+        .hero {
+            padding: 20px 0 30px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* Search Bar Mobile */
+        .search-container {
+            margin-bottom: 40px;
+        }
+
+        .search-bar {
+            padding: 15px 50px 15px 20px;
+            font-size: 1rem;
+        }
+
+        .search-icon {
+            right: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Waitlist CTA Mobile */
+        .waitlist-cta {
+            padding: 15px;
+            margin: 0 auto 30px;
+            max-width: 100%;
+            flex-direction: column;
+            text-align: center;
+            gap: 12px;
+        }
+
+        .waitlist-text {
+            font-size: 0.9rem;
+        }
+
+        .waitlist-btn {
+            align-self: center;
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Main Content Mobile */
+        .main-content {
+            padding: 30px 0;
+            border-radius: 15px 15px 0 0;
+        }
+
+        /* Filters Mobile */
+        .filters {
+            justify-content: flex-start;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            gap: 10px;
+        }
+
+        .filter-btn {
+            white-space: nowrap;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            min-width: max-content;
+        }
+
+        /* Cards Grid Mobile */
+        .cards-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .agent-card {
+            padding: 20px;
+            height: auto;
+            min-height: 320px;
+        }
+
+        .card-header {
+            margin-bottom: 12px;
+            gap: 12px;
+        }
+
+        .agent-logo {
+            width: 45px;
+            height: 45px;
+            font-size: 1.1rem;
+        }
+
+        .agent-name {
+            font-size: 1.2rem;
+        }
+
+        .agent-description {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .meta-badge {
+            font-size: 0.8rem;
+            padding: 4px 10px;
+        }
+
+        .pricing-badge {
+            top: 15px;
+            right: 15px;
+            padding: 4px 12px;
+            font-size: 0.8rem;
+        }
+
+        /* Card Footer Mobile */
+        .card-footer {
+            padding-top: 15px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Modal Mobile */
+        .modal-overlay {
+            padding: 15px;
+        }
+
+        .modal-content {
+            margin: 0;
+            padding: 20px;
+            max-height: 95vh;
+            border-radius: 15px;
+        }
+
+        .modal-close {
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            font-size: 16px;
+        }
+
+        .modal-header {
+            flex-direction: column;
+            text-align: center;
+            padding-right: 0;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .modal-logo {
+            width: 70px;
+            height: 70px;
+            font-size: 1.6rem;
+        }
+
+        .modal-title {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        .modal-tagline {
+            font-size: 1rem;
+        }
+
+        .modal-pricing-badge {
+            margin: 0;
+            align-self: center;
+        }
+
+        .modal-section {
+            margin-bottom: 20px;
+        }
+
+        .modal-section-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .modal-description {
+            font-size: 0.95rem;
+        }
+
+        .modal-details-grid {
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .modal-detail-item {
+            padding: 12px;
+        }
+
+        .modal-actions {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Waitlist Modal Mobile - FIXED ALIGNMENT */
+        .waitlist-modal {
+            padding: 25px;
+            border-radius: 15px;
+            max-width: 95%;
+            width: 95%;
+        }
+
+        .waitlist-modal h2 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .waitlist-modal p {
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .waitlist-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            text-align: left;
+            display: block;
+            width: 100%;
+        }
+
+        .waitlist-input {
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            width: 100%;
+            box-sizing: border-box;
+            display: block;
+        }
+
+        .waitlist-textarea {
+            min-height: 100px;
+            width: 100%;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        .waitlist-submit {
+            padding: 14px 28px;
+            font-size: 1rem;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /* Pagination Mobile */
+        .pagination {
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 30px;
+        }
+
+        .pagination-btn {
+            padding: 8px 12px;
+            font-size: 0.9rem;
+        }
+
+        .pagination-info {
+            font-size: 0.85rem;
+            margin: 0 10px;
+            order: -1;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Loading/Error/Empty States Mobile */
+    .loading, .error-state, .empty-state {
+        padding: 40px 15px;
+    }
+
+    .loading-spinner {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 15px;
+    }
+
+    .empty-state h3, .error-state h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .empty-state p, .error-state p {
+        font-size: 0.9rem;
+    }
+
+    .retry-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    }
+
+    /* Extra Small Mobile (320px - 480px) */
+    @media (max-width: 480px) {
+        .hero h1 {
+            font-size: 1.8rem;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+        }
+
+        .search-bar {
+            padding: 12px 45px 12px 15px;
+            font-size: 0.95rem;
+        }
+
+        .waitlist-text {
+            font-size: 0.85rem;
+        }
+
+        .waitlist-btn {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+
+        .agent-card {
+            padding: 15px;
+        }
+
+        .agent-name {
+            font-size: 1.1rem;
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+        }
+
+        .waitlist-modal {
+            padding: 20px;
+            max-width: 98%;
+            width: 98%;
+        }
+
+        .waitlist-modal h2 {
+            font-size: 1.4rem;
+        }
+
+        .form-label {
+            font-size: 0.85rem;
+        }
+
+        .waitlist-input {
+            padding: 10px 12px;
+            font-size: 0.9rem;
+        }
+
+        .waitlist-submit {
+            padding: 12px 24px;
+            font-size: 0.95rem;
+        }
+    }
+
+    /* Landscape Mobile */
+    @media (max-width: 768px) and (orientation: landscape) {
+        .hero {
+            padding: 30px 0 25px;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .modal-content, .waitlist-modal {
+            max-height: 90vh;
+        }
+    }
+
+    /* Touch-friendly improvements */
+    @media (hover: none) and (pointer: coarse) {
+        .btn, .filter-btn, .pagination-btn, .waitlist-btn {
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        .modal-close {
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        .search-bar {
+            min-height: 50px;
+        }
+
+        .waitlist-input {
+            min-height: 48px;
+        }
+    }
+
+    /* Notification Styles */
+    .notification {
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+    }
+
+    .notification-success {
+        background: linear-gradient(135deg, #48bb78, #38a169) !important;
+    }
+
+    .notification-error {
+        background: linear-gradient(135deg, #f56565, #e53e3e) !important;
+    }
+
+    .notification-info {
+        background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    }
+
+    </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Noleaf.app</h1>
-            <p>Discover and explore the most powerful AI agents to supercharge your workflow and productivity</p>
-            
-            <!-- Search Bar -->
-            <div class="search-container">
-                <input type="text" class="search-bar" placeholder="Search AI agents by name, category, or feature..." id="searchInput">
-                <span class="search-icon">🔍</span>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <!-- NEW: Events Navigation Banner -->
+            <div class="events-nav-banner">
+                <span class="events-nav-text">Looking for our events page? Here you go →</span>
+                <a href="index1.html" class="events-nav-btn">Events Page</a>
             </div>
 
-            <!-- Waitlist CTA -->
-            <div class="waitlist-cta">
-                <p class="waitlist-text">
-                    <span class="waitlist-label">Coming Soon:</span> Describe your use case and we'll find the perfect agent for you
-                </p>
-                <button class="waitlist-btn" onclick="openWaitlistModal()">
-                    Get Early Access
-                </button>
-            </div>
-        </div>
-    </section>
+            <h1>Noleaf.app</h1>
+            <p>Discover and explore the most powerful AI agents to supercharge your workflow and productivity</p>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search AI agents by name, category, or feature..." id="searchInput">
+                <span class="search-icon">🔍</span>
+            </div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <!-- Filters -->
-            <div class="filters" id="filters">
-                <button class="filter-btn active" data-filter="all">All Agents</button>
-                <button class="filter-btn" data-filter="free">Free</button>
-                <button class="filter-btn" data-filter="paid">Paid</button>
-                <button class="filter-btn" data-filter="freemium">Freemium</button>
-            </div>
+            <!-- Waitlist CTA -->
+            <div class="waitlist-cta">
+                <div class="waitlist-content">
+                    <p class="waitlist-text">
+                        <span class="waitlist-label">Coming Soon:</span> Describe your use case and we'll find the perfect agent for you
+                    </p>
+                </div>
+                <button class="waitlist-btn" onclick="openWaitlistModal()">
+                    Get Early Access
+                </button>
+            </div>
+        </div>
+    </section>
 
-            <!-- Loading State -->
-            <div class="loading" id="loadingState">
-                <div class="loading-spinner"></div>
-                <p>Loading AI agents...</p>
-            </div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Filters -->
+            <div class="filters" id="filters">
+                <button class="filter-btn active" data-filter="all">All Agents</button>
+                <button class="filter-btn" data-filter="free">Free</button>
+                <button class="filter-btn" data-filter="paid">Paid</button>
+                <button class="filter-btn" data-filter="freemium">Freemium</button>
+            </div>
 
-            <!-- Error State -->
-            <div class="error-state" id="errorState" style="display: none;">
-                <h3>Error loading data</h3>
-                <p>Failed to load AI agents data. Please check your internet connection and try again.</p>
-                <button class="retry-btn" onclick="loadData()">Retry</button>
-            </div>
+            <!-- Loading State -->
+            <div class="loading" id="loadingState">
+                <div class="loading-spinner"></div>
+                <p>Loading AI agents...</p>
+            </div>
 
-            <!-- Cards Grid -->
-            <div class="cards-grid" id="cardsGrid" style="display: none;">
-                <!-- Cards will be inserted here -->
-            </div>
+            <!-- Error State -->
+            <div class="error-state" id="errorState" style="display: none;">
+                <h3>Error loading data</h3>
+                <p>Failed to load AI agents data. Please check your internet connection and try again.</p>
+                <button class="retry-btn" onclick="loadAgents()">Retry</button>
+            </div>
 
-            <!-- Empty State -->
-            <div class="empty-state" id="emptyState" style="display: none;">
-                <h3>No agents found</h3>
-                <p>Try adjusting your search terms or filters to find what you're looking for.</p>
-            </div>
+            <!-- Cards Grid -->
+            <div class="cards-grid" id="cardsGrid" style="display: none;">
+                <!-- Cards will be inserted here -->
+            </div>
 
-            <!-- Pagination -->
-            <div class="pagination" id="pagination" style="display: none;">
-                <!-- Pagination will be inserted here -->
-            </div>
-        </div>
-    </main>
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <h3>No agents found</h3>
+                <p>Try adjusting your search terms or filters to find what you're looking for.</p>
+            </div>
 
-    <!-- Modal -->
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">×</button>
-            <div id="modalBody">
-                <!-- Modal content will be inserted here -->
-            </div>
+            <!-- Pagination -->
+            <div class="pagination" id="pagination" style="display: none;">
+                <!-- Pagination will be inserted here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <div id="modalBody">
+                <!-- Modal content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Waitlist Modal -->
+    <div class="modal-overlay" id="waitlistModalOverlay">
+        <div class="waitlist-modal">
+            <button class="modal-close" onclick="closeWaitlistModal()">×</button>
+            <h2>🔮 Join the Waitlist</h2>
+            <p>Be the first to experience AI-powered agent discovery. Describe your needs, and we'll find the perfect agent for you!</p>
+            <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xwpoygyd" method="POST">
+                <div class="form-group">
+                    <label for="waitlist-name" class="form-label">Your Name <span class="required">*</span></label>
+                    <input type="text" class="waitlist-input" id="waitlist-name" name="name" placeholder="Your Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="waitlist-email" class="form-label">Your Email <span class="required">*</span></label>
+                    <input type="email" class="waitlist-input" id="waitlist-email" name="email" placeholder="Your Email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="waitlist-company" class="form-label">Company/Organization</label>
+                    <input type="text" class="waitlist-input" id="waitlist-company" name="company" placeholder="Company/Organization (Optional)">
+                </div>
+                
+                <div class="form-group">
+                    <label for="waitlist-use-case" class="form-label">Use Case <span class="required">*</span></label>
+                    <textarea class="waitlist-input waitlist-textarea" id="waitlist-use-case" name="use_case" placeholder="Describe your use case or what kind of AI agent you're looking for..." required></textarea>
+                </div>
+                
+                <!-- Hidden fields -->
+                <input type="hidden" name="_subject" value="New Waitlist Signup - AI Agent Platform">
+                <input type="hidden" name="_next" value="thank-you.html">
+                
+                <button type="submit" class="waitlist-submit">Join Waitlist</button>
+            </form>
         </div>
     </div>
 
-    <!-- Waitlist Modal -->
-    <!-- Waitlist Modal -->
+    <script>
 
-<!-- Replace your existing waitlist modal with this updated version -->
-<div class="modal-overlay" id="waitlistModalOverlay">
-    <div class="waitlist-modal">
-        <button class="modal-close" onclick="closeWaitlistModal()">×</button>
-        <h2>🔮 Join the Waitlist</h2>
-        <p>Be the first to experience AI-powered agent discovery. Describe your needs, and we'll find the perfect agent for you!</p>
-        
-        <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/xwpoygyd" method="POST">
-            <div class="form-group">
-                <label for="waitlist-name" class="form-label">Your Name <span class="required">*</span></label>
-                <input type="text" class="waitlist-input" id="waitlist-name" name="name" placeholder="Your Name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="waitlist-email" class="form-label">Your Email <span class="required">*</span></label>
-                <input type="email" class="waitlist-input" id="waitlist-email" name="email" placeholder="Your Email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="waitlist-company" class="form-label">Company/Organization</label>
-                <input type="text" class="waitlist-input" id="waitlist-company" name="company" placeholder="Company/Organization (Optional)">
-            </div>
-            
-            <div class="form-group">
-                <label for="waitlist-use-case" class="form-label">Use Case <span class="required">*</span></label>
-                <textarea class="waitlist-input waitlist-textarea" id="waitlist-use-case" name="use_case" placeholder="Describe your use case or what kind of AI agent you're looking for..." required></textarea>
-            </div>
-            
-            <!-- Hidden fields -->
-            <input type="hidden" name="_subject" value="New Waitlist Signup - AI Agent Platform">
-            <input type="hidden" name="_next" value="thank-you.html">
-            
-            <button type="submit" class="waitlist-submit">Join Waitlist</button>
-        </form>
-    </div>
-</div>
+    // Global variables
+    let currentPage = 1;
+    let totalPages = 1;
+    let currentSearchQuery = '';
+    let currentCategoryFilter = '';
+    let currentPricingFilter = 'all';
 
-    <script>
+    // Update this to your Railway deployment URL
+    const API_BASE_URL = 'https://web-production-101a.up.railway.app'; // <-- CHANGE THIS URL
 
-// Replace your existing JavaScript with this updated version
-
-// Global variables
-let currentPage = 1;
-let totalPages = 1;
-let currentSearchQuery = '';
-let currentCategoryFilter = '';
-let currentPricingFilter = 'all';
-
-// Update this to your Railway deployment URL
-const API_BASE_URL = 'https://web-production-101a.up.railway.app'; // <-- CHANGE THIS URL
-
-// Initialize app
-document.addEventListener('DOMContentLoaded', function() {
-    setupEventListeners();
-    loadAgents(); // Load first page
-});
-
-// Setup event listeners
-function setupEventListeners() {
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('input', debounce(handleSearch, 300));
-
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', handleFilter);
+    // Initialize app
+    document.addEventListener('DOMContentLoaded', function() {
+        setupEventListeners();
+        loadAgents(); // Load first page
     });
 
-    // Modal handlers
-    const modalOverlay = document.getElementById('modalOverlay');
-    modalOverlay.querySelector('.modal-close').addEventListener('click', closeModal);
-    modalOverlay.addEventListener('click', (e) => {
-        if (e.target === modalOverlay) closeModal();
-    });
+    // Setup event listeners
+    function setupEventListeners() {
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', debounce(handleSearch, 300));
 
-    // Waitlist modal handlers
-    const waitlistModalOverlay = document.getElementById('waitlistModalOverlay');
-    waitlistModalOverlay.querySelector('.modal-close').addEventListener('click', closeWaitlistModal);
-    waitlistModalOverlay.addEventListener('click', (e) => {
-        if (e.target === waitlistModalOverlay) closeWaitlistModal();
-    });
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', handleFilter);
+        });
 
-    // Escape key handler
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            if (modalOverlay.classList.contains('show')) closeModal();
-            if (waitlistModalOverlay.classList.contains('show')) closeWaitlistModal();
-        }
-    });
+        // Modal handlers
+        const modalOverlay = document.getElementById('modalOverlay');
+        modalOverlay.querySelector('.modal-close').addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
 
-    // Waitlist form
-    const waitlistForm = document.getElementById('waitlistForm');
-    if (waitlistForm) {
-        waitlistForm.addEventListener('submit', handleWaitlistSubmission);
-    }
-}
+        // Waitlist modal handlers
+        const waitlistModalOverlay = document.getElementById('waitlistModalOverlay');
+        waitlistModalOverlay.querySelector('.modal-close').addEventListener('click', closeWaitlistModal);
+        waitlistModalOverlay.addEventListener('click', (e) => {
+            if (e.target === waitlistModalOverlay) closeWaitlistModal();
+        });
 
-// Debounce function
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Load agents from backend
-async function loadAgents(page = 1, search = '', category = '', pricing = 'all') {
-    const loadingState = document.getElementById('loadingState');
-    const errorState = document.getElementById('errorState');
-    const cardsGrid = document.getElementById('cardsGrid');
-    const emptyState = document.getElementById('emptyState');
-    const pagination = document.getElementById('pagination');
-
-    try {
-        // Show loading
-        loadingState.style.display = 'block';
-        errorState.style.display = 'none';
-        emptyState.style.display = 'none';
-        cardsGrid.style.display = 'none';
-        pagination.style.display = 'none';
-
-        // Build URL
-        const params = new URLSearchParams();
-        params.append('page', page.toString());
-        if (search) params.append('search', search);
-        if (category) params.append('category', category);
-        if (pricing !== 'all') params.append('pricing', pricing);
-
-        const response = await fetch(`${API_BASE_URL}/agents?${params.toString()}`);
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
-        const result = await response.json();
-        
-        // Update state
-        currentPage = result.page;
-        totalPages = result.total_pages;
-        
-        loadingState.style.display = 'none';
-        
-        // Render results
-        if (result.data && result.data.length > 0) {
-            renderAgentCards(result.data);
-            cardsGrid.style.display = 'grid';
-            
-            if (totalPages > 1) {
-                renderPagination();
-                pagination.style.display = 'flex';
+        // Escape key handler
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (modalOverlay.classList.contains('show')) closeModal();
+                if (waitlistModalOverlay.classList.contains('show')) closeWaitlistModal();
             }
-        } else {
-            emptyState.style.display = 'block';
-        }
-        
-    } catch (error) {
-        console.error('Error loading agents:', error);
-        loadingState.style.display = 'none';
-        errorState.style.display = 'block';
-        
-        const errorDetails = document.getElementById('errorDetails');
-        if (errorDetails) {
-            errorDetails.textContent = `Failed to load agents: ${error.message}`;
+        });
+
+        // Waitlist form
+        const waitlistForm = document.getElementById('waitlistForm');
+        if (waitlistForm) {
+            waitlistForm.addEventListener('submit', handleWaitlistSubmission);
         }
     }
-}
 
-// Handle search
-function handleSearch() {
-    currentSearchQuery = document.getElementById('searchInput').value.trim();
-    currentPage = 1;
-    loadAgents(currentPage, currentSearchQuery, currentCategoryFilter, currentPricingFilter);
-}
+    // Debounce function
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
 
-// Handle filter
-function handleFilter(e) {
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    e.target.classList.add('active');
+    // Load agents from backend
+    async function loadAgents(page = 1, search = '', category = '', pricing = 'all') {
+        const loadingState = document.getElementById('loadingState');
+        const errorState = document.getElementById('errorState');
+        const cardsGrid = document.getElementById('cardsGrid');
+        const emptyState = document.getElementById('emptyState');
+        const pagination = document.getElementById('pagination');
 
-    currentPricingFilter = e.target.dataset.filter;
-    currentPage = 1;
-    loadAgents(currentPage, currentSearchQuery, currentCategoryFilter, currentPricingFilter);
-}
+        try {
+            // Show loading
+            loadingState.style.display = 'block';
+            errorState.style.display = 'none';
+            emptyState.style.display = 'none';
+            cardsGrid.style.display = 'none';
+            pagination.style.display = 'none';
 
-// Render agent cards
-function renderAgentCards(agents) {
-    const cardsGrid = document.getElementById('cardsGrid');
-    
-    cardsGrid.innerHTML = agents.map((agent, index) => {
+            // Build URL
+            const params = new URLSearchParams();
+            params.append('page', page.toString());
+            if (search) params.append('search', search);
+            if (category) params.append('category', category);
+            if (pricing !== 'all') params.append('pricing', pricing);
+
+            const response = await fetch(`${API_BASE_URL}/agents?${params.toString()}`);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const result = await response.json();
+            
+            // Update state
+            currentPage = result.page;
+            totalPages = result.total_pages;
+            
+            loadingState.style.display = 'none';
+            
+            // Render results
+            if (result.data && result.data.length > 0) {
+                renderAgentCards(result.data);
+                cardsGrid.style.display = 'grid';
+                
+                if (totalPages > 1) {
+                    renderPagination();
+                    pagination.style.display = 'flex';
+                }
+            } else {
+                emptyState.style.display = 'block';
+            }
+            
+        } catch (error) {
+            console.error('Error loading agents:', error);
+            loadingState.style.display = 'none';
+            errorState.style.display = 'block';
+            
+            const errorDetails = document.getElementById('errorDetails');
+            if (errorDetails) {
+                errorDetails.textContent = `Failed to load agents: ${error.message}`;
+            }
+        }
+    }
+
+    // Handle search
+    function handleSearch() {
+        currentSearchQuery = document.getElementById('searchInput').value.trim();
+        currentPage = 1;
+        loadAgents(currentPage, currentSearchQuery, currentCategoryFilter, currentPricingFilter);
+    }
+
+    // Handle filter
+    function handleFilter(e) {
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
+
+        currentPricingFilter = e.target.dataset.filter;
+        currentPage = 1;
+        loadAgents(currentPage, currentSearchQuery, currentCategoryFilter, currentPricingFilter);
+    }
+
+    // Render agent cards
+    function renderAgentCards(agents) {
+        const cardsGrid = document.getElementById('cardsGrid');
+        
+        cardsGrid.innerHTML = agents.map((agent, index) => {
+            const name = agent.enrich_name || agent.name || 'Unknown Agent';
+            const tagline = agent.enrich_tagline || '';
+            const description = agent.description || 'No description available';
+            const pricing = agent.pricingbadge || '';
+            const category = agent.enrich_category || '';
+            
+            const initials = name.split(' ').map(word => word.charAt(0)).join('').substring(0, 2).toUpperCase();
+            
+            let tags = [];
+            if (agent.enrich_tags) {
+                try {
+                    tags = JSON.parse(agent.enrich_tags.replace(/'/g, '"'));
+                } catch (e) {
+                    tags = agent.enrich_tags.split(',').map(tag => tag.trim());
+                }
+            }
+
+            return createAgentCard(agent, name, tagline, description, pricing, category, initials, tags, index);
+        }).join('');
+    }
+
+    // Create agent card HTML
+    function createAgentCard(agent, name, tagline, description, pricing, category, initials, tags, index) {
+        return `
+            <div class="agent-card" style="animation-delay: ${index * 0.05}s">
+                ${pricing ? `<div class="pricing-badge pricing-${pricing.toLowerCase()}">${pricing}</div>` : ''}
+                
+                <div class="card-content">
+                    <div class="card-header">
+                        <div class="agent-logo">${initials}</div>
+                        <div class="agent-info">
+                            <h3 class="agent-name">${sanitizeHTML(name)}</h3>
+                            ${tagline ? `<p class="agent-tagline">${sanitizeHTML(tagline)}</p>` : ''}
+                        </div>
+                    </div>
+
+                    <p class="agent-description">${sanitizeHTML(description)}</p>
+
+                    <div class="card-meta">
+                        ${category ? `<span class="meta-badge">📁 ${sanitizeHTML(category)}</span>` : ''}
+                        ${agent.deployment ? `<span class="meta-badge">☁️ ${sanitizeHTML(agent.deployment)}</span>` : ''}
+                        ${tags.slice(0, 2).map(tag => `<span class="meta-badge">#${sanitizeHTML(tag)}</span>`).join('')}
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button class="btn btn-primary" onclick="openModal(${JSON.stringify(agent).replace(/"/g, '&quot;')})">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+
+    // Sanitize HTML
+    function sanitizeHTML(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    // Render pagination
+    function renderPagination() {
+        const pagination = document.getElementById('pagination');
+        
+        let paginationHTML = '';
+
+        // Previous button
+        paginationHTML += `
+            <button class="pagination-btn ${currentPage === 1 ? 'disabled' : ''}" 
+                    onclick="changePage(${currentPage - 1})" 
+                    ${currentPage === 1 ? 'disabled' : ''}>
+                ‹ Previous
+            </button>
+        `;
+
+        // Page numbers
+        const maxVisiblePages = 5;
+        let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+        let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+        if (endPage - startPage < maxVisiblePages - 1) {
+            startPage = Math.max(1, endPage - maxVisiblePages + 1);
+        }
+
+        if (startPage > 1) {
+            paginationHTML += `<button class="pagination-btn" onclick="changePage(1)">1</button>`;
+            if (startPage > 2) {
+                paginationHTML += `<span class="pagination-btn disabled">...</span>`;
+            }
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            paginationHTML += `
+                <button class="pagination-btn ${i === currentPage ? 'active' : ''}" 
+                        onclick="changePage(${i})">
+                    ${i}
+                </button>
+            `;
+        }
+
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+                paginationHTML += `<span class="pagination-btn disabled">...</span>`;
+            }
+            paginationHTML += `<button class="pagination-btn" onclick="changePage(${totalPages})">${totalPages}</button>`;
+        }
+
+        // Next button
+        paginationHTML += `
+            <button class="pagination-btn ${currentPage === totalPages ? 'disabled' : ''}" 
+                    onclick="changePage(${currentPage + 1})"
+                    ${currentPage === totalPages ? 'disabled' : ''}>
+                Next ›
+            </button>
+        `;
+
+        // Info
+        paginationHTML += `
+            <span class="pagination-info">
+                Page ${currentPage} of ${totalPages}
+            </span>
+        `;
+
+        pagination.innerHTML = paginationHTML;
+    }
+
+    // Change page
+    function changePage(page) {
+        if (page < 1 || page > totalPages || page === currentPage) return;
+        
+        loadAgents(page, currentSearchQuery, currentCategoryFilter, currentPricingFilter);
+        
+        document.getElementById('cardsGrid').scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+
+    // Modal functions
+    function openModal(agentData) {
+        const agent = typeof agentData === 'string' ? JSON.parse(agentData) : agentData;
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalBody = document.getElementById('modalBody');
+
+        modalBody.innerHTML = createModalContent(agent);
+        modalOverlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        const modalOverlay = document.getElementById('modalOverlay');
+        modalOverlay.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+
+    function openWaitlistModal() {
+        const waitlistModalOverlay = document.getElementById('waitlistModalOverlay');
+        waitlistModalOverlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeWaitlistModal() {
+        const waitlistModalOverlay = document.getElementById('waitlistModalOverlay');
+        waitlistModalOverlay.classList.remove('show');
+        document.body.style.overflow = 'auto';
+    }
+
+    // Create modal content
+    function createModalContent(agent) {
         const name = agent.enrich_name || agent.name || 'Unknown Agent';
         const tagline = agent.enrich_tagline || '';
         const description = agent.description || 'No description available';
         const pricing = agent.pricingbadge || '';
         const category = agent.enrich_category || '';
+        const websiteUrl = agent.url || '#';
         
         const initials = name.split(' ').map(word => word.charAt(0)).join('').substring(0, 2).toUpperCase();
         
         let tags = [];
-        if (agent.enrich_tags) {
-            try {
+        let integrations = [];
+        let llms = [];
+        
+        // Parse tags safely
+        try {
+            if (agent.enrich_tags) {
                 tags = JSON.parse(agent.enrich_tags.replace(/'/g, '"'));
-            } catch (e) {
+            }
+        } catch (e) {
+            if (agent.enrich_tags) {
                 tags = agent.enrich_tags.split(',').map(tag => tag.trim());
             }
         }
+        
+        // Parse integrations safely
+        try {
+            if (agent.integrations) {
+                integrations = JSON.parse(agent.integrations.replace(/'/g, '"'));
+            }
+        } catch (e) {
+            if (agent.integrations) {
+                integrations = agent.integrations.split(',').map(integration => integration.trim());
+            }
+        }
+        
+        // Parse LLMs safely
+        try {
+            if (agent.supportedllms) {
+                llms = JSON.parse(agent.supportedllms.replace(/'/g, '"'));
+            }
+        } catch (e) {
+            if (agent.supportedllms) {
+                llms = agent.supportedllms.split(',').map(llm => llm.trim());
+            }
+        }
 
-        return createAgentCard(agent, name, tagline, description, pricing, category, initials, tags, index);
-    }).join('');
-}
+        return `
+            <div class="modal-header">
+                <div class="modal-logo">${initials}</div>
+                <div style="flex: 1;">
+                    <h2 class="modal-title">${sanitizeHTML(name)}</h2>
+                    ${tagline ? `<p class="modal-tagline">${sanitizeHTML(tagline)}</p>` : ''}
+                </div>
+                ${pricing ? `<div class="modal-pricing-badge pricing-${pricing.toLowerCase()}">${pricing}</div>` : ''}
+            </div>
 
-// Create agent card HTML
-function createAgentCard(agent, name, tagline, description, pricing, category, initials, tags, index) {
-    return `
-        <div class="agent-card" style="animation-delay: ${index * 0.05}s">
-            ${pricing ? `<div class="pricing-badge pricing-${pricing.toLowerCase()}">${pricing}</div>` : ''}
-            
-            <div class="card-content">
-                <div class="card-header">
-                    <div class="agent-logo">${initials}</div>
-                    <div class="agent-info">
-                        <h3 class="agent-name">${sanitizeHTML(name)}</h3>
-                        ${tagline ? `<p class="agent-tagline">${sanitizeHTML(tagline)}</p>` : ''}
+            <div class="modal-section">
+                <h3 class="modal-section-title">Description</h3>
+                <p class="modal-description">${sanitizeHTML(description)}</p>
+            </div>
+
+            <div class="modal-section">
+                <h3 class="modal-section-title">Details</h3>
+                <div class="modal-details-grid">
+                    ${category ? `
+                        <div class="modal-detail-item">
+                            <div class="modal-detail-label">Category</div>
+                            <div class="modal-detail-value">${sanitizeHTML(category)}</div>
+                        </div>
+                    ` : ''}
+                    
+                    ${agent.deployment ? `
+                        <div class="modal-detail-item">
+                            <div class="modal-detail-label">Deployment</div>
+                            <div class="modal-detail-value">${sanitizeHTML(agent.deployment)}</div>
+                        </div>
+                    ` : ''}
+                    
+                    ${agent.license ? `
+                        <div class="modal-detail-item">
+                            <div class="modal-detail-label">License</div>
+                            <div class="modal-detail-value">${sanitizeHTML(agent.license)}</div>
+                        </div>
+                    ` : ''}
+                    
+                    ${agent.isopensource ? `
+                        <div class="modal-detail-item">
+                            <div class="modal-detail-label">Open Source</div>
+                            <div class="modal-detail-value">${sanitizeHTML(agent.isopensource)}</div>
+                        </div>
+                    ` : ''}
+                </div>
+            </div>
+
+            ${tags.length > 0 ? `
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Tags</h3>
+                    <div class="modal-tags">
+                        ${tags.map(tag => `<span class="modal-tag">${sanitizeHTML(tag)}</span>`).join('')}
                     </div>
                 </div>
+            ` : ''}
 
-                <p class="agent-description">${sanitizeHTML(description)}</p>
-
-                <div class="card-meta">
-                    ${category ? `<span class="meta-badge">📁 ${sanitizeHTML(category)}</span>` : ''}
-                    ${agent.deployment ? `<span class="meta-badge">☁️ ${sanitizeHTML(agent.deployment)}</span>` : ''}
-                    ${tags.slice(0, 2).map(tag => `<span class="meta-badge">#${sanitizeHTML(tag)}</span>`).join('')}
+            ${integrations.length > 0 ? `
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Integrations</h3>
+                    <div class="modal-integrations">
+                        ${integrations.map(integration => `<span class="modal-integration">${sanitizeHTML(integration)}</span>`).join('')}
+                    </div>
                 </div>
+            ` : ''}
+
+            ${llms.length > 0 ? `
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Supported LLMs</h3>
+                    <div class="modal-llms">
+                        ${llms.map(llm => `<span class="modal-llm">${sanitizeHTML(llm)}</span>`).join('')}
+                    </div>
+                </div>
+            ` : ''}
+
+            <div class="modal-actions">
+                ${websiteUrl && websiteUrl !== '#' ? `<a href="${websiteUrl}" target="_blank" class="btn btn-primary">Visit Website</a>` : ''}
+                ${!websiteUrl || websiteUrl === '#' ? `<button class="btn btn-secondary" disabled>No Website Available</button>` : ''}
             </div>
-
-            <div class="card-footer">
-                <button class="btn btn-primary" onclick="openModal(${JSON.stringify(agent).replace(/"/g, '&quot;')})">
-                    View Details
-                </button>
-            </div>
-        </div>
-    `;
-}
-
-// Sanitize HTML
-function sanitizeHTML(str) {
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
-}
-
-// Render pagination
-function renderPagination() {
-    const pagination = document.getElementById('pagination');
-    
-    let paginationHTML = '';
-
-    // Previous button
-    paginationHTML += `
-        <button class="pagination-btn ${currentPage === 1 ? 'disabled' : ''}" 
-                onclick="changePage(${currentPage - 1})" 
-                ${currentPage === 1 ? 'disabled' : ''}>
-            ‹ Previous
-        </button>
-    `;
-
-    // Page numbers
-    const maxVisiblePages = 5;
-    let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-    let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
-
-    if (endPage - startPage < maxVisiblePages - 1) {
-        startPage = Math.max(1, endPage - maxVisiblePages + 1);
-    }
-
-    if (startPage > 1) {
-        paginationHTML += `<button class="pagination-btn" onclick="changePage(1)">1</button>`;
-        if (startPage > 2) {
-            paginationHTML += `<span class="pagination-btn disabled">...</span>`;
-        }
-    }
-
-    for (let i = startPage; i <= endPage; i++) {
-        paginationHTML += `
-            <button class="pagination-btn ${i === currentPage ? 'active' : ''}" 
-                    onclick="changePage(${i})">
-                ${i}
-            </button>
         `;
     }
 
-    if (endPage < totalPages) {
-        if (endPage < totalPages - 1) {
-            paginationHTML += `<span class="pagination-btn disabled">...</span>`;
-        }
-        paginationHTML += `<button class="pagination-btn" onclick="changePage(${totalPages})">${totalPages}</button>`;
-    }
-
-    // Next button
-    paginationHTML += `
-        <button class="pagination-btn ${currentPage === totalPages ? 'disabled' : ''}" 
-                onclick="changePage(${currentPage + 1})"
-                ${currentPage === totalPages ? 'disabled' : ''}>
-            Next ›
-        </button>
-    `;
-
-    // Info
-    paginationHTML += `
-        <span class="pagination-info">
-            Page ${currentPage} of ${totalPages}
-        </span>
-    `;
-
-    pagination.innerHTML = paginationHTML;
-}
-
-// Change page
-function changePage(page) {
-    if (page < 1 || page > totalPages || page === currentPage) return;
-    
-    loadAgents(page, currentSearchQuery, currentCategoryFilter, currentPricingFilter);
-    
-    document.getElementById('cardsGrid').scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-    });
-}
-
-// Modal functions
-function openModal(agentData) {
-    const agent = typeof agentData === 'string' ? JSON.parse(agentData) : agentData;
-    const modalOverlay = document.getElementById('modalOverlay');
-    const modalBody = document.getElementById('modalBody');
-
-    modalBody.innerHTML = createModalContent(agent);
-    modalOverlay.classList.add('show');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-    const modalOverlay = document.getElementById('modalOverlay');
-    modalOverlay.classList.remove('show');
-    document.body.style.overflow = 'auto';
-}
-
-function openWaitlistModal() {
-    const waitlistModalOverlay = document.getElementById('waitlistModalOverlay');
-    waitlistModalOverlay.classList.add('show');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeWaitlistModal() {
-    const waitlistModalOverlay = document.getElementById('waitlistModalOverlay');
-    waitlistModalOverlay.classList.remove('show');
-    document.body.style.overflow = 'auto';
-}
-
-// Create modal content
-function createModalContent(agent) {
-    const name = agent.enrich_name || agent.name || 'Unknown Agent';
-    const tagline = agent.enrich_tagline || '';
-    const description = agent.description || 'No description available';
-    const pricing = agent.pricingbadge || '';
-    const category = agent.enrich_category || '';
-    const websiteUrl = agent.url || '#';
-    
-    const initials = name.split(' ').map(word => word.charAt(0)).join('').substring(0, 2).toUpperCase();
-    
-    let tags = [];
-    let integrations = [];
-    let llms = [];
-    
-    // Parse tags safely
-    try {
-        if (agent.enrich_tags) {
-            tags = JSON.parse(agent.enrich_tags.replace(/'/g, '"'));
-        }
-    } catch (e) {
-        if (agent.enrich_tags) {
-            tags = agent.enrich_tags.split(',').map(tag => tag.trim());
-        }
-    }
-    
-    // Parse integrations safely
-    try {
-        if (agent.integrations) {
-            integrations = JSON.parse(agent.integrations.replace(/'/g, '"'));
-        }
-    } catch (e) {
-        if (agent.integrations) {
-            integrations = agent.integrations.split(',').map(integration => integration.trim());
-        }
-    }
-    
-    // Parse LLMs safely
-    try {
-        if (agent.supportedllms) {
-            llms = JSON.parse(agent.supportedllms.replace(/'/g, '"'));
-        }
-    } catch (e) {
-        if (agent.supportedllms) {
-            llms = agent.supportedllms.split(',').map(llm => llm.trim());
-        }
-    }
-
-    return `
-        <div class="modal-header">
-            <div class="modal-logo">${initials}</div>
-            <div style="flex: 1;">
-                <h2 class="modal-title">${sanitizeHTML(name)}</h2>
-                ${tagline ? `<p class="modal-tagline">${sanitizeHTML(tagline)}</p>` : ''}
-            </div>
-            ${pricing ? `<div class="modal-pricing-badge pricing-${pricing.toLowerCase()}">${pricing}</div>` : ''}
-        </div>
-
-        <div class="modal-section">
-            <h3 class="modal-section-title">Description</h3>
-            <p class="modal-description">${sanitizeHTML(description)}</p>
-        </div>
-
-        <div class="modal-section">
-            <h3 class="modal-section-title">Details</h3>
-            <div class="modal-details-grid">
-                ${category ? `
-                    <div class="modal-detail-item">
-                        <div class="modal-detail-label">Category</div>
-                        <div class="modal-detail-value">${sanitizeHTML(category)}</div>
-                    </div>
-                ` : ''}
-                
-                ${agent.deployment ? `
-                    <div class="modal-detail-item">
-                        <div class="modal-detail-label">Deployment</div>
-                        <div class="modal-detail-value">${sanitizeHTML(agent.deployment)}</div>
-                    </div>
-                ` : ''}
-                
-                ${agent.license ? `
-                    <div class="modal-detail-item">
-                        <div class="modal-detail-label">License</div>
-                        <div class="modal-detail-value">${sanitizeHTML(agent.license)}</div>
-                    </div>
-                ` : ''}
-                
-                ${agent.isopensource ? `
-                    <div class="modal-detail-item">
-                        <div class="modal-detail-label">Open Source</div>
-                        <div class="modal-detail-value">${sanitizeHTML(agent.isopensource)}</div>
-                    </div>
-                ` : ''}
-            </div>
-        </div>
-
-        ${tags.length > 0 ? `
-            <div class="modal-section">
-                <h3 class="modal-section-title">Tags</h3>
-                <div class="modal-tags">
-                    ${tags.map(tag => `<span class="modal-tag">${sanitizeHTML(tag)}</span>`).join('')}
-                </div>
-            </div>
-        ` : ''}
-
-        ${integrations.length > 0 ? `
-            <div class="modal-section">
-                <h3 class="modal-section-title">Integrations</h3>
-                <div class="modal-integrations">
-                    ${integrations.map(integration => `<span class="modal-integration">${sanitizeHTML(integration)}</span>`).join('')}
-                </div>
-            </div>
-        ` : ''}
-
-        ${llms.length > 0 ? `
-            <div class="modal-section">
-                <h3 class="modal-section-title">Supported LLMs</h3>
-                <div class="modal-llms">
-                    ${llms.map(llm => `<span class="modal-llm">${sanitizeHTML(llm)}</span>`).join('')}
-                </div>
-            </div>
-        ` : ''}
-
-        <div class="modal-actions">
-            ${websiteUrl && websiteUrl !== '#' ? `<a href="${websiteUrl}" target="_blank" class="btn btn-primary">Visit Website</a>` : ''}
-            ${!websiteUrl || websiteUrl === '#' ? `<button class="btn btn-secondary" disabled>No Website Available</button>` : ''}
-        </div>
-    `;
-}
-
-// Waitlist form submission
-function handleWaitlistSubmission(e) {
-    e.preventDefault();
-    const form = e.target;
-    const submitBtn = form.querySelector('.waitlist-submit');
-    const originalText = submitBtn.textContent;
-    
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Joining...';
-    
-    fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: {
-            'Accept': 'application/json'
-        }
-    })
-    .then(response => {
-        if (response.ok) {
-            submitBtn.textContent = 'Joined! ✓';
+    // Waitlist form submission
+    function handleWaitlistSubmission(e) {
+        e.preventDefault();
+        const form = e.target;
+        const submitBtn = form.querySelector('.waitlist-submit');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Joining...';
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                submitBtn.textContent = 'Joined! ✓';
+                setTimeout(() => {
+                    closeWaitlistModal();
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }, 1500);
+            } else {
+                throw new Error('Form submission failed');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            submitBtn.textContent = 'Error - Try Again';
+            submitBtn.disabled = false;
             setTimeout(() => {
-                closeWaitlistModal();
-                form.reset();
-                submitBtn.disabled = false;
                 submitBtn.textContent = originalText;
-            }, 1500);
-        } else {
-            throw new Error('Form submission failed');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        submitBtn.textContent = 'Error - Try Again';
-        submitBtn.disabled = false;
-        setTimeout(() => {
-            submitBtn.textContent = originalText;
-        }, 3000);
-    });
-}
-    </script>
+            }, 3000);
+        });
+    }
+    </script>
 </body>
 </html>
